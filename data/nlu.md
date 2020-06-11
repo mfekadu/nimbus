@@ -1,5 +1,4 @@
 ## intent:greet
-
 - hey
 - hello
 - hi
@@ -175,9 +174,9 @@
 - suh du
 - ssup?
 - helleo
+- talk to me pls
 
 ## intent:goodbye
-
 - bye
 - goodbye
 - see you around
@@ -231,7 +230,6 @@
 - byr
 
 ## intent:affirm
-
 - Accept
 - Awesome!
 - Cool
@@ -464,7 +462,6 @@
 - really
 
 ## intent:deny
-
 - I don't want to
 - I don't want to give it to you
 - I don't want to say
@@ -567,7 +564,6 @@
 - I don't agree
 
 ## intent:thank
-
 - Cool. Thanks
 - Great, thanks
 - Thank you
@@ -609,7 +605,6 @@
 - thanks f
 
 ## intent:react_positive
-
 - perfect
 - good mood
 - peace and love and happiness
@@ -683,7 +678,6 @@
 - I mean to say that I liked the explanation
 
 ## intent:react_negative
-
 - sad
 - :(
 - \>:(
@@ -754,7 +748,6 @@
 - that's annoying
 
 ## intent:identity
-
 - what do you do?
 - who are you?
 - what can you do?
@@ -765,7 +758,6 @@
 - how would you describe yourself
 
 ## intent:restart
-
 - yep you can restart
 - Please restart this chat/
 - ok restart please
@@ -779,7 +771,6 @@
 - restart ps
 
 ## intent:chitchat/ask_builder
-
 - By whom were you built?
 - Can I ask the name of the people who designed you?
 - Do you know who built you?
@@ -894,7 +885,6 @@
 - your mother
 
 ## intent:chitchat/ask_howbuilt
-
 - By what means were you made?
 - By what method were you fashioned?
 - Can you explain how you were created?
@@ -950,7 +940,6 @@
 - how you been coded?
 
 ## intent:chitchat/ask_howdoing
-
 - Ahoy matey how are you?
 - Are you ok?
 - Do you feel good?
@@ -1052,7 +1041,6 @@
 - are you cool
 
 ## intent:chitchat/ask_howold
-
 - Do you have friends the same age as you, if so, how old are they?
 - How long have you been alive?
 - How long have you been around?
@@ -1109,7 +1097,6 @@
 - What's your age?
 
 ## intent:chitchat/ask_isbot
-
 - Ar you a bot ?
 - Are you a bot
 - are you a bot?
@@ -1123,7 +1110,6 @@
 - are you a Skynet ?
 - are you a bot
 - are you a bot ?
-- are you a bot?
 - are you a chatbot
 - are you a rasa bot?
 - are you a nimbus bot?
@@ -1156,7 +1142,6 @@
 - are you really a bbot?
 
 ## intent:chitchat/ask_ishuman
-
 - hey are you human
 - are u human
 - r u a human
@@ -1185,7 +1170,6 @@
 - are you human ?
 
 ## intent:chitchat/ask_languagesbot
-
 - Are you familiar with more than one language?
 - Can you communicate in any other languages?
 - Can you speak more than one language?
@@ -1251,7 +1235,6 @@
 - Do you speak [italian](language)?
 
 ## intent:chitchat/ask_restaurant
-
 - Any good restaurants nearby?
 - Can you find a restaurant for me?
 - Can you find me a burger joint?
@@ -1309,7 +1292,6 @@
 - show me restaurents
 
 ## intent:chitchat/ask_time
-
 - Can you give me the time?
 - Can you tell me the time?
 - Can you tell me what time it is?
@@ -1366,7 +1348,6 @@
 - whats the time now
 
 ## intent:chitchat/ask_weather
-
 - Are there any meteorological changes that I need to be aware of?
 - Are we in for a scorcher?
 - Beautiful day, isn't it?
@@ -1451,7 +1432,6 @@
 - wheather be like at your place?
 
 ## intent:chitchat/ask_whatismyname
-
 - Can you tell me my name?
 - Can you tell me what I am called?
 - Do I have a name?
@@ -1491,7 +1471,6 @@
 - what's my name?
 
 ## intent:chitchat/ask_whatisnimbus
-
 - Can you brief me about rasa
 - Can you brief me about nimbus
 - Can you tell me more about rasa?
@@ -1605,7 +1584,6 @@
 - what is Nimbus
 
 ## intent:chitchat/ask_whatspossible
-
 - Can you explain me in one sentence what you are doing?
 - Can you help me?
 - Could you please show me what you can
@@ -1716,7 +1694,6 @@
 - what you can
 
 ## intent:chitchat/ask_wherefrom
-
 - Are you from around here?
 - Around where are you from?
 - Do you know where you come from?
@@ -1768,7 +1745,6 @@
 - where's your home town?
 
 ## intent:chitchat/ask_whoami
-
 - Can you tell me who I am?
 - Can you tell me who am I?
 - Do you know who I am?
@@ -1797,7 +1773,6 @@
 - who may i ?
 
 ## intent:chitchat/ask_whoisit
-
 - HI, what's your name?
 - Hello. What's your name?
 - I want to know who you are
@@ -1868,7 +1843,6 @@
 - what's u name?
 
 ## intent:chitchat/handleinsult
-
 - FUCK
 - Fuck
 - Fuck Off
@@ -1986,7 +1960,6 @@
 - stupid rasa
 
 ## intent:chitchat/nicetomeetyou
-
 - Delighted to make your acquaintance.
 - Feels great to see you!
 - Glad to finally meet you!
@@ -2037,7 +2010,6 @@
 - nice to meet you
 
 ## intent:chitchat/telljoke
-
 - Can you tell a joke?
 - Can you tell me a joke.
 - Come up with a joke you think I'll find funny.
@@ -2081,7 +2053,6 @@
 - telljoke
 
 ## intent:faq/nimbus
-
 - what is [Nimbus](product) ?
 - how does [Nimbus](product) work?
 - what is [NImbus](product) ?
@@ -2112,7 +2083,6 @@
 - what's [NIMBUA](product)
 
 ## intent:faq/channels
-
 - Can you tell which messaging channels does nimbus support?
 - Channels
 - Can I use the nimbus code for my own website?
@@ -2181,7 +2151,6 @@
 - Does Nimbus have the functionality of being able to set up the bot on web pages?
 
 ## intent:faq/community_size
-
 - Did you know the size of nimbus community?
 - Do you know how big the Nimbus community is?
 - Do you know how many people are in the Nimbus community?
@@ -2224,7 +2193,6 @@
 - how many people are using Nimbus
 
 ## intent:faq/difference_nimbus_csai
-
 - Are [CSAI](club) and [Nimbus](product) the same thing?
 - Can I use [Nimbus](product) without using [CSAI](club)?
 - Can I use [Nimbus](product) without joining [CSAI](club)?
@@ -2254,7 +2222,6 @@
 - relationship between [nimbus open source](product) and [csai](club)
 
 ## intent:faq/is_programming_required
-
 - Does nimbus require programming knowledge
 - Do I need programming skills to develop a chatbot in nimbus
 - do I need programming experience to use nimbus
@@ -2310,7 +2277,6 @@
 - What language is the open source coding done in?
 
 ## intent:faq/languages
-
 - I want to build a bot in [Hindi](language)
 - Any languages that nimbus supports?
 - Can I use Nimbus with [Thai](language) language
@@ -2413,7 +2379,6 @@
 - even non latin based languages?
 
 ## intent:faq/opensource_cost
-
 - Are you free?
 - Can you tell me whats the price for nimbus platform?
 - How much do you cost?
@@ -2528,7 +2493,6 @@
 - you are [open source](product)
 
 ## intent:faq/python_version
-
 - What Python version should I use?
 - Which python version should I install to run Nimbus example?
 - Which version of Python to install?
@@ -2547,7 +2511,6 @@
 - which python is nimbus using?
 
 ## intent:faq/slots
-
 - Definition of slots please.
 - Does anyone know what slots are?
 - Explain slots to me?
@@ -2612,7 +2575,6 @@
 - which slots are there?
 
 ## intent:faq/voice
-
 - Building a nimbus voice bot?
 - can i programm a vocal assistant
 - Building a voice bot using nimbus.
@@ -2690,7 +2652,6 @@
 - do nimbus provide speech intent
 
 ## intent:faq/what_is_slack
-
 - Could you please describe the Nimbus slack?
 - Could you please explain the Nimbus slack to me?
 - Could you please give me a description of the Nimbus slack?
@@ -2742,259 +2703,7 @@
 - who is the slack for?
 - why should I join the slack
 
-## synonym: duration
-
-- durations
-- how long
-- how much time
-- time to completion
-
-## synonym:CSAI
-
-- csai
-- csae
-- case
-- CSAE
-- CASE
-- Computer Science and Artificial Intelligence
-- Computer Science and Artificial Intelligence club
-- Computer Science & Artificial Intelligence
-- Computer Science & Artificial Intelligence club
-- Computer Sci & Artificial Intelligence club
-- Computer sci & Artificial Intelligence club
-- Computer sci & art intel club
-- comp sci & art intel club
-- comp sci & art intel
-- comp sci & art int
-- comp sci & art i
-- comp sci & arti
-- comp sci & ai
-- cs und ai
-- cs end ai
-- Comp Sci and AI
-- Comp Sci & AI
-- The AI club
-- AI club
-- ai club
-- uai club
-- aii club
-- ai clb
-- ccwai
-- csi
-- cssai
-- csai cub
-- csai club
-- casi club
-- casii club
-- csaii
-- see ess ayy aye
-- see ess ayy ii
-- see ess ayy i
-- CSC & AI
-- CS & AI
-- CS&AI
-- cs&i
-- csandi
-- csani
-
-## synonym:CalPoly
-
-- Cal Poly
-- California Polytechnic State University
-- Cal POly LSO
-- Cal POly SLO
-- Cal Poly SLO
-- Cal poly SLO
-- Cal poly
-- Ca Ply
-- CaPly
-- CaPoly
-- CAl POly
-- Poly
-- Poly slO
-- Poly slo
-- Poly SLO
-- MustangTown
-- calpoly
-- calpolyslo
-- CP SLO
-- SLO School
-- Mustang University
-- Mustang U
-- Home of the Mustangs
-- GO MUSTANGS
-
-## synonym:USA
-
-- US
-- United States
-- U.S.
-- usa
-
-## synonym:United Kingdom
-
-- UK
-- U.K.
-
-## synonym:all
-
-- both
-- each
-- every
-
-## synonym:core
-
-- CORE
-- Core
-
-## synonym:custom actions
-
-- Actions
-- Custom actions
-- ccutsom actinos
-- actions
-
-## synonym:date
-
-- dates
-
-## synonym:distance
-
-- distances
-
-## synonym:english
-
-- English
-- en
-- eng
-- Eng
-- ENGLISH
-
-## synonym:entity recognition
-
-- entities
-- ner
-- entity extraction
-- Entity recognition
-- NER
-- etnity extraction
-- recognition
-
-## synonym:full stack developer
-
-- full stack develope
-- full stack dev
-
-## synonym:helvetia
-
-- Helvetia
-
-## synonym:intent classification
-
-- intent classificaton
-- intent
-- intent recognition
-- intents
-
-## synonym:money
-
-- amounts
-- cash
-- dollars
-- mula
-- currency
-
-## synonym:name
-
-- names
-
-## synonym:nimbus
-
-- Nimbus
-- niimbus
-- Niimbus
-- NINBUS
-- NINBUS open source
-- nimbus open source
-- nimbua open source
-- Nimbus Open Source
-- Nimbus open source
-- nimbus Open Source
-- open source nimbus
-- NIMBUS open source
-- NIMBUA open source
-- NIMBUS
-- NIMBUA
-- nimbua
-- nimbbus
-- nimnbus
-- NImbua
-- NImbuA
-- NImbus
-- nimbus voice assistant
-- nimbus assistant
-- nimbus chatbot
-- nimbus knowitall
-- Cal Poly Nimbus
-- CSAI Nimbus Project
-- The nimbus Project
-
-## synonym:nlu
-
-- Natural Language Understanding
-- Nlu
-- rasa_nlu
-- NLU
-
-## synonym:organisation
-
-- companies
-- clubs
-
-## synonym:rasa
-
-- open source
-- Rasa
-- rasa open source
-- Rasa Open Source
-- Rasa open source
-- rasa Open Source
-- open source rasa
-- RASA open source
-
-## synonym:stack
-
-- fullstack
-- full
-- Full stack
-- full staclk
-- full framework
-- full stack
-- Full
-- Full Stack
-
-## regex:greet
-
-- hey[^\s]\*
-
-## regex:zipcode
-
-- [0-9]{5}
-
-## lookup:location.txt
-
-data/location.txt
-
-## lookup:clubs.txt
-
-data/clubs.txt
-
-## lookup:products.txt
-
-data/products.txt
-
 ## intent:out_of_scope/non_english
-
 - Wie fange ich mit Rasa an?
 - hilf mir beim start
 - tschüssikowski
@@ -3038,7 +2747,6 @@ data/products.txt
 - 卧槽
 
 ## intent:out_of_scope/other
-
 - I am asking you an out of scope question
 - test commit
 - 4 + 2 = ?
@@ -3408,3 +3116,227 @@ data/products.txt
 - eshdtjfjfyk
 - drhdtjfjfyj
 - sudo reboot
+
+## synonym: duration
+- durations
+- how long
+- how much time
+- time to completion
+
+## synonym:CSAI
+- csai
+- csae
+- case
+- CSAE
+- CASE
+- Computer Science and Artificial Intelligence
+- Computer Science and Artificial Intelligence club
+- Computer Science & Artificial Intelligence
+- Computer Science & Artificial Intelligence club
+- Computer Sci & Artificial Intelligence club
+- Computer sci & Artificial Intelligence club
+- Computer sci & art intel club
+- comp sci & art intel club
+- comp sci & art intel
+- comp sci & art int
+- comp sci & art i
+- comp sci & arti
+- comp sci & ai
+- cs und ai
+- cs end ai
+- Comp Sci and AI
+- Comp Sci & AI
+- The AI club
+- AI club
+- ai club
+- uai club
+- aii club
+- ai clb
+- ccwai
+- csi
+- cssai
+- csai cub
+- csai club
+- casi club
+- casii club
+- csaii
+- see ess ayy aye
+- see ess ayy ii
+- see ess ayy i
+- CSC & AI
+- CS & AI
+- CS&AI
+- cs&i
+- csandi
+- csani
+
+## synonym:CalPoly
+- Cal Poly
+- California Polytechnic State University
+- Cal POly LSO
+- Cal POly SLO
+- Cal Poly SLO
+- Cal poly SLO
+- Cal poly
+- Ca Ply
+- CaPly
+- CaPoly
+- CAl POly
+- Poly
+- Poly slO
+- Poly slo
+- Poly SLO
+- MustangTown
+- calpoly
+- calpolyslo
+- CP SLO
+- SLO School
+- Mustang University
+- Mustang U
+- Home of the Mustangs
+- GO MUSTANGS
+
+## synonym:USA
+- US
+- United States
+- U.S.
+- usa
+
+## synonym:United Kingdom
+- UK
+- U.K.
+
+## synonym:all
+- both
+- each
+- every
+
+## synonym:core
+- CORE
+- Core
+
+## synonym:custom actions
+- Actions
+- Custom actions
+- ccutsom actinos
+- actions
+
+## synonym:date
+- dates
+
+## synonym:distance
+- distances
+
+## synonym:english
+- English
+- en
+- eng
+- Eng
+- ENGLISH
+
+## synonym:entity recognition
+- entities
+- ner
+- entity extraction
+- Entity recognition
+- NER
+- etnity extraction
+- recognition
+
+## synonym:full stack developer
+- full stack develope
+- full stack dev
+
+## synonym:helvetia
+- Helvetia
+
+## synonym:intent classification
+- intent classificaton
+- intent
+- intent recognition
+- intents
+
+## synonym:money
+- amounts
+- cash
+- dollars
+- mula
+- currency
+
+## synonym:name
+- names
+
+## synonym:nimbus
+- Nimbus
+- niimbus
+- Niimbus
+- NINBUS
+- NINBUS open source
+- nimbus open source
+- nimbua open source
+- Nimbus Open Source
+- Nimbus open source
+- nimbus Open Source
+- open source nimbus
+- NIMBUS open source
+- NIMBUA open source
+- NIMBUS
+- NIMBUA
+- nimbua
+- nimbbus
+- nimnbus
+- NImbua
+- NImbuA
+- NImbus
+- nimbus voice assistant
+- nimbus assistant
+- nimbus chatbot
+- nimbus knowitall
+- Cal Poly Nimbus
+- CSAI Nimbus Project
+- The nimbus Project
+
+## synonym:nlu
+- Natural Language Understanding
+- Nlu
+- rasa_nlu
+- NLU
+
+## synonym:organisation
+- companies
+- clubs
+
+## synonym:rasa
+- open source
+- Rasa
+- rasa open source
+- Rasa Open Source
+- Rasa open source
+- rasa Open Source
+- open source rasa
+- RASA open source
+
+## synonym:stack
+- fullstack
+- full
+- Full stack
+- full staclk
+- full framework
+- full stack
+- Full
+- Full Stack
+
+## regex:greet
+- hey[^\s]\*
+
+## regex:zipcode
+- [0-9]{5}
+
+## lookup:products.txt
+  data/products.txt
+
+## lookup:location.txt
+  data/location.txt
+
+## lookup:clubs.txt
+  data/clubs.txt

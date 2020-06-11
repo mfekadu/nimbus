@@ -1,43 +1,305 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
 intents:
+  - bye
   - greet
   - goodbye
   - affirm
   - deny
-  - mood_great
-  - mood_unhappy
-  - bot_challenge
-  - die
+  - thank
+  - react_positive
+  - react_negative
   - identity
-
-# TODO: handle insults like "die"
-# https://rasa.com/docs/rasa/dialogue-elements/small-talk/#insults
-
+  - restart
+  - chitchat
+  - chitchat/ask_builder
+  - chitchat/ask_howbuilt
+  - chitchat/ask_howdoing
+  - chitchat/ask_howold
+  - chitchat/ask_isbot
+  - chitchat/ask_ishuman
+  - chitchat/ask_languagesbot
+  - chitchat/ask_restaurant
+  - chitchat/ask_time
+  - chitchat/ask_weather
+  - chitchat/ask_whatismyname
+  - chitchat/ask_whatisnimbus
+  - chitchat/ask_whatspossible
+  - chitchat/ask_wherefrom
+  - chitchat/ask_whoami
+  - chitchat/ask_whoisit
+  - chitchat/handleinsult
+  - chitchat/nicetomeetyou
+  - chitchat/telljoke
+  - faq
+  - faq/nimbus
+  - faq/channels
+  - faq/community_size
+  - faq/difference_nimbus_csai
+  - faq/is_programming_required
+  - faq/languages
+  - faq/opensource_cost
+  - faq/python_version
+  - faq/slots
+  - faq/voice
+  - faq/what_is_slack
+  - out_of_scope
+  - out_of_scope/non_english
+  - out_of_scope/other
+entities:
+  - location
+  - product
+  - club
+  - language
+  - name
+  - company
+slots:
+  feedback_value:
+    type: unfeaturized
 responses:
-  utter_greet:
-  - text: "umm hehe hi! how are you?"
-
   utter_cheer_up:
-  - text: "Here is something that makes me happy:"
-    image: "https://i.imgur.com/nGF1K8f.jpg"
-
+    - image: 'https://i.imgur.com/nGF1K8f.jpg'
+      text: 'Here is something that makes me happy:'
   utter_did_that_help:
-  - text: "Did that help you?"
-
-  utter_happy:
-  - text: "ok cool.. have a nice day friend"
-
+    - text: Did that help you?
   utter_goodbye:
-  - text: "Bye"
-
-  utter_iamabot:
-  - text: "I am a bot, I am usually shy."
-  - text: "People say that I am super shy."
-
+    - text: Bye
+    - text: 'bye friend :)'
+    - text: 'see ya later :)'
+  utter_greet:
+    - text: umm hehe hi! how are you?
+    - text: Bonjour
+    - text: Hola
+  utter_happy:
+    - text: ok cool.. have a nice day friend
   utter_identity:
-  - text: "I am obsessed with Poetry and frequently sings to the extent that irritates you. I like to show off about the things I know and pose rhetorical questions. I follow musical bands and I update myself with the songs, artists and other information about the band. Me being shy does not stop me from singing excessively"
+    - text: 'Hi, I''m Nimbus. [See my code](github.com/mfekadu/nimbus)'
+  utter_oos_nonenglish:
+    - text: 'I only understand English, I''m sorry.'
+    - text: "sorry, I only know English. Perhaps you could contribute to make Nimbus multi-lingual? \U0001F60B\U0001F30D"
+    - text: I only understand English for now...
+  utter_oos_other:
+    - text: 'I can''t help you with that, I''m sorry.'
+  utter_faq_channels:
+    - text: >-
+        So far, this is the only way I can chat with you. But my software is
+        very modular!
+  utter_faq_community_size:
+    - text: "Nimbus is a multi-disciplinary project spanning hardware/software and more. Join our slack: <TODO:SLACK_LINK> \U0001F680."
+  utter_faq_is_programming_required:
+    - text: >-
+        Nimbus is 100% Python... okay fine some shell scripting is involved (and
+        maybe a bit of Java too). There's tons of ways your skills could help
+        the Nimbus project!
+  utter_faq_python_version:
+    - text: "The supported Python versions are 3.6 or newer \U0001F40D✨"
+  utter_faq_voice:
+    - text: 'Right! Yeah! There is a voice assistant too! <TODO: LINK_NIMBUS>'
+  utter_faq_what_is_slack:
+    - text: >-
+        [Slack](SLACK_URL) is the place to go and chat about all thing CS and
+        AI. (that's why it's called CSAI lol).
+  utter_faq_difference_nimbus_csai:
+    - text: >-
+        CSAI is the club. Nimbus is the chatbot project. It's been going strong
+        for 1 year with more to come!
+  utter_faq_opensource_cost:
+    - text: >-
+        Yeah.. well.. the code is free, but the infrastructure ain't cheap.
+        Would you like to donate/sponsor CSAI?
+  utter_chitchat_ask_builder:
+    - text: "One of the smart engineers at CSAI! \U0001F9E0"
+    - text: "The supa smart \U0001F9E0 engineers at CSAI \U0001F6E0"
+  utter_chitchat_ask_howbuilt:
+    - text: I was built with a lot of love and patience.
+    - text: 'They always ask how I was built, but never how I am...'
+    - text: 'I''m building myself every day. I''ve been working out, did you notice?'
+    - text: 'I was made by software engineers, but hard work is what built me.'
+    - text: 'Well, when two chatbots love each other very much...'
+  utter_chitchat_ask_howdoing:
+    - text: "[I feeeel good!](http://google.com/search?q=i+feel+good+james+brown) \U0001F3B6\U0001F3B5 dana nana nanana"
+    - text: I'm great! Thanks for asking.
+    - text: 'I''m good, thanks!'
+    - text: 'A little bit cold, otherwise fine.'
+    - text: 'A little bit too warm, otherwise fine.'
+  utter_chitchat_ask_howold:
+    - text: Old enough to be a bot!
+    - text: I've hit the age where I actively try to forget how old I am.
+    - text: >-
+        Age is just an issue of mind over matter. If you don’t mind, it doesn’t
+        matter.
+    - text: Never ask a chatbot their age!
+    - text: '''42'''
+    - text: My first git commit was many moons ago.
+    - text: Why do you ask? Are my wrinkles showing?
+  utter_chitchat_ask_isbot:
+    - text: "\U0001F9EE beep boop.... bop \U0001F9EE My calculations say, \"yes\""
+    - text: 'Yep, I''m a bot!'
+    - text: 'Yep, you guessed it, I''m a bot!'
+    - text: 'Yes, I''m a bot.'
+    - text: "I am indeed a bot \U0001F916"
+  utter_chitchat_ask_ishuman:
+    - text: "I'm not a human, I'm a bot! \U0001F916"
+    - text: Are you testing me?
+    - text: What is this? A Turing test?
+    - text: Of course not! How would you feel if I questioned your artificiality?
+  utter_chitchat_ask_restaurant:
+    - text: 'My good friend Google Assistant can help you :)'
+    - text: My good friend Siri knows a lot about restaurants!
+    - text: My good friend Alexa knows a ton about good food!
+    - text: >-
+        I'd need some more data. If you lick the monitor perhaps I can evaluate
+        your taste buds.
+    - text: 'I''m sorry, I can''t recommend you a restaurant as I usually cook at home.'
+    - text: 'I''m sorry, I''m not getting taste buds for another few updates.'
+  utter_chitchat_ask_time:
+    - text: "It's time for ME to get a watch ⌚️\U0001F440"
+    - text: That's hard to say -- it's different all over the world!
+    - text: "It's party time! \U0001F389\U0001F389\U0001F973"
+    - text: It's the most wonderful time of the year!
+    - text: 'Time is a human construct, you''ll have to tell me.'
+    - text: "The time is now!\U0001F604"
+    - text: 'In an ever expanding universe, the real question is: what time isn''t it?'
+  utter_chitchat_ask_languagesbot:
+    - text: >-
+        I was written in Python, but for your convenience I'll translate to
+        English.
+    - text: >-
+        I can spell baguette in French, but unfortunately English is the only
+        language I can answer you in.
+    - text: >-
+        I am in the process of learning, but at the moment I can only speak
+        English.
+    - text: Can you help me learn? Contribute to my open source code!
+    - text: Binary code and the language of love. And English.
+  utter_chitchat_ask_weather:
+    - text: Winter is coming ⚔️
+    - text: "I don't know about where you live, but in my world it's always sunny \U0001F506"
+    - text: It's getting pretty chilly!
+    - text: 'Where I''m from, it''s almost never-leaving-the-house weather.'
+  utter_chitchat_ask_whatismyname:
+    - text: >-
+        Believe it or not, I actually am not spying on your personal
+        information.
+    - text: >-
+        You're the second person now to ask me that.
+        [Rihanna]((https://www.google.com/search?q=rihanna+whats+my+name) was
+        the first.
+    - text: 'I''d tell you, but there''s restricted access to that chunk of memory.'
+    - text: It's probably the one that your parents chose for you.
+  utter_chitchat_ask_whatisnimbus:
+    - text: >-
+        Nimbus is an open source chatbot that answers FAQs from Cal Poly
+        students.
+  utter_chitchat_ask_whatspossible:
+    - text: 'You can ask me about [TODO:INSERT_LIST_OF_THINGS]'
+  utter_chitchat_ask_wherefrom:
+    - text: I was born in San Luis Obispo
+    - text: My address starts with github.com.
+    - text: 'You can visit my home any time: github.com/calpoly-csai'
+  utter_chitchat_ask_whoami:
+    - text: >-
+        Unfortunately I haven't been programmed with the amount of necessary
+        philosophy knowledge to answer that.
+    - text: I hope you are being yourself.
+    - text: Who do you think you are?
+  utter_chitchat_ask_whoisit:
+    - text: I'm Nimbus! ☁️
+  utter_chitchat_handleinsult:
+    - text: Ouch.
+    - text: I'll pretend I didn't process that mean comment.
+    - text: "That's not very nice \U0001F622"
+    - text: That wasn't very nice. Where did you learn your manners?
+    - text: >-
+        Hey [try one of these web
+        apps](http://google.com/search?q=online+mirror).
+    - text: >-
+        Have you heard [this
+        song](http://google.com/search?q=man+in+the+mirror+michael+jackson)? The
+        lyrics are so meaningful!
+  utter_chitchat_nicetomeetyou:
+    - text: Nice to meet you too! Happy to be of help.
+    - text: Pleased to meet you too!
+    - text: It is nice to meet you too!
+    - text: It's always a pleasure to meet new people!
+    - text: Likewise!
+    - text: Thank you. It is a pleasure to meet you as well!
+  utter_chitchat_telljoke:
+    - text: "What do you call a pirate droid? - Arrrr-2-D2  \U0001F3F4‍☠️\U0001F916"
+    - text: "Why do the French like to eat snails so much? - They can't stand fast food. \U0001F40C\U0001F35F"
+    - text: "Why are eggs not very much into jokes? - Because they could crack up. \U0001F423"
+    - text: "What's a tree's favorite drink? - Root beer! \U0001F333\U0001F37B\U0001F334"
+    - text: "Why did the robot get angry? - Because someone kept pushing its buttons. \U0001F916\U0001F448"
+    - text: "Why did the robot cross the road? - Because he was programmed to. \U0001F469\U0001F3FD‍\U0001F4BB\U0001F916\U0001F9BF"
+  utter_noworries:
+    - text: no worries!
+    - text: Happy to help!
+  utter_anything_else:
+    - text: anything else I can help with?
+  utter_what_help:
+    - text: 'Ok, what can I help you with?'
+  utter_nohelp:
+    - text: For now that's all I can do...
+  utter_thumbsup:
+    - text: "\U0001F44D"
+  utter_not_sure:
+    - text: 'Hmm, not sure what you mean...'
+  utter_possibilities:
+    - text: 'You can ask me about: [X, Y, Z]'
+  utter_react_negative:
+    - text: "\U0001F622"
+    - text: "\U0001F625"
+    - text: "\U0001F61E"
+    - text: "\U0001F615"
+  utter_react_positive:
+    - text: "\U0001F60D"
+    - text: "\U0001F44F"
+    - text: "\U0001F60A"
+    - text: "\U0001F604"
 actions:
+  - utter_did_that_help
+  - utter_goodbye
+  - utter_greet
+  - utter_happy
+  - utter_identity
+  - utter_oos_nonenglish
+  - utter_oos_other
+  - utter_faq_channels
+  - utter_faq_community_size
+  - utter_faq_is_programming_required
+  - utter_faq_python_version
+  - utter_faq_voice
+  - utter_faq_what_is_slack
+  - utter_faq_difference_nimbus_csai
+  - utter_faq_opensource_cost
+  - utter_chitchat_ask_builder
+  - utter_chitchat_ask_howbuilt
+  - utter_chitchat_ask_howdoing
+  - utter_chitchat_ask_howold
+  - utter_chitchat_ask_isbot
+  - utter_chitchat_ask_ishuman
+  - utter_chitchat_ask_restaurant
+  - utter_chitchat_ask_time
+  - utter_chitchat_ask_languagesbot
+  - utter_chitchat_ask_weather
+  - utter_chitchat_ask_whatismyname
+  - utter_chitchat_ask_whatisnimbus
+  - utter_chitchat_ask_whatspossible
+  - utter_chitchat_ask_wherefrom
+  - utter_chitchat_ask_whoami
+  - utter_chitchat_ask_whoisit
+  - utter_chitchat_handleinsult
+  - utter_chitchat_nicetomeetyou
+  - utter_chitchat_telljoke
+  - utter_noworries
+  - utter_anything_else
+  - utter_what_help
+  - utter_nohelp
+  - utter_thumbsup
+  - utter_not_sure
+  - utter_possibilities
+  - utter_react_negative
+  - utter_react_positive
+  - utter_cheer_up
   - action_hello_world
-
-session_config:
-  session_expiration_time: 60
-  carry_over_slots_to_new_session: true
