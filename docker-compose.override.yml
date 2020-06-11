@@ -4,6 +4,8 @@ services:
     image: mfekadu/rasa-actions:latest
 
   db:
+    ports:
+      - "5432:5432"
     volumes:
       - db-volume:/bitnami/postgresql
 
