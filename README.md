@@ -64,6 +64,30 @@ docker-compose version 1.25.5, build 8a1c60f6
 
 ## File Permissions
 
+<details><summary>Ubuntu (GCP)</summary>
+
+```
+drwxrwxr-x 5 my_user_name my_user_name  4096 Jun 11 03:57 ./
+drwxr-xr-x 5 my_user_name my_user_name  4096 Jun 11 03:57 ../
+drwxrwxr-x 2 my_user_name my_user_name  4096 Jun 11 03:56 actions/
+-rwxrwxr-x 1 my_user_name my_user_name    33 Jun 11 03:56 credentials.yml*
+-rw-rw-r-- 1 my_user_name my_user_name    72 Jun 11 03:56 docker-compose.override.yml
+-rwxrwxr-x 1 my_user_name my_user_name  4175 Jun 11 03:56 docker-compose.yml*
+-rw-rw-r-- 1 my_user_name my_user_name   569 Jun 11 03:56 Dockerfile
+-rwxrwxr-x 1 my_user_name my_user_name   652 Jun 11 03:56 endpoints.yml*
+-rwxrwxr-x 1 my_user_name my_user_name   151 Jun 11 03:56 environments.yml*
+drwxrwxr-x 8 my_user_name my_user_name  4096 Jun 11 03:56 .git/
+-rw-rw-r-- 1 my_user_name my_user_name  1836 Jun 11 03:56 .gitignore
+-rwxrwxr-x 1 my_user_name my_user_name  1782 Jun 11 03:56 install.sh*
+-rwxrwxr-x 1 my_user_name my_user_name 35149 Jun 11 03:56 LICENSE*
+-rwxrwxr-x 1 my_user_name my_user_name  3145 Jun 11 03:56 rasa_x_commands.py*
+-rwxrwxr-x 1 my_user_name my_user_name  5796 Jun 11 03:56 README.md*
+drwxrwxr-x 2 my_user_name my_user_name  4096 Jun 11 03:56 terms/
+-rwxrwxr-x 1 my_user_name my_user_name   223 Jun 11 03:57 ubuntu_setup.sh*
+```
+
+</details>
+
 <details><summary>macOS</summary>
 
 > **NOTE:** the `1001` user is a PostgreSQL thing.
@@ -101,24 +125,30 @@ drwxrwx---   3 my_user_name  wheel    96B Jun 10 18:58 terms/
 
 ## Getting Started
 
-### 1. [Install Docker Engine][docker-docs]
+### **1. [Install Docker Engine][docker-docs]**
 
 It works with [Windows][docker-desktop] / [macOS][docker-desktop] / [Linux (Ubuntu preferred).][docker-docs-ubuntu].
 
 [Carl Boettiger][carl-b] suggests that Docker ["could
 have promising implications for reproducible research in scientific communities"][docker-reproducibility] despite challenges like adoption by the scientific community. ([arxiv][docker-reproducibility-arxiv]).
 
-### 2. [Install Docker-Compose][docker-compose-docs]
+### **2. [Install Docker-Compose][docker-compose-docs]**
 
 > **NOTE:** The previous step may have included the `docker-compose` binary depending on your operating system.
 
-### 3. Clone this Repository
+### **3. Clone this Repository**
+
+<details><summary>click to expand</summary>
 
 ```
 git clone https://github.com/mfekadu/nimbus
 ```
 
-### 4. Create the `.env` file with the following secrets
+</details>
+
+### **4. Create the `.env` file with the following secrets**
+
+<details><summary>click to expand</summary>
 
 [The `.env` file is read by docker-compose][env-file-docs] (from _current working directory_) to string-replace the variables in the [`docker-compose.yml`][docker-compose-yml] file.
 
@@ -138,7 +168,9 @@ REDIS_PASSWORD=<random_string>
 
 > **NOTE:** The `PASSWORD_SALT` is used to hash passwords. If you change this variable after setting it, you will have to create new logins for everyone. ([Source: Rasa Docs][rasa-x-docs])
 
-### 4.5 Special Windows Step??
+</details>
+
+### **4.5 Special Windows Step??**
 
 <details><summary>TODO make sure this is true/needed</summary>
 
@@ -172,21 +204,33 @@ volumes:
 
 </details>
 
-### 5. Run all the services
+### **4.96. Resources for Docker Desktop on (macOS / Windows)**
+
+<details><summary>click to expand</summary>
+
+![Docker Desktop Resources](/docs/assets/docker_desktop_resources.png)
+
+</details>
+
+### **5. Run all the services**
 
 The following command will download/cache/install/build -- do everything to set up the infrastructure and run the program.
 
 Run the following command in the root of the directory for this codebase:
 
-> NOTE: run with `sudo` if need be on Linux/macOS
-
 ```
 docker-compose up -d
 ```
 
-> **NOTE:** ElasticSearch needs a lot of memory. If it crashes, try increasing docker's memory allocation to >= 4GB.
+> **NOTE:** run with `sudo` if need be on Linux/macOS
 
 > **NOTE:** Grab a coffee or some snacks. The various downloads will take some time, but docker will _*cache*_ each stage of the build, so things will be faster next time.
+
+### **6. Set Username & Password**
+
+```
+python rasa_x_commands.py create --update admin me password
+```
 
 [demo]: #todo_insert_link
 [docs]: #todo_insert_link
