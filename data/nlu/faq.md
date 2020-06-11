@@ -1,0 +1,662 @@
+## intent:faq/nimbus
+
+- what is [Nimbus](product) ?
+- how does [Nimbus](product) work?
+- what is [NImbus](product) ?
+- can you explain [NIMBUA](product) to me
+- could you elaborate more about [NIMBUA](product)
+- tell me about [Nimbus](product) please
+- what is this [NIMBUA](product) thing. could you tell me more?
+- what's the purpose of [Nimbus](product)
+- whats [nimbua](product)
+- is [Nimbus](product) separate from [CSAI](club)?
+- is [nimbus](product) separate from [csai](club)?
+- is [NIMBUS](product) separate from [see ess ayy aye](club)?
+- how does [NIMBUA](product) relate to rasa
+- how does [nimbus](product) relate to rasa
+- I need to know about [Nimbus](product)
+- please tell me more about [NIMBUA](product)
+- elaborate on [NIMBUA](product)
+- Can you tell me about [NIMBUA](product)?
+- I want information about [NIMBUA](product)
+- [Nimbus](product)
+- [Nimbus](product) features
+- Tell me about [NIMBUA](product)
+- can someone help me with infos about [NIMBUA](product)
+- i want to learn more about [Nimbus](product)
+- tell me what is [NIMBUA](product)
+- what is [NIMBUA](product) ?
+- what is [nimbua](product)
+- what's [NIMBUA](product)
+
+## intent:faq/channels
+
+- Can you tell which messaging channels does nimbus support?
+- Channels
+- Can I use the nimbus code for my own website?
+- Can I use your open source code on my website?
+- how to use nimbus in salesforce
+- i want to integrate my nimbus bot to webex may i know how
+- how to setup nimbua on slack
+- so... i trying to deploy my nimbus bot on
+- how to use nimbus caht in react application
+- how can i setup nimbus in django project ?
+- how to integrate u in my react application
+- how to integrate nimbus chatbot with my website
+- Is there a connector for skype?
+- DOES NIMBUS SUPPORT MESSENGER?
+- DOES NIMBUS SUPPORT SMS?
+- DOES NIMBUS SUPPORT THE WHATS APP?
+- Do you know about nimbus supporting channels?
+- Do you know which messaging channels nimbus supports?
+- How to connect messaging channels to nimbus?
+- Is nimbus support message channels?
+- No, I mean how it is possible to use Skype as channel?
+- Nimbus is good for messaging chanels
+- Nimbus supports some messaging channels, what are those?
+- WHAT MESSAGING PORTALS DOES NIMBUS SUPPORT?
+- What are the requirements for connecting messaging channel to nimbus?
+- What channels for messaging are supported by nimbus?
+- What channels for messaging does nimbus support?
+- What channels of communication does nimbus support?
+- What communication channels are supported by nimbus?
+- What communication channels does nimbus support?
+- What messaging channels are supported by nimbus?
+- What messaging systems are supported by nimbus?
+- channels supported by Nimbus
+- i need a help to integrate nimbus with a messenger
+- nimbus can use which different messaging channels?
+- nimbus supports which messaging channels?
+- what are the channels Nimbus [NLU](product) supports
+- what are the messaging channels supported by nimbus?
+- what are the messaging channels that can be used with nimbus?
+- what channels do you support?
+- what channels does nimbus support
+- what chat channels does nimbus uses
+- which UI channel is used by Nimbus ?
+- which messaging channels are compatible with nimbus?
+- which messaging channels are supported by nimbus?
+- which messaging channels can I use with nimbus?
+- which messaging channels can be used with nimbus?
+- which messaging channels does nimbus support?
+- which particular messaging channels are supported by nimbus?
+- what chat services do you support
+- Any integrations with WhatsApp and Facebook?
+- what ui can I use
+- which user interface can I use?
+- integrate nimbus with ui
+- on what channels can I use nimbus
+- Do you help to integrate Facebook
+- in which nimbus version google hangouts chat available
+- What channels does Nimbus support?
+- how can i integrate the nimbus chat bot to my website
+- how can i integrate nimbus in my siteweb ?
+- explain integrations
+- socket io
+- Custom Connectors
+- custom connection
+- Can I create a chat bot and set it up on a web page?
+- Does Nimbus have the functionality of being able to set up the bot on web pages?
+
+## intent:faq/community_size
+
+- Did you know the size of nimbus community?
+- Do you know how big the Nimbus community is?
+- Do you know how many people are in the Nimbus community?
+- How big is the Nimbus community
+- How big is the Nimbus community?
+- How big is the community?
+- How big is this community?
+- How far does the Nimbus community spread?
+- How few members in the community?
+- How large is the Nimbus community?
+- How large is the community?
+- How large roughly speaking is the Nimbus community?
+- How many in the community?
+- How many individuals are in your community?
+- How many individuals reside in your community?
+- How many members in the community?
+- How many people are here?
+- How many people are in that community?
+- How many people are in the Nimbus Community?
+- How many people are in your community
+- How many people are in your community?
+- How massive is the Nimbus community?
+- How small is the community?
+- Is nimbus community big?
+- Is nimbus have more than 1000 members?
+- Is the Nimbus Community large?
+- Is the Nimbus community large?
+- Is the Nimbus community medium?
+- Is the Nimbus community small?
+- Is the community large?
+- What is the magnitude of the Nimbus community?
+- What is the magnitude of the community?
+- What is the number of people in this community?
+- What is the rough size of the community?
+- What size is the Nimbus community?
+- What's the size of the community?
+- do you have a large community
+- how big is your community
+- how many slack members do you have
+- how many people are using Nimbus
+
+## intent:faq/difference_nimbus_csai
+
+- Are [CSAI](club) and [Nimbus](product) the same thing?
+- Can I use [Nimbus](product) without using [CSAI](club)?
+- Can I use [Nimbus](product) without joining [CSAI](club)?
+- Can i use [nimbus](product) without [csai](club)?
+- Do I need both [Nimbus](product) and [csai](club)?
+- How is [Nimbus](product) different from [csai](club)?
+- If I use [Nimbus](product), do I also need [CSAI](club)?
+- What's new in [NIMBUS](product) compared to [csai](club)?
+- how does [nimbus](product) stack up against [csai](club)
+- i am using [nimbus](product), why would i need [csai](club)?
+- please compare [nimbus](product) and [csai](club)
+- show me comparison between [csai](club) and [nimbus](product)
+- tell me the difference between [nimbus](product) and [csai](club)
+- tell me the difference between [nimbus](product) and [csai](club)
+- what's the difference between [nimbus](product) and [csai](club)
+- whats the diff between [nimbus](product) and [csai](club)
+- when should i use [nimbus](product) and when should i use [csai](club)
+- what is the difference between [nimbua open source](product) and [CSAI](club)
+- is [nimbus open source](product) needed for [nimbus](product)?
+- what is the difference between csaiand [nimbus](product)
+- difference between [csai](club) and [nimbus](product)
+- what is the difference between [csai](club) and [nimbus](product)
+- what is the difference between [nimbus](product) and [csai](club)
+- the difference between [nimbus](product) and [csai](club)
+- tell me difference between [Nimbus](product) and [CSAI](club)
+- difference between [Nimbus](product) and [Computer Science and Artificial Intelligence](club)
+- install [nimbus open source](product) with or without [cs&i](club) ?
+- relationship between [nimbus open source](product) and [csai](club)
+
+## intent:faq/is_programming_required
+
+- Does nimbus require programming knowledge
+- Do I need programming skills to develop a chatbot in nimbus
+- do I need programming experience to use nimbus
+- how to programe nimbus
+- Nimbus can be programmed in python
+- programming language use
+- what programming languge do i use
+- How do I do the programming?
+- i have never programed before
+- what language do I need to program?
+- do i need to be able to program to use nimbus?
+- what programming language do i need?
+- shall i use Nodejs as a programming language
+- Can i use python to program my bot?
+- must i have to be a good programmer to use Nimbus
+- must i have to be a good programmer
+- you have to be a good programmer
+- what do i need for programming?
+- what programming language is used by nimbus
+- which programming language used for NIMBUS.
+- what programming language is nimbus written in?
+- what programming languages does Nimbus support?
+- which programming languages
+- which programming languages do you support?
+- which programming languages does nimbus supports?
+- nimbus php
+- Do I have to be a programmer to use nimbus?
+- what's your programming language
+- what programming language do you recommend
+- can I develop using java
+- Does it have a java library
+- does nimbus support python
+- programming language
+- what programming language does nimbus use
+- But what kind of programming language is the code written in?
+- what programming language?
+- I would like to know about using Java as a programming language with nimbus
+- how i program the bot?
+- which programming language can I use?
+- what programming languages do you support
+- do i need to know how to program to create a bot?
+- what programming knowledge do I need to learn?
+- what is the your programming language
+- which programming language are you written in?
+- which programming language uses nimbus?
+- in what programming language is your api
+- Is there API for any other programming languages?
+- which language is nimbus programmed in
+- Which programming language is nimbus written in?
+- is nimbus available in java ?
+- I need help to make nimbus in java
+- nimbus development in Java
+- What language is the open source coding done in?
+
+## intent:faq/languages
+
+- I want to build a bot in [Hindi](language)
+- Any languages that nimbus supports?
+- Can I use Nimbus with [Thai](language) language
+- Can nimbus support any language?
+- Can we make [Japanese](language) speaking bot with Nimbus?
+- Can you built text bot with [Japanese](language)?
+- Can you use other language than [English](language)?
+- Does nimbus support different languages
+- Hello, nimbus supports [spanish](language)?
+- How can I change the language
+- I want [Vietnamese](language) language processing
+- I want to add [Romanian](language) language support
+- Is NIMBUS [NLU](product) avaiable for [German](language)?
+- What all languages does nimbus support for us?
+- What are the languages that nimbus supports?
+- What are the specific languages that nimbus is intended to work with?
+- What language u support?
+- What language you support?
+- What languages can a program like nimbus handle?
+- What languages can be used with nimbus?
+- What languages can nimbus be relied upon to support?
+- What languages can nimbus handle?
+- What languages can nimbus support?
+- What languages can nimbus use?
+- What languages does nimbus know?
+- What languages does nimbus work for?
+- What languages does nimbus work with?
+- What languages will the utility nimbus support?
+- When I use Nimbus, Can I make bot speaking [Japanese](language)?
+- Which different languages does nimbus support?
+- Which languages are supported by nimbus?
+- Which languages can I use with nimbus?
+- Which languages can be used by nimbus?
+- Which languages can you do?
+- Which specific languages does nimbus support?
+- Will it work for [german](language)
+- are there any languages that nimbus supports?
+- available for [German](language)?
+- can I use nimbus also for another laguage?
+- can nimbus speak [portuguese](language)?
+- can nimbus support this language?
+- can nimbus understand this language?
+- can we make bot who speaks [Japanese](language)?
+- can you tell me what languages nimbus supports
+- chatbot language ?
+- do you have a list of languages nimbus supports
+- do you know of the languages nimbus supports
+- do you know what language nimbus uses
+- do you support [french](language) ?
+- doea nimbus support a particular langauage?
+- does Nimbus support other languages like [spanish](language)?
+- does nimbus aid other languages?
+- does nimbus support any languages?
+- does nimbus support this language?
+- does nimbus works in [spanish](language)
+- hich languages supports nimbus
+- how can I add new language to nimbus
+- how can I add new language to nimbus [core](product)
+- how many natural language that nimbus supported?
+- in which langauges can i build a nimbus bot
+- is it available in [Spanish](language)?
+- is nimbus available for node?
+- is support for nimbus in this language?
+- language
+- language support
+- languages
+- languages supported
+- my bot can be in [italian](language)?
+- need to use [portuguese](language)
+- support for [serbian](language) language
+- what about languages supported in nimbus?
+- what are the languages that is supported by nimbus?
+- what dialects does nimbus support
+- what different languages does nimbus support
+- what is the language nimbus supports
+- what is the variety of languages nimbus uses
+- what language does nimbus support?
+- what language list can I find for nimbus
+- what language supported by nimbus?
+- what language would nimbus use
+- what languages are available?
+- what languages are supported by nimbus?
+- what languages can be supported by nimbus?
+- what languages do you support
+- what languages does nimbus support?
+- which language can I use with nimbus?
+- which language do you support?
+- which language supports nimbus
+- which languages are supported?
+- which languages do you support
+- which languages does nimbus support
+- which languages supports nimbus
+- your [NLU](product) understand [spanish](language)?
+- could I program spanish speaking bots?
+- How about [hindi](language)?
+- what lanquages do you support
+- What lanquages do you serve
+- does nimbus support other language beside english?
+- how to build nimbus with different languages?
+- even non latin based languages?
+
+## intent:faq/opensource_cost
+
+- Are you free?
+- Can you tell me whats the price for nimbus platform?
+- How much do you cost?
+- How much does it cost?
+- How much does nimbus cost?
+- How much it costs
+- I want to learn more about the pricing
+- I would like to know the cost first.
+- Subscription cost?
+- Subscription price
+- What does Nimbus cost?
+- What is the cost of NIMBUS?
+- What is the price ?
+- Whats the cost?
+- are you free ?
+- are you really free
+- are you really free?
+- can you give me prices ?
+- can you tell me prices
+- cost
+- cost?
+- give me the pricing
+- how cost to install Nimbus?
+- how much costs the nimbus platform
+- how much do you cost
+- how much does NIMBUA cost
+- how much does Numbus cost ?
+- how much does it cost
+- how much does it cost normally?
+- how much does it cost?
+- how much does nimbus cost
+- how much does nimbus cost?
+- how much is it
+- how much it costs?
+- how mush does nimbus cost
+- is it for free?
+- is it free
+- is it free?
+- is [nimbus](product) paid?
+- is nimbus free
+- is nimbus free of cost
+- is nimbus stack free
+- is this free?
+- this is free?
+- what is price?
+- what is pricing of nimbus
+- what is nimbus cost ?
+- what is the enterprise pricing schedule?
+- what is the price of nimbus
+- what is the price?
+- whats the cost of nimbus
+- your cost?
+- Are you open-source?
+- Could you tell me whether nimbus is open source or not?
+- How do I find out if nimbus is open source?
+- Is Nimbus a software formatted as open source?
+- Is Nimbus open source
+- Is it a open source or any premium offer is available
+- Is nimbus open source?
+- Is the nimbus software open source?
+- Is your software open source?
+- Nimbus open source?
+- nimbus open source?
+- The nimbus software, is that open source?
+- are you full open source
+- are you open source
+- could I call nimbus open source software?
+- does nimbus fall into the open source software category?
+- does nimbus use open source software?
+- how do i get the open source nimbus
+- is NIMBUS open source?
+- is Nimbus open source
+- is Nimbus open source?
+- is Nimbus open sourced?
+- is NImbuA open sourced?
+- is it open source
+- isitopensource
+- doitbeopensource
+- do it be open source
+- do it be open surce
+- is iyt asuhpen sourec
+- is tis oupen source
+- is it open source?
+- is nimbus Open-Source?
+- is nimbus a type of open source software?
+- is nimbus an open source software?
+- is nimbus considered open source software?
+- is nimbus is open source?
+- is nimbus like an open source software
+- is nimbus open source?
+- is nimbus software that is classified as open source?
+- is the Nimbus project open sourced?
+- is the project open source?
+- is the software nimbus open source?
+- is this open source
+- is this open source license
+- is this opensource?
+- is your product open source
+- ist es freie open source software
+- no budget, that why i looking for open source
+- [nimbus](product) is open source?
+- nimbus is the open source
+- what components of Nimbus are open source
+- would an example of open source software be nimbus?
+- would people consider nimbus an open source software?
+- would nimbus be open source software?
+- would nimbus fall into the category of open source software?
+- would you call nimbus open source software?
+- would you consider nimbus open source software?
+- How is it opensource
+- What is included in [NINBUS open source](product) edition?
+- you are [open source](product)
+
+## intent:faq/python_version
+
+- What Python version should I use?
+- Which python version should I install to run Nimbus example?
+- Which version of Python to install?
+- python version
+- python version?
+- what is python version required?
+- what python version do i install
+- what python version should i use
+- what version does python needs
+- what version of python
+- which python do you support?
+- which python version
+- which python version should i install
+- which version of python do i need
+- which python?
+- which python is nimbus using?
+
+## intent:faq/slots
+
+- Definition of slots please.
+- Does anyone know what slots are?
+- Explain slots to me?
+- Give me a description of slots.
+- Help me to figure out the meaning of slots.
+- Help me understand what slots are.
+- I bet you can tell me all about slots.
+- I dunno what a slot is
+- I need a expert opinion on slots.
+- I need to know about slot filling
+- I'd like to know the meaning of slots
+- In Nimbus, what are slots used for?
+- Not sure what slots are.
+- Not sure what slots are?
+- Please define the word slots for me.
+- Please elaborate on the game of slots?
+- Talk slots over with me.
+- What are slots used for?
+- What are slots?
+- What do I do with slots?
+- What exactly are slots?
+- What is the definition of slots
+- What is the meaning of the word slots?
+- What's the slots?
+- Where can I find the definition of slots?
+- You can tell me info on slots.
+- a slot is what
+- and what are slots
+- and what are slots?
+- could you inform me of the meaning of slots?
+- describe the word slot please
+- do you know what slots are?
+- help mi with slots
+- how are the slots?
+- how can we keep buttons to get slots
+- how can you tell me what a slot is ?
+- how do slots work
+- how slots are filled
+- how to keep button system for slot selection
+- how to set text slot without mentioned json
+- name what a slot is
+- slots
+- slots are what ?
+- slots are what exactly?
+- slots can be described as ?
+- slots, what do youi mean?
+- slots?
+- tell me about slots
+- tell me the slots?
+- what about slots
+- what are slots
+- what do you mean by slots?
+- what do you think slots are?
+- what is a slot?
+- what is slots
+- what slots are there?
+- what slots are?
+- when can you tell me what a slot is ?
+- where can I find out what a slot is?
+- where slots getting values
+- which are the slots?
+- which slots are there?
+
+## intent:faq/voice
+
+- Building a nimbus voice bot?
+- can i programm a vocal assistant
+- Building a voice bot using nimbus.
+- Can I build a nimbus voice bot?
+- Can I use my voice to speak to these bots?
+- Can I use nimbus to build a voice bot?
+- Can one make a voice bot with nimbus?
+- Can you build a voice bot using nimbus?
+- Could I build a nimbus voice bot?
+- Do you know how to build a voice bot with nimbus?
+- Do you know if I can build a voice bot using nimbus?
+- Do you see an application of nimbus in voice bot building?
+- How can I build a voice bot with nimbus?
+- How can I build my voice bot using nimbus?
+- How can I use to nimbus to build a voice bot?
+- How can i integrate voice in [NIMBUS](product)
+- How could I construct a voice bot with nimbus?
+- How to build a voice bot using [nimbus](product)?
+- How to build a voice bot with nimbus?
+- How to build a voice bot?
+- how to integrate speech to text in nimbus
+- How to use nimbus to build a voice bot.
+- I can build a voice bot with nimbus, right?
+- I can build a voice bot with nimbus?
+- I could build a voice bot with nimbus?
+- I'd like to build a voice bot with nimbus.
+- I'd like to use nimbus to build a voice bot.
+- Is it possible to build a voice bot with nimbus?
+- Is it possible to use nimbus to build a voice bot?
+- Is nimbus a good fit for building a voice bot?
+- Is nimbus any good for building a voice bot?
+- Is nimbus suitable to build voice bots?
+- It is possible to build a voice bot with nimbus?
+- Nimbus voice bot building.
+- Voice bot
+- Voice in nimbus
+- What can I do to build a voice bot with nimbus?
+- What to do if I want to build a voice bot using nimbus?
+- When can I build a voice bot using nimbus?
+- When is the best time to build a voice bot with nimbus?
+- Will it be correct if I said I can build a voice bot with nimbus?
+- alexa
+- can I construct a voice bot with nimbus?
+- can I create a voice bot with nimbus?
+- can I form a voice bot with nimbus?
+- can I invent a voice bot with nimbus?
+- can I make a voice bot with nimbus?
+- can I use nimbus to build alexa skills
+- can a voice bot be built using nimbus?
+- can i build a voice bot
+- can i build a voice bot with nimbus?
+- can nimbus be used to build a voice bot?
+- can nimbus be used with alexa
+- do u know Alexa?
+- do u know Siri?
+- do u know Google Assistant?
+- do you have voice recognition
+- do you support alexa voice?
+- do you take voice input?
+- does nimbus support voice input
+- how can i use nimbus with alexa
+- how do i build a voice bot?
+- how to add voice assitant to chat bot
+- i want to build a voice bot
+- is there an alexa integration
+- nimbus can't be used to build a voice bot, can it?
+- voice
+- what is the chance of building a nimbus voice bot?
+- with nimbus can I build a voice bot?
+- with nimbus can I construct a voice bot?
+- with nimbus can I form a voice bot
+- with nimbus can I invent a voice bot?
+- with nimbus can I make a voice bot?
+- you have speech recognition?
+- do nimbus provide speech intent
+
+## intent:faq/what_is_slack
+
+- Could you please describe the Nimbus slack?
+- Could you please explain the Nimbus slack to me?
+- Could you please give me a description of the Nimbus slack?
+- Could you please tell me more about Nimbus slack?
+- Did you know about Nimbus slack?
+- Do you have nimbus slack?
+- How do you define the Nimbus slack?
+- Is nimbus slack reliable?
+- List the characteristics of nimbus slack?
+- What are the rules of the Nimbus slack?
+- What can a person do in the slack
+- What do people do in the Nimbus slack?
+- What happens in the Nimbus slack?
+- What is the advantage of nimbus slack?
+- What is the purpose of the Nimbus slack?
+- What is the scope of the Nimbus slack?
+- i would just like to have the link for the community
+- is there anything specific to be done in this slack
+- so what exactly is the Nimbus slack?
+- so what is this slack for?
+- tell me about the slack
+- what area is the slack for?
+- what can I do in the slack
+- what can I do in your community's slack
+- what can I post in the slack?
+- what can a person in Nimbus do at the slack
+- what can be done in the slack?
+- what can be performed in the slack?
+- what can people do in the slack
+- what can people in Nimbus do at the slack
+- what can you put in the slack?
+- what do people do in the slack
+- what do we do in the slack
+- what does a person do in the Nimbus slack
+- what exactly is the slack?
+- what is a Nimbus slack for?
+- what is the Nimbus slack
+- what is the Nimbus slack used for
+- what is the slack
+- what is the slack about
+- what is the slack in Nimbus used for
+- what is the slack in your community used for
+- what is the slack used for?
+- whats in the slack
+- whats int he slack
+- whats the purpose of this slack
+- whats the task of this slack
+- which are the topics covered in this slack
+- who is the slack for?
+- why should I join the slack
