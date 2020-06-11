@@ -102,6 +102,7 @@ celerybeat.pid
 *.sage.py
 
 # Environments
+# the .env file contains the secrets
 .env
 .venv
 env/
