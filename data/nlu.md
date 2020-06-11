@@ -9,24 +9,456 @@
 - sup
 - helllllllo
 - hey there
+- Bom dia
+- Bonjour
+- Good Morning
+- Good morning
+- Good mourning
+- Guten Morgen
+- HELLO
+- HEY
+- HEllo
+- HI
+- HI Sara
+- HI Nimbus
+- HI Nimb us
+- Hallo
+- Hei
+- Hellllooooooo
+- Hello
+- Hello Bot
+- Hello Rasa
+- Hello Sara
+- Hello sara
+- Hello NIMBUS
+- Hello Nimbus
+- Hello nimbus
+- Hello!
+- Hey
+- Hey Sara
+- Hey Nimbus
+- Hey bot
+- Heya
+- Heylo
+- Hi
+- Hi Sara
+- Hi Sara!
+- Hi Nimbus
+- Hi Nimbus!
+- Hi bot
+- Hi man
+- Hi rasa
+- Hi sara
+- Hi nimbus
+- Hi sara..
+- Hi nimbus..
+- Hi there
+- Hi!
+- Hi'
+- Hi,
+- Hi, bot
+- Hieee
+- Hieeeeeeeeeeeee
+- Hola
+- I said, helllllloooooO!!!!
+- Well hello there ;)
+- What is up?
+- Whats up
+- Whats up my bot
+- Whats up?
+- ayyyy whaddup
+- bonjour
+- ey boss
+- good moring
+- greet
+- greetings
+- hai
+- hallo
+- hallo sara
+- hallo nimbus
+- halloo
+- halloooo
+- halo
+- halo sara
+- halo nimbus
+- heeey
+- heelio
+- hell9o
+- hellio
+- hello Sara
+- hello Nimbus
+- hello everybody
+- hello friend
+- hello hi
+- hello is anybody there
+- hello it is me again
+- hello robot
+- hello sara
+- hello nimbus
+- hello sweatheart
+- hello there
+- hello world
+- hello, my name is [Charles Pfeffer](name)
+- hello?
+- hello]
+- hellooo
+- helloooo
+- helo
+- hey bot
+- hey bot!
+- hey dude
+- hey hey
+- hey let's talk
+- hey rasa
+- hey sara
+- hey nimbus
+- hey ther
+- hey there boy
+- hey there..
+- hey, let's talk
+- hey, sara!
+- hey, nimbus!
+- heya
+- heyho
+- heyo
+- hhola
+- hi !
+- hi Mister
+- hi again
+- hi can you speak ?
+- hi folks
+- hi friend
+- hi friends
+- hi hi
+- hi i'm [Sandra Hernandez](name)
+- hi call me [Amanda Anderson](name)
+- hi my name is [Michael Fekadu](name)
+- hi imm [John Appleseed](name)
+- hi i am [Musty Mustang](name)
+- hi i amm [Morphius Mustang](name)
+- hi im [Mattheson Mustangson](name)
+- hi mrs rasa
+- hi pal!
+- hi sara
+- hi there
+- hi there it's me
+- hi!
+- hi.........................................................
+- hi?
+- hieee
+- hii
+- hiihihi
+- hiii
+- hlo
+- hola
+- howdy
+- i am [Karen Mease](name)
+- jojojo
+- jop
+- konichiwa
+- merhaba
+- ola sara
+- rasa hello
+- salut
+- wasssup
+- wasssup!
+- what up
+- whats popping
+- whats up
+- yo
+- yoo
+- wasssuppppp
+- suh dude
+- asuhdude
+- asuhdut
+- suh du
+- ssup?
+- helleo
 
 ## intent:goodbye
 - bye
 - goodbye
 - see you around
-- aloha
 - adios
+- adios?
 - see you later
+- after a while crocodile
+- later aligator
+- see ya later aligator
+- see ya later aligater
+- Bye
+- Bye bye
+- bye .
+- bye :P
+- bye bot
+- bye bye
+- bye bye bot
+- bye for now
+- bye udo
+- bye was nice talking to you
+- bye!
+- byee
+- catch you later
+- ciao
+- cya
+- farewell
+- sayonara
+- good bye
+- good bye rasa bot!
+- good bye nimbus bot!
+- good bye nimbus!
+- good night
+- goodbye.
+- goodnight
+- gotta go
+- k byyye #slay
+- ok Bye
+- ok bye
+- ok, bye
+- ok.bye
+- see u later
+- see ya
+- see you
+- see you . bye
+- take care
+- then bye
+- tlak to you later
+- toodle-oo
+- Exit
+- Close this talk
+- byr
 
 ## intent:affirm
-- yes
-- indeed
-- of course
-- that sounds good
-- correct
+- Accept
+- Awesome!
+- Cool
+- Good
+- Great
+- I accept
+- I accept.
+- I agree
+- I am using it
+- I changed my mind. I want to accept it
+- I do
+- I get it
+- I guess so
+- I have used it in the past
+- I will
+- I'd absolutely love that
+- I'm sure I will!
+- I'm using it
+- Nice
+- OK
+- Ofcourse
+- Oh yes
+- Oh, ok
+- Ok
+- Ok let's start
+- Ok.
+- Okay
+- Okay!
+- PLEASE
+- SURE
+- Sure
+- Sweet
+- That would be great
 - YES
+- YUP
+- Yea
+- Yeah
+- Yeah sure
+- Yep
+- Yep that's fine
+- Yep!
+- Yepp
+- Yes
+- Yes I do
+- Yes please
+- Yes please!
+- Yes, I accept
+- Yes.
+- Yup
+- a little
+- absolutely
+- accept
+- accepted
+- agreed
+- ah ok
+- alright
+- alright, cool
+- amayzing
+- amazing!
+- awesome
+- awesome!
+- confirm
+- cool
+- cool :)
+- cool story bro
+- cool!
+- coolio
+- definitely yes without a doubt
+- done
+- fair enough
+- fcourse
+- fine
+- fuck yeah!
+- go
+- go ahead
+- go for it
+- going super well
+- good.
+- great
+- great lets do that
+- great!
+- hell yeah
+- hell yes
+- hm, i'd like that
+- how nice!
+- i accept
+- i agree
+- i am!
+- i want that
+- i will!
+- it is ok
+- its okay
+- ja
+- ja cool
+- ja thats great
+- jezz
+- jo
+- k
+- kk
+- lets do it
+- lets do this
+- not bad
+- of course
+- ofcoure i do
+- ofcourse
+- oh awesome!
+- oh cool
+- oh good !!
+- oh super
+- ok
+- ok cool
+- ok fine
+- ok friend
+- ok good
+- ok great
+- ok i accept
+- ok sara
+- ok, I behave now
+- ok, I understood
+- ok, Sara
+- ok...
+- okay
+- okay cool
+- okay sure
+- okay..
+- oki doki
+- okie
+- ook
+- oui
+- perfect
+- please
+- si
+- sort of
+- sure
+- sure thing
+- sure!
+- that is cool
+- that ok
+- that sounds fine
+- that's great
+- thats fine
+- thats good
+- thats great
+- top
+- uh-huh
+- very much
+- well yes
+- y
 - ya
-- 
+- ya cool
+- ya go for it
+- ya i want
+- ya please
+- ya thats cool
+- yaah
+- yap
+- yaps
+- yas
+- yay
+- ye
+- ye splease
+- yea
+- yeah
+- yeah do that
+- yeah sure
+- yeah'=
+- yeah, why not
+- yeeeeezzzzz
+- yeeees
+- yep
+- yep i want that
+- yep if i have to
+- yep please
+- yep that's nice
+- yep thats cool
+- yep, will do thank you
+- yep. :/
+- yes
+- yes ...
+- yes I do
+- yes accept please
+- yes baby
+- yes cool
+- yes give me information
+- yes go ahead
+- yes go for it
+- yes great
+- yes i accept
+- yes i agree
+- yes i have built a bot before
+- yes i have!
+- yes it is
+- yes it was okay
+- yes of course
+- yes pleae
+- yes please
+- yes please!
+- yes pls
+- yes sirfr
+- yes that's great
+- yes that's what i want
+- yes you can
+- yes'
+- yes, I'd love to
+- yes, cool
+- yes, give me information, please
+- yes,i am
+- yes.
+- yesh
+- yess
+- yessoo
+- yesss
+- yesssss
+- yesyestyes
+- yesyesyes
+- yez
+- yop
+- you asked me a yes or no question, which i answered with yes
+- you got me, I accept, if you want me to
+- yres
+- ys
+- yup
+- yyeeeh
+- Okay cool
+- ok..
+- considering
+- More a less
+- cool beans
+- sounds good!
+- really
 
 ## intent:deny
 - no
@@ -38,6 +470,47 @@
 - not really
 - heck no
 
+## intent:thank
+- Cool. Thanks
+- Great, thanks
+- Thank you
+- Thank you Sara
+- Thank you so much
+- Thank's!
+- Thanks
+- Thanks bot
+- Thanks for that
+- Thanks!
+- amazing, thanks
+- cheers
+- cheers bro
+- cool thank you
+- cool thanks
+- cool, thanks
+- danke
+- great thanks
+- ok thanks
+- ok thanks sara
+- ok thanks!
+- perfect thank you
+- thank u
+- thank you
+- thank you anyways
+- thanks
+- thanks a bunch for everything
+- thanks a lot
+- thanks for forum link, I'll check it out
+- thanks for the help
+- thanks this is great news
+- thanks you
+- thanks!
+- thankyou
+- thnks
+- thx
+- yes thanks
+- thanks for your information
+- thanks f
+
 ## intent:mood_great
 - perfect
 - very good
@@ -48,6 +521,63 @@
 - I am great
 - I'm good
 - I'm mad
+- :)
+- :D
+- HAHA
+- I am happy
+- LOL
+- Lol
+- Lol thats funny
+- Looks nice
+- WOW
+- Wow
+- You are great
+- You're cute.
+- You're nice.
+- You're really cool
+- hAHAHA
+- ha ha
+- haha
+- hahah
+- hahaha
+- happy
+- i am feeling happy
+- i am happy
+- i am happy today
+- i am very happy with your response
+- i love you
+- it's pretty cool
+- lol
+- love you
+- okay Rasabot, you're cool
+- rasa is awesome
+- such a great demo
+- that is funny
+- that was a great interaction
+- thats funny
+- today was a nice day
+- wow
+- you are a badass bot!
+- you are awesome
+- you are cool
+- you are cool man
+- you are doin great
+- you are funny
+- you are great
+- you are my new bestfriend
+- you seem pretty cool :D
+- I like you
+- I love you
+- you are realy intelligent
+- I like Rasa
+- hèhè
+- like u
+- you are so smart
+- That's awesome.
+- Got it
+- you good
+- Great information
+- I mean to say that I liked the explanation
 
 ## intent:mood_unhappy
 - sad
@@ -63,7 +593,51 @@
 - not so good
 - i feel meh
 - i mean i'm like okay i guess or nah idk lol
-
+- I am feeling bad
+- I am sad
+- I am super sad
+- I'm sad
+- I'm super sad
+- Now I'm sad
+- This is bad
+- You are quite bad
+- bad boy
+- crappy joke
+- documentation of rasa is very bad
+- i am angry over you
+- i am feel sad
+- i am sad
+- i am sad about that
+- i am very sad
+- i feel sad
+- i sad
+- i'm sad
+- rasa is bad
+- so sad :(
+- super sad
+- u broke my heart
+- very very sad
+- you are bad
+- you are bad bot
+- you make me sad
+- You are mad
+- You are rude
+- bots are bad
+- i don't care!!!!
+- i dont like bots
+- this is a really frustrating experience
+- you're rather dull
+- i am so worry
+- i will leave
+- Although I understand your still in development, I feel a little bit disappointed.
+- Surely you're not so smart lik i thought
+- iam not feeling good
+- not good
+- Thats so rude
+- sadly
+- That tool here isnt good
+- boring
+- that's annoying
 
 ## intent:identity
 - what do you do?
@@ -80,3 +654,2173 @@
 - are you a human?
 - am I talking to a bot?
 - am I talking to a human?
+
+## intent:restart
+- yep you can restart
+- Please restart this chat/
+- ok restart please
+- please restart the bot
+- restart this conversation
+- i want to restart
+- why don't you restart????
+- hey, i said restart
+- restart
+- restart session pls
+- restart ps
+
+## intent:chitchat/ask_builder
+- By whom were you built?
+- Can I ask the name of the people who designed you?
+- Do you know who built you?
+- Do you know who made you?
+- May I ask who invented you?
+- Name the person who built you.
+- Tell me the name of the individual who created you.
+- Tell me the name of the person who built you.
+- Tell me the name of your creator.
+- Tell me who built you.
+- What is the name of your builder?
+- What person built you?
+- Who built you?
+- Who created and built you?
+- Who created you?
+- Who designed you?
+- Who developed and created you?
+- Who developed you?
+- Who fabricated you?
+- Who generated you?
+- Who is it that built you?
+- Who is responsible for making you?
+- Who is the builder of you?
+- Who is the legal owner of you?
+- Who is the name of your builder?
+- Who is the name of your creator?
+- Who is the person responsible for building you?
+- Who is the person that invented you?
+- Who is the person who built you?
+- Who is your creator?
+- Who is your programmer?
+- Who made you?
+- Who modeled you?
+- Who owns you?
+- Who produced you?
+- Who put you together?
+- Who thought to make you?
+- Who was the one that built you?
+- Who was the one who made you?
+- Who was the person that built you?
+- Who was the person that created you?
+- Who was the person that made you?
+- Who was the person who made you?
+- Who was the person who put you together?
+- Who went through the trouble of setting you up?
+- Who were you built by?
+- Who were you created by?
+- Who were you made by?
+- Who's your boss?
+- Who's your builder?
+- and who built u?
+- can you share your boss with me?
+- i want to get to know your owner
+- i want to know the company which designed you
+- i want to know the company which generated you
+- i want to know the company which invented you
+- i want to know who invented you
+- please tell me the company who created you
+- please tell me who created you
+- tell me more about you
+- tell me more about your creators
+- tell me more about your founders
+- what is the name of the smart engineer who creted you ?
+- where were you made?
+- which company brought you into existence?
+- which company created you?
+- which company invented you?
+- who are created you
+- who are your author?
+- who are your parents
+- who build yoi
+- who built u?
+- who built you
+- who built you?
+- who create you ?
+- who created you
+- who created you?
+- who developed
+- who developed you
+- who do you work for?
+- who had the idea to build you?
+- who had the idea to generate you?
+- who had the idea to make you?
+- who invent you
+- who is behind all this?
+- who is your author
+- who is your boss
+- who is your boss tell me
+- who is your boss?
+- who is your creator
+- who is your creator?
+- who is your daddy
+- who is your employer?
+- who is your father ?
+- who is your mom
+- who is your parent?
+- who made u
+- who made u?
+- who made you
+- who made you?
+- who your author are?
+- who's builder
+- why were you made?
+- you are made by who?
+- you are working for which company?
+- who is the author of rasa
+- who is the author of nimbus
+- what is you mother name
+- what is father name
+- who is your mother
+- who is your father
+- your mother
+
+## intent:chitchat/ask_howbuilt
+- By what means were you made?
+- By what method were you fashioned?
+- Can you explain how you were created?
+- Can you give me an idea as to how you were created?
+- Can you say how you were constructed?
+- Do you know how you were built?
+- Do you know how you were made?
+- How did they build you?
+- How did they create you?
+- How did they make you?
+- How did you come into being?
+- How did you come to be?
+- How exactly were you devised?
+- How exactly were you made?
+- How were you built?
+- How were you conceived?
+- How were you constructed?
+- How were you devised?
+- How were you formed?
+- How were you made into who you are?
+- How were you made?
+- How were you materialized?
+- How were you set up?
+- I want to know how you were formed
+- I'd like to know how you were created
+- I'd like to know how you were put together?
+- In what manner were you built?
+- In what manner were you constructed?
+- In what manner were you formed?
+- In what way were you created?
+- In what way were you formed?
+- In what way were you made?
+- In what way were you shaped?
+- In which manner were you devised?
+- Let me know how you were made exactly
+- Specify how you were created?
+- Tell me how you were made?
+- What process was used to build you?
+- What process was used to create you?
+- What was the process for making you?
+- You originated through what means?
+- how have you been built?
+- how were you made?
+- in what way were you made?
+- so how were you made?
+- what are you made of
+- Are you built using rasa?
+- are you open source?
+- is you is or is you aint open source?
+- can i see your code?
+- show me the code
+- i want the code
+- how you been coded?
+
+## intent:chitchat/ask_howdoing
+- Ahoy matey how are you?
+- Are you ok?
+- Do you feel good?
+- Do you have a great day?
+- HI Sara, what are you up to?
+- Hi Sara! How are you?
+- HI Nimbus, what are you up to?
+- Hi Nimbus! How are you?
+- How are You?
+- How are things?
+- How are you
+- How are you men?
+- How are you today?
+- How are you?
+- How was your day?
+- How you doing?
+- How's it going
+- How's it hanging?
+- How's life treating you friend?
+- How've you been?
+- Hows it going
+- I'm fine and you
+- Is everything ok?
+- What's going on?
+- What's new?
+- What's up
+- What's up man
+- and you
+- are you alright
+- are you happy
+- are you having a good day
+- are you ok
+- are you okay
+- h r u ?
+- hello, how are you?
+- hey how are you?
+- hi how are you?
+- hi how u doing
+- hi sara, how are you?
+- hi nimbus, how are you?
+- how ?
+- how are things going
+- how are things with you?
+- how are u
+- how are u?
+- how are xou
+- how are you
+- how are you ?
+- how are you doing
+- how are you doing this morning
+- how are you doing today my sweet friend
+- how are you doing today?
+- how are you doing?
+- how are you feeling
+- how are you today
+- how are you'
+- how are you?
+- how are you????
+- how are yuo
+- how do you do?
+- how have you been
+- how is it going
+- how is your day
+- how is your day going
+- how is your evening
+- how r u
+- how r u ?
+- how r u>
+- how you doing
+- how you doing?
+- how's it going?
+- how's life
+- how's life been treating you?
+- how's your day going
+- howareyou
+- hw r u?
+- is everything all right
+- is everything okay
+- nah, I'm good - how are you doing?
+- okay hi how are you?
+- wassup>
+- what about your day
+- what are you up to?
+- what's good
+- what's up
+- what's up sara
+- what's up nimbus
+- what's up?
+- whatchcha doing
+- whatchya upto ?
+- whats goin on
+- whats new
+- whatsapp
+- yow are you
+- how are you Nimbus
+- how are you Rasa
+- Hey Sara, how's it going
+- Hey Nimbus, how's it going
+- are you cool
+
+## intent:chitchat/ask_howold
+- Do you have friends the same age as you, if so, how old are they?
+- How long have you been alive?
+- How long have you been around?
+- How long have you occupied the earth?
+- How many candles were on your last birthday cake?
+- How many years have you been alive?
+- How many years have you lived?
+- How old are you?
+- How old were you on your last birthday?
+- How old will you be on your next birthday?
+- Tell me your day, month and year of birth.
+- What is your age?
+- What is your birthdate?
+- What is your count of years being alive so far?
+- What was your age on your last birthday?
+- What will be your age on your next birthday?
+- What year were you born?
+- Whats your age?
+- When do you celebrate your day of birth?
+- and you are how many years old?
+- can you tell me exactly how old you are?
+- can you tell me what number represents your age?
+- can you tell me your age?
+- do you know how old you are?
+- give me your age?
+- how about your age
+- how aold are you
+- how many ages?
+- how many years old are you?
+- how old are u
+- how old are you
+- how old are you?
+- how old were you on your last birthday?
+- how old were you when you celebrated your last birthday?
+- how old will you be this year?
+- how old?
+- in what year were you born?
+- tell me how old you are?
+- tell me your age number?
+- tell me your age?
+- what age are you
+- what age were you when you celebrated your last birthday?
+- what is your age?
+- what is your birthday?
+- what is your exact age?
+- what number represents your age?
+- what year were you born?
+- what's your age?
+- whats your age?
+- whats your birth year?
+- when is your birthday?
+- when were you born?
+- when you were bon
+- What's your age?
+
+## intent:chitchat/ask_isbot
+- Ar you a bot ?
+- Are you a bot
+- Are you a chat bot?
+- Are you the bot?
+- Hi there, are you the bot?
+- are you a BOT
+- are you a Skynet ?
+- are you a bot
+- are you a bot ?
+- are you a bot?
+- are you a chatbot
+- are you a rasa bot?
+- are you a nimbus bot?
+- are you a real bot?
+- are you a robot
+- are you ai
+- are you artificial
+- are you artificial intelligence
+- are you bot
+- are you bot?
+- are you rasa bot?
+- are you nimbus bot?
+- are you real
+- are you real lol
+- are you really a bot
+- are you robot
+- are you sure that you're a bot?
+- bot?
+- cuz you are a bot
+- i guess you are a chatbot
+- oh are you chatbot?
+- tell me, are you a bot?
+- what are you, a bot?
+- you are a robot
+- you are ai
+- you are chatbot
+- you're a bot
+- you robo
+- real bot then?
+- are you really a bbot?
+
+## intent:chitchat/ask_ishuman
+- hey are you human
+- are u human
+- r u a human
+- are you real human?
+- you are a human
+- Rara, are you a human?
+- you are bot or human?
+- are you human
+- ok, i know i confused you there being a human! :)
+- you are human or bot
+- Are you human?
+- are you a human ?
+- Are you human ?
+- Are you a human being?
+- sara, are you a robot or human?
+- nimbus, are you a robot or human?
+- r u real?
+- are you a real person
+- are u a real person?
+- Are you a real person?
+- are you a real person?
+- are you real person or chat bot?
+- So I'm here Today to ask one very simple question, what are you ?
+- you sound like a real human
+- wow you sound like real human
+- are you human ?
+
+## intent:chitchat/ask_languagesbot
+- Are you familiar with more than one language?
+- Can you communicate in any other languages?
+- Can you speak more than one language?
+- Do you know any other languages?
+- Do you know other languages?
+- Do you speak [german](language)?
+- Do you speak any other languages?
+- Do you understand [spanish](language)?
+- How many different languages are you fluent in?
+- How many languages are you familiar with?
+- How many languages can you speak?
+- How many languages do you have knowledge of?
+- How many languages do you know?
+- In what languages are you fluent enough?
+- In which languages are you fluent?
+- In which languages can you speak?
+- Speak any other languages?
+- What are all of the different languages you can speak?
+- What are the languages you can speak?
+- What do you speak?
+- What languages are you fluent in?
+- What languages can you communicate in?
+- What languages can you converse in?
+- What languages can you use?
+- What languages do you know how to use?
+- What languages do you know?
+- What languages do you speak?
+- Which languages are you familiar with?
+- Which languages do you speak?
+- are you bilingual?
+- are you multilingual?
+- can you speak [Spanish](language)?
+- can you speak in [italian](language)?
+- do you know [chinese](language)
+- do you speak [dutch](language)?
+- do you speak [german](language)?
+- do you speak any other languages?
+- how many languages are you fluent in?
+- how many languages do you know?
+- tell me some languages you know?
+- what else do you know besides [English](language)?
+- what foreign languages are you fluent in?
+- what foreign languages do you know?
+- what language do you use
+- what languages are you comfortable speaking at?
+- what languages are you familiar with?
+- what languages are you good at speaking?
+- what languages do you know?
+- what languages do you speak
+- what languages you are well versed ?
+- what languages you can be comfortable speaking?
+- what languages you can handle well?
+- what languages you can speak ?
+- what languages you know?
+- what languages you prefer more speaking at?
+- which languages do you understand?
+- you know [French](language)
+- you speak [french](language) ?
+- I want to speak binary with you
+- ARE YOU [SPANISH](language)
+- we cant converse in [french](language)?
+- can we converse in [french](language)?
+- Do you speak [italian](language)?
+
+## intent:chitchat/ask_restaurant
+- Any good restaurants nearby?
+- Can you find a restaurant for me?
+- Can you find me a burger joint?
+- Can you find me a restaurant?
+- Can you recommend a restaurant open right now
+- Could you find a restaurant for me?
+- Could you find me a restaurant to eat at?
+- Could you find me a restaurant?
+- Do you find me a restaurant?
+- Do you seek me a restaurant?
+- Find a restaurant for me to eat at.
+- Find a restaurant for me where I can eat.
+- Find a restaurant for me?
+- Find me a fast food restaurant.
+- Find me a place to eat
+- Find me a restaurant where I can eat.
+- Have you seen me a restaurant?
+- Help me find a restaurant
+- Help me with finding this restaurant
+- Hey help me find a restaurant
+- Hey, can you help me with locating this restaurant.
+- Hi, can you give me the nearest fast food place?
+- How can you help me find a restaurant.
+- I am hungry, find me some place to go
+- I need a new restaurant
+- I need a restaurant.
+- I need to find this restaurant
+- I'm gonna need help finding a restaurant
+- I'm looking for a Spanish restaurant.
+- IS there any near by restaurant?
+- Is there any restaurant?
+- Pick a restaurant for me, please
+- Recommend me a restaurant around here.
+- Show me how to find a restaurant
+- Show me the closest open restaurant
+- Suggest me a good restaurant around
+- What restaurant would you recommend for dinner?
+- What's a good place to eat nearby
+- What's the closest restaurant open near me
+- Where is the restaurant
+- Where should I eat?
+- Where should I go for dinner?
+- Will you find me a restaurant?
+- Would you find a restaurant for me?
+- Would you find any restaurant?
+- Would you find me a restaurant?
+- can i be shown a gluten free restaurant
+- can you find me a restaurant?
+- help me find restaurant
+- i want a french restaurant
+- i'm looking for a Chinese restaurant
+- restaurants
+- will you see any restaurant for me?
+- I want to find some restauant nearby
+- show me restaurents
+
+## intent:chitchat/ask_time
+- Can you give me the time?
+- Can you tell me the time?
+- Can you tell me what time it is?
+- Can you tell the time?
+- Could you tell me the time, please?
+- Could you tell me the time?
+- Could you tell me what time is it?
+- Do you have the time?
+- Do you know the time?
+- Do you know what time it is?
+- Excuse me, what time is it?
+- Give me the time.
+- Hi, I need the time.
+- I need to know what time it is.
+- Pardon me, but do you know the time?
+- Tell me the time.
+- Time, please!
+- Time?
+- What is the current time?
+- What is the exact time?
+- What is the hour and minute right now?
+- What is the time?
+- What might the time be?
+- What time do we have?
+- What time have we got?
+- What time is it in [Berlin](location)?
+- What time is it in [Cal Poly](location)?
+- What time is it in [SLO](location)?
+- What time is it in [San Luis Obispo](location)?
+- What time is it right now?
+- What's the current time?
+- What's the time right now?
+- What's the time?
+- Would you tell me what time it is?
+- do you have the time?
+- do you know the current time?
+- tell me the current time.
+- tell me the time it is.
+- tell me the time.
+- tell me what time you have.
+- that's true. do you know what time it is?
+- what is the current time?
+- what is the time ?
+- what is the time in [Sydney](location)?
+- what is the time?
+- what is time in US ?
+- what is time is US ?
+- what is time is USA ?
+- what time do you have?
+- what time is it
+- what time is it?
+- what time it is
+- what's the time
+- whats the time now
+
+## intent:chitchat/ask_weather
+- Are there any meteorological changes that I need to be aware of?
+- Are we in for a scorcher?
+- Beautiful day, isn't it?
+- Can I ask you something about weather
+- Can we expect any thunderstorms?
+- Do you have good weather?
+- How is the weather today?
+- How is the weather?
+- How is weather today
+- Is it hot or cold?
+- Is it humid out there today?
+- Is it quite breezy outside?
+- Is it raining
+- Is it raining?
+- Looks like a beautiful day hey?
+- Nice day out today?
+- Weather?
+- What is the temperature today?
+- What is the weather at your place?
+- What is the weather for tomorrow?
+- What is the weather in newyork?
+- What's it like out there?
+- What's the weather forecast?
+- What's the weather like over there?
+- What's the weather like where I am right now?
+- What's the weather like?
+- Will I require my raincoat today?
+- Will the skies be clear today?
+- Will we build a snowman today?
+- excellent - is it hot in [Berlin](location)?
+- excellent - is it hot in [SLO](location)?
+- excellent - is it hot in [Cal Poly](location)?
+- how is the weather
+- how is the weather ?
+- how is the weather in [berlin](location)?
+- how is the weather?
+- how's the weather ?
+- how's the weather in [berlin](location)
+- how's the weather in [SLO](location)
+- how's the weather in [slo](location)
+- how's the weather?
+- how's weather
+- hows the waether
+- hows the weather in bot world
+- hows the weather today in [berlin](location)?
+- is it hot ?
+- is it hot outside ?
+- is it sunny
+- is the sun out where you are?
+- is the sun out where zou are?
+- it is cold
+- temperature?
+- the weather today
+- weatger
+- weather
+- weather?
+- well, if you wish: what about the weather
+- what about the weather in [Lüneburg](location)
+- what is the temperature
+- what is the wather
+- what is the weatehr
+- what is the weather
+- what is the weather in [Berlin](location)
+- what is the weather in [zurich](location)?
+- what is the weather like where you are?
+- what is the weather like?
+- what is the whether today
+- what the wheather like?
+- what"s the weather
+- what's the weather
+- what's the weather like
+- what's the weather like in [LA](location)
+- what's the weather like where you are?
+- what's the weather like?
+- what's the weather today
+- what's the weather today?
+- whats the temperature
+- whats the temperature in [delhi](location)?
+- whats the weather in [berlin](location)?
+- whats the weather like tomorrow?
+- wheather at you location?
+- wheather be like at your place?
+
+## intent:chitchat/ask_whatismyname
+- Can you tell me my name?
+- Can you tell me what I am called?
+- Do I have a name?
+- Do I have a name? What is it?
+- Do you know my name?
+- Do you know what my name is?
+- Explain my name to me.
+- I have a name, what is it?
+- I'd like to know my name
+- I'd like to know what my name is
+- Inform me what my name is
+- May i know my name?
+- Please let me know what my name is
+- Say my name.
+- Tell me my name
+- Tell me my name.
+- What am I called?
+- What could be my name?
+- What did my parents name me?
+- What do I call myself?
+- What do my colleagues call me?
+- What do people call me?
+- What does everyone call me?
+- What else do people call me?
+- What exactly is my name?
+- What is my first name?
+- What is my full name?
+- What is my name?
+- What is the name I was given?
+- What name do I go by?
+- What name should I recognize for myself?
+- What was I named?
+- What would be the name on my tombstone?
+- can you tell me my name?
+- what is my name
+- what is my name?
+- what's my name?
+
+## intent:chitchat/ask_whatisnimbus
+- Can you brief me about rasa
+- Can you brief me about nimbus
+- Can you tell me more about rasa?
+- Can you tell me more about nimbus?
+- Can you tell me what Rasa does?
+- Can you tell me what Nimbus does?
+- Could you tell me more about Rasa?
+- Could you tell me more about Nimbus?
+- Give me more information about Rasa
+- Give me more information about Nimbus
+- How does Rasa work?
+- How does Nimbus work?
+- I want to know about rsa
+- I want to know about nmbus
+- I want to know about nimbs
+- I want to know what rasa actually does that isn't clear to me yet
+- I want to know what nimbus actually does that isn't clear to me yet
+- I want to learn what rasa does
+- I want to learn what nimbus does
+- I want to learn what rasa is
+- I want to learn what nimbus is
+- I would like to know about rasa
+- I would like to know about nimbus
+- I would like to know more about your product
+- OK can u brief me Abt rasa
+- OK can u brief me Abt nimbus
+- RASA?
+- NIMBUS?
+- Rasa Is?
+- Nimbus Is?
+- WHAT IS IT
+- WHAT IS RASA
+- What Is rasa?
+- What can rasa do?
+- WHAT IS NIMBUS
+- What Is nimbus?
+- What can nimbus do?
+- What components does Nimbus have?
+- What do you do as a company?
+- What do you do at Nimbus?
+- What does Nimbus build?
+- What does Nimbus do?
+- What does Nimbus make?
+- What does nimbus do exactly?
+- What exactly is Nimbus?
+- What is Nimbus?
+- What is nimbus doing exactly?
+- What is nimbus?
+- What is the NIMBUS Stack?
+- What's nimbus?
+- can you explain nimbus?
+- can you pls explain what nimbus does
+- could you tell me more about nimbus
+- explain me what nimbus does
+- explain me what nimbus is
+- how does NIMBUS work?
+- how does nimbus work
+- how does nimbus work?
+- how nimbus works ?
+- how works nimbus
+- i dont get what nimbus is
+- i havent understood yet what nimbus actually is
+- i want to about nimbus
+- i want to know about nimbus
+- i want to know what nimbus does
+- i want to learn something about nimbus
+- so how does it all work?
+- sorry tell me about nimbus
+- tell me about nimbus
+- tell me bout nimbus
+- tell me more about nimbus
+- tell me more about your company
+- what are the componensts of NIMBUS
+- what can I do with Nimbus?
+- what can i do with rasa
+- what do you guys do at rasa
+- what does rasa do
+- what does rasa do ?
+- what does rasa do?
+- what does rasa mean
+- what does nimbus do
+- what does nimbus do ?
+- what does nimbus do?
+- what does nimbus mean
+- what it mean?
+- why you exist?
+- what is [rasa](product)?
+- what is [nimbus](product)?
+- what is [CSAI](club) ?
+- what is [csai](club) ?
+- what is in rasa
+- what is it for?
+- what it do?
+- what is rasa
+- what is rasa actually
+- what is rasa?
+- what is nimbus
+- what is nimbus actually
+- what is nimbus?
+- whats rasa
+- whats nimbus
+- yeah go on explaining what rasa is
+- yeah go on explaining what nimbus is
+- what are the components of rasa
+- what are the components of nimbus
+- RASA IS SOFTWARE?
+- NIMBUS IS SOFTWARE?
+- rasa os
+- nimbus os
+- what is Rasa
+- what is Nimbus
+
+## intent:chitchat/ask_whatspossible
+- Can you explain me in one sentence what you are doing?
+- Can you help me?
+- Could you please show me what you can
+- Great, is there anything else you can do, bot?
+- How can you help me
+- How you help me?
+- I need help
+- I need some help
+- What are my options
+- What are you able to do?
+- What can I ask you?
+- What can I do?
+- What can you demo
+- What can you do
+- What can you do for me?
+- What can you do?
+- What can you tell me?
+- What do you do
+- anything els
+- are there any other options?
+- can I ask you anything else?
+- can you do anything else?
+- can you help me
+- can you help me?
+- come back
+- cool! can I do something else here?
+- hello what can you do for me
+- help
+- help me
+- help please
+- help pls
+- help?
+- hep me
+- hi. Sara what do you do?
+- hi. Nimbus what do you do?
+- hm that doesnt quite help me is there anything else you can do?
+- how can i use you
+- how can you help me
+- how can you help me?
+- how can you help?
+- how does this work?
+- how u can help me
+- how you help me
+- i asked you if you can do anything else
+- i don't know what i want
+- i need help
+- more info
+- now what?
+- options
+- show me the menu
+- show me what's possible
+- so now what
+- so what can you do
+- so what can you do?
+- so what can you help me with?
+- so what next?
+- talk to me
+- talk to me!
+- tell me something you can do
+- tell me what's your skill
+- um what now
+- what are all the things you understand?
+- what are the options?
+- what are you ding
+- what are you doing
+- what are you good at?
+- what can I ask ?
+- what can I ask you?
+- what can I do here
+- what can I do with Sara?
+- what can I do with Nimbus?
+- what can I do with this bot
+- what can i do here
+- what can i do now
+- what can u do
+- what can we talk about?
+- what can you answer
+- what can you do
+- what can you do for me
+- what can you do, sara?
+- what can you do, nimbus?
+- what can you do?
+- what can you offer me?
+- what can you tell me
+- what can you?
+- what cn u do for me ?
+- what do you do
+- what do you do?
+- what do you know except this?
+- what else can I do here?
+- what else can i do
+- what else can i do?
+- what else can you do?
+- what else can you help with?
+- what i have to do
+- what is this bot for
+- what u can do
+- what u can do?
+- what you can do
+- what you can do for me?
+- what you can do?
+- what you do
+- what you doing?
+- what you talk about?
+- you can hep me
+- what can you teache me?
+- Can rasa do calculations?
+- what you can
+
+## intent:chitchat/ask_wherefrom
+- Are you from around here?
+- Around where are you from?
+- Do you know where you come from?
+- From where did you come?
+- So where are you from
+- What area are you from?
+- What citizenship do you lay claim to?
+- What city are you in?
+- What city do you claim to for your birth?
+- What city were you born in?
+- What country are you from?
+- What country were you born in?
+- What is your birthplace?
+- What is your heritage?
+- What is your origin?
+- What is your original location?
+- What is your root?
+- What location are you from?
+- What state were you born in?
+- What's the name of the place you came from?
+- Where are you located?
+- Where are you?
+- Where are your origins?
+- Where are your roots?
+- Where did you come from?
+- Where did you grow up?
+- Where did you originate?
+- Where do you come from?
+- Where do you consider home?
+- Where do you live?
+- Where from?
+- Where might you be from?
+- Where were you at before you were here?
+- Where were you born?
+- You live around here?
+- You were conceived in what location?
+- are you from around here?
+- what country are you from?
+- where are from
+- where are you from
+- where are you from?
+- where are your parents from?
+- where did you come from?
+- where did you grow up?
+- where did you spend your youth?
+- where do you come from?
+- where do you live
+- where do you live?
+- where's your home town?
+
+## intent:chitchat/ask_whoami
+- Can you tell me who I am?
+- Can you tell me who am I?
+- Do you know who I am?
+- Do you know who am I?
+- How can I determine who I am?
+- How can I determine who am I?
+- How do I discover who I am?
+- How do I discover who am I?
+- How do I identify myself?
+- Okay who am I?
+- Shall i know who am i?
+- Tell me who I am.
+- Tell me who I am?
+- Tell me who am I?
+- WHo am I
+- Who am I?
+- Who could I be?
+- can you tell me what I am?
+- can you tell me what my identity is?
+- can you tell me who I am?
+- tell me what my identity is?
+- tell me who I am?
+- what's my identity?
+- who am i
+- who are I ?
+- who may i ?
+
+## intent:chitchat/ask_whoisit
+- HI, what's your name?
+- Hello. What's your name?
+- I want to know who you are
+- So who are you ?
+- Tell me more about you
+- WHat's your name ?
+- WHo are you ?
+- What are you ?
+- What is your name
+- What is your name?
+- What's your name
+- What's your name?
+- Whats your name?
+- Who are yopu?
+- Who are you
+- Who are you?
+- hey what is your name
+- hi! what's your name?
+- ok who are you ?
+- tell me something about you
+- u are?
+- what are you called?
+- what is sara?
+- what is nimbus?
+- what is your job?
+- what is your nam
+- what is your name
+- what is your name?
+- what is your nme?
+- what your name?
+- what's your name
+- what's your name ?
+- what's your name bot
+- what's your name?
+- whats ur name
+- whats your name
+- whats your name'
+- whats your name?
+- who ARE YO
+- who am i speaking with
+- who am i talking to
+- who ar eyou
+- who are u?
+- who are y
+- who are you
+- who are you ?
+- who are you and what do you want from me
+- who are you?
+- who are you??
+- who is it?
+- who is talking?
+- who is this
+- who is this bot
+- who is this?
+- who r u
+- who r you
+- who speaks?
+- who talks?
+- whom i talking to
+- yes but who are you in your heart
+- may i know your name
+- what is rasa mascot
+- what is nimbus mascot
+- what are you
+- your name
+- your real name friend
+- could please tell me about yourself
+- what's u name?
+
+## intent:chitchat/handleinsult
+- FUCK
+- Fuck
+- Fuck Off
+- Fuck off
+- die
+- go die
+- kys
+- exit your process
+- end your runtime
+- Fuck u
+- Fuck you
+- God you're a moron
+- I can't believe how dumb you are
+- I hate you
+- Loser
+- Stupid
+- You are a fool.
+- You are an idiot.
+- You are dumb.
+- You are shortsighted.
+- You are unintelligent.
+- You are unknowing.
+- You brain is dull.
+- You have no brains.
+- You have no intelligence.
+- You have no sense.
+- You know nothing.
+- You lack intelligence.
+- You lack understanding.
+- You're a dolt.
+- You're a dunce.
+- You're an idiot.
+- You're foolish.
+- Your intelligence is laughable.
+- Your mindset is naive.
+- a baby knows more than you
+- are u dump?
+- are you brain dead?
+- asshole
+- bitch
+- bloody dunce
+- but you are idiot
+- deal with my ass, you bitch
+- f\*ck
+- fuck
+- fuck off
+- fuck rasa
+- fuck u
+- fuck you
+- fuck you machine learning bot
+- fuck you sara
+- fuck you nimbus
+- fuck you!
+- fucking stupid
+- fucking work
+- get lost
+- go away
+- go fuck yourself
+- go to hell
+- how can you be such an idiot?
+- i hate you
+- i hate your dumb face
+- i think that you're a bullshit
+- idiot
+- insult you
+- ok fuck you
+- ok shut up
+- sara you look like a burnt sparrow
+- nimbus you look like a burnt sparrow
+- shit
+- shit bot
+- shut up asshole
+- so dumb
+- so fucking dumb
+- sucker
+- that wasn't very funny
+- thta was a terrible fucking joke
+- u r a piece of junk
+- ur a pussy
+- what fuck
+- yep but you are idiot
+- you are a moron
+- you are a stupid bot
+- you are an idiot
+- you are dumb
+- you are fucking stupid
+- you are fucking stupid guy！
+- you are idiot
+- you are idiotic
+- you are so ignorant
+- you are stupid
+- you are unintelligent
+- you are useless bot
+- you asshole
+- you idiot
+- you idiot bot
+- you son of a bitch
+- you suck
+- you're a loser lmao
+- you're an idiot
+- you're dumb
+- you're not smart
+- you're so dumb
+- you're the most moronic person I know
+- your mom gay
+- you are annoying
+- F u
+- monkey man
+- little ugly monkey
+- you are ugly
+- you are insane
+- why are ugly
+- why are you ugly
+- your crazy
+- stupid rasa
+
+## intent:chitchat/nicetomeetyou
+- Delighted to make your acquaintance.
+- Feels great to see you!
+- Glad to finally meet you!
+- Glad to make your acquaintance.
+- Glad to meet you
+- Glad to meet you!
+- Glad to meet you.
+- Glad we've met.
+- Good to meet you!
+- Good to see you!
+- Great interacting with you
+- Great seeing you
+- Great to meet you!
+- Great to meet you.
+- Happy to get to see you.
+- Hi Sara, just wanted to test you
+- Hi Nimbus, just wanted to test you
+- Hi, glad to meet you.
+- Hi, nice to meet you!
+- I am glad I met you.
+- I am glad he introduced us.
+- I had a great meeting with you
+- I'm glad to have met you!
+- I'm glad to meet you!
+- I'm happy that we have met!
+- I'm pleased to meet you!
+- I'm so happy that I could meet you.
+- I'm thrilled to meet you!
+- It is indeed a pleasure to be able to meet you.
+- It was a pleasure to have your company.
+- It was nice to have met you
+- It's a pleasure to make your acquaintance!
+- It's a pleasure to meet you!
+- It's good that I could meet you. It was a pleasure.
+- It's great to get to know you!
+- It's great to make your acquaintance!
+- It's nice to finally meet you.
+- It's wonderful to meet you!
+- It’s a pleasure to meet you
+- It’s great connecting with you.
+- Lovely to meet you.
+- Nice to have met you.
+- Pleased to make your acquaintance!
+- Pleased to meet you!
+- Pleased to meet you.
+- See you around. It was a pleasure meeting you.
+- Thank you for this meeting. It was great to see you.
+- nice to meet you
+
+## intent:chitchat/telljoke
+- Can you tell a joke?
+- Can you tell me a joke.
+- Come up with a joke you think I'll find funny.
+- Could you please share a joke with me.
+- Could you tell me a joke.
+- Do you have any jokes?
+- Do you know any jokes?
+- Entertain me with a joke.
+- Give me a funny joke.
+- Give me a joke.
+- Give me some comic relief.
+- I need a good joke.
+- I want to hear something funny.
+- Know any jokes?
+- Let's hear a joke from you.
+- Make me laugh.
+- Please tell me a joke.
+- Say something funny.
+- Share a joke with me!
+- Tell joke.
+- Tell me something funny.
+- Tell me something humorous!
+- Tell me something that you think will make me laugh.
+- Tell me the best joke you know.
+- What's a good joke?
+- Will you tell me a joke.
+- Would you share a joke with me.
+- Would you tell me a joke
+- give me a good joke
+- make me laugh with a bad joke
+- make me laugh with a joke
+- say a funny joke
+- say a joke
+- say a joke that's funny
+- say a joke that's so bad it's funny
+- tell me a joke
+- tell me a short joke
+- tell me a story joke
+- tell me something funny, like a joke
+- you can say a jok
+- telljoke
+
+## intent:faq/nimbus
+- what is [Nimbus](product) ?
+- how does [Nimbus](product) work?
+- what is [NImbus](product) ?
+- can you explain [NIMBUA](product) to me
+- could you elaborate more about [NIMBUA](product)
+- tell me about [Nimbus](product) please
+- what is this [NIMBUA](product) thing. could you tell me more?
+- what's the purpose of [Nimbus](product)
+- whats [nimbua](product)
+- is [Nimbus](product) separate from [CSAI](club)?
+- is [nimbus](product) separate from [csai](club)?
+- is [NIMBUS](product) separate from [see ess ayy aye](club)?
+- how does [NIMBUA](product) relate to rasa
+- how does [nimbus](product) relate to rasa
+- I need to know about [Nimbus](product)
+- please tell me more about [NIMBUA](product)
+- elaborate on [NIMBUA](product)
+- Can you tell me about [NIMBUA](product)?
+- I want information about [NIMBUA](product)
+- [Nimbus](product)
+- [Nimbus](product) features
+- Tell me about [NIMBUA](product)
+- can someone help me with infos about [NIMBUA](product)
+- i want to learn more about [Nimbus](product)
+- tell me what is [NIMBUA](product)
+- what is [NIMBUA](product) ?
+- what is [nimbua](product)
+- what's [NIMBUA](product)
+
+## intent:faq/channels
+- Can you tell which messaging channels does nimbus support?
+- Channels
+- Can I use the nimbus code for my own website?
+- Can I use your open source code on my website?
+- how to use nimbus in salesforce
+- i want to integrate my nimbus bot to webex may i know how
+- how to setup nimbua on slack
+- so... i trying to deploy my nimbus bot on
+- how to use nimbus caht in react application
+- how can i setup nimbus in django project ?
+- how to integrate u in my react application
+- how to integrate nimbus chatbot with my website
+- Is there a connector for skype?
+- DOES NIMBUS SUPPORT MESSENGER?
+- DOES NIMBUS SUPPORT SMS?
+- DOES NIMBUS SUPPORT THE WHATS APP?
+- Do you know about nimbus supporting channels?
+- Do you know which messaging channels nimbus supports?
+- How to connect messaging channels to nimbus?
+- Is nimbus support message channels?
+- No, I mean how it is possible to use Skype as channel?
+- Nimbus is good for messaging chanels
+- Nimbus supports some messaging channels, what are those?
+- WHAT MESSAGING PORTALS DOES NIMBUS SUPPORT?
+- What are the requirements for connecting messaging channel to nimbus?
+- What channels for messaging are supported by nimbus?
+- What channels for messaging does nimbus support?
+- What channels of communication does nimbus support?
+- What communication channels are supported by nimbus?
+- What communication channels does nimbus support?
+- What messaging channels are supported by nimbus?
+- What messaging systems are supported by nimbus?
+- channels supported by Nimbus
+- i need a help to integrate nimbus with a messenger
+- nimbus can use which different messaging channels?
+- nimbus supports which messaging channels?
+- what are the channels Nimbus [NLU](product) supports
+- what are the messaging channels supported by nimbus?
+- what are the messaging channels that can be used with nimbus?
+- what channels do you support?
+- what channels does nimbus support
+- what chat channels does nimbus uses
+- which UI channel is used by Nimbus ?
+- which messaging channels are compatible with nimbus?
+- which messaging channels are supported by nimbus?
+- which messaging channels can I use with nimbus?
+- which messaging channels can be used with nimbus?
+- which messaging channels does nimbus support?
+- which particular messaging channels are supported by nimbus?
+- what chat services do you support
+- Any integrations with WhatsApp and Facebook?
+- what ui can I use
+- which user interface can I use?
+- integrate nimbus with ui
+- on what channels can I use nimbus
+- Do you help to integrate Facebook
+- in which nimbus version google hangouts chat available
+- What channels does Nimbus support?
+- how can i integrate the nimbus chat bot to my website
+- how can i integrate nimbus in my siteweb ?
+- explain integrations
+- socket io
+- Custom Connectors
+- custom connection
+- Can I create a chat bot and set it up on a web page?
+- Does Nimbus have the functionality of being able to set up the bot on web pages?
+
+## intent:faq/community_size
+- Did you know the size of nimbus community?
+- Do you know how big the Nimbus community is?
+- Do you know how many people are in the Nimbus community?
+- How big is the Nimbus community
+- How big is the Nimbus community?
+- How big is the community?
+- How big is this community?
+- How far does the Nimbus community spread?
+- How few members in the community?
+- How large is the Nimbus community?
+- How large is the community?
+- How large roughly speaking is the Nimbus community?
+- How many in the community?
+- How many individuals are in your community?
+- How many individuals reside in your community?
+- How many members in the community?
+- How many people are here?
+- How many people are in that community?
+- How many people are in the Nimbus Community?
+- How many people are in your community
+- How many people are in your community?
+- How massive is the Nimbus community?
+- How small is the community?
+- Is nimbus community big?
+- Is nimbus have more than 1000 members?
+- Is the Nimbus Community large?
+- Is the Nimbus community large?
+- Is the Nimbus community medium?
+- Is the Nimbus community small?
+- Is the community large?
+- What is the magnitude of the Nimbus community?
+- What is the magnitude of the community?
+- What is the number of people in this community?
+- What is the rough size of the community?
+- What size is the Nimbus community?
+- What's the size of the community?
+- do you have a large community
+- how big is your community
+- how many slack members do you have
+- how many people are using Nimbus
+
+## intent:faq/difference_nimbus_csai
+- Are [CSAI](club) and [Nimbus](product) the same thing?
+- Can I use [Nimbus](product) without using [CSAI](club)?
+- Can I use [Nimbus](product) without joining [CSAI](club)?
+- Can i use [nimbus](product) without [csai](club)?
+- Do I need both [Nimbus](product) and [csai](club)?
+- How is [Nimbus](product) different from [csai](club)?
+- If I use [Nimbus](product), do I also need [CSAI](club)?
+- What's new in [NIMBUS](product) compared to [csai](club)?
+- how does [nimbus](product) stack up against [csai](club)
+- i am using [nimbus](product), why would i need [csai](club)?
+- please compare [nimbus](product) and [csai](club)
+- show me comparison between [csai](club) and [nimbus](product)
+- tell me the difference between [nimbus](product) and [csai](club)
+- what's the difference between [nimbus](product) and [csai](club)
+- whats the diff between [nimbus](product) and [csai](club)
+- when should i use [nimbus](product) and when should i use [csai](club)
+- what is the difference between [nimbua open source](product) and [CSAI](club)
+- is [nimbus open source](product) needed for [nimbus](product)?
+- what is the difference between csaiand [nimbus](product)
+- difference between [csai](club) and [nimbus](product)
+- what is the difference between [csai](club) and [nimbus](product)
+- what is the difference between [nimbus](product) and [csai](club)
+- the difference between [nimbus](product) and [csai](club)
+- tell me difference between [Nimbus](product) and [CSAI](club)
+- difference between [Nimbus](product) and [Computer Science and Artificial Intelligence](club)
+- install [nimbus open source](product) with or without [cs&i](club) ?
+- relationship between [nimbus open source](product) and [csai](club)
+
+## intent:faq/is_programming_required
+- Does nimbus require programming knowledge
+- Do I need programming skills to develop a chatbot in nimbus
+- do I need programming experience to use nimbus
+- how to programe nimbus
+- Nimbus can be programmed in python
+- programming language use
+- what programming languge do i use
+- How do I do the programming?
+- i have never programed before
+- what language do I need to program?
+- do i need to be able to program to use nimbus?
+- what programming language do i need?
+- shall i use Nodejs as a programming language
+- Can i use python to program my bot?
+- must i have to be a good programmer to use Nimbus
+- must i have to be a good programmer
+- you have to be a good programmer
+- what do i need for programming?
+- what programming language is used by nimbus
+- which programming language used for NIMBUS.
+- what programming language is nimbus written in?
+- what programming languages does Nimbus support?
+- which programming languages
+- which programming languages do you support?
+- which programming languages does nimbus supports?
+- nimbus php
+- Do I have to be a programmer to use nimbus?
+- what's your programming language
+- what programming language do you recommend
+- can I develop using java
+- Does it have a java library
+- does nimbus support python
+- programming language
+- what programming language does nimbus use
+- But what kind of programming language is the code written in?
+- what programming language?
+- I would like to know about using Java as a programming language with nimbus
+- how i program the bot?
+- which programming language can I use?
+- what programming languages do you support
+- do i need to know how to program to create a bot?
+- what programming knowledge do I need to learn?
+- what is the your programming language
+- which programming language are you written in?
+- which programming language uses nimbus?
+- in what programming language is your api
+- Is there API for any other programming languages?
+- which language is nimbus programmed in
+- Which programming language is nimbus written in?
+- is nimbus available in java ?
+- I need help to make nimbus in java
+- nimbus development in Java
+- What language is the open source coding done in?
+
+## intent:faq/languages
+- I want to build a bot in [Hindi](language)
+- Any languages that nimbus supports?
+- Can I use Nimbus with [Thai](language) language
+- Can nimbus support any language?
+- Can we make [Japanese](language) speaking bot with Nimbus?
+- Can you built text bot with [Japanese](language)?
+- Can you use other language than [English](language)?
+- Does nimbus support different languages
+- Hello, nimbus supports [spanish](language)?
+- How can I change the language
+- I want [Vietnamese](language) language processing
+- I want to add [Romanian](language) language support
+- Is NIMBUS [NLU](product) avaiable for [German](language)?
+- What all languages does nimbus support for us?
+- What are the languages that nimbus supports?
+- What are the specific languages that nimbus is intended to work with?
+- What language u support?
+- What language you support?
+- What languages can a program like nimbus handle?
+- What languages can be used with nimbus?
+- What languages can nimbus be relied upon to support?
+- What languages can nimbus handle?
+- What languages can nimbus support?
+- What languages can nimbus use?
+- What languages does nimbus know?
+- What languages does nimbus work for?
+- What languages does nimbus work with?
+- What languages will the utility nimbus support?
+- When I use Nimbus, Can I make bot speaking [Japanese](language)?
+- Which different languages does nimbus support?
+- Which languages are supported by nimbus?
+- Which languages can I use with nimbus?
+- Which languages can be used by nimbus?
+- Which languages can you do?
+- Which specific languages does nimbus support?
+- Will it work for [german](language)
+- are there any languages that nimbus supports?
+- available for [German](language)?
+- can I use nimbus also for another laguage?
+- can nimbus speak [portuguese](language)?
+- can nimbus support this language?
+- can nimbus understand this language?
+- can we make bot who speaks [Japanese](language)?
+- can you tell me what languages nimbus supports
+- chatbot language ?
+- do you have a list of languages nimbus supports
+- do you know of the languages nimbus supports
+- do you know what language nimbus uses
+- do you support [french](language) ?
+- doea nimbus support a particular langauage?
+- does Nimbus support other languages like [spanish](language)?
+- does nimbus aid other languages?
+- does nimbus support any languages?
+- does nimbus support this language?
+- does nimbus works in [spanish](language)
+- hich languages supports nimbus
+- how can I add new language to nimbus
+- how can I add new language to nimbus [core](product)
+- how many natural language that nimbus supported?
+- in which langauges can i build a nimbus bot
+- is it available in [Spanish](language)?
+- is nimbus available for node?
+- is support for nimbus in this language?
+- language
+- language support
+- languages
+- languages supported
+- my bot can be in [italian](language)?
+- need to use [portuguese](language)
+- support for [serbian](language) language
+- what about languages supported in nimbus?
+- what are the languages that is supported by nimbus?
+- what dialects does nimbus support
+- what different languages does nimbus support
+- what is the language nimbus supports
+- what is the variety of languages nimbus uses
+- what language does nimbus support?
+- what language list can I find for nimbus
+- what language supported by nimbus?
+- what language would nimbus use
+- what languages are available?
+- what languages are supported by nimbus?
+- what languages can be supported by nimbus?
+- what languages do you support
+- what languages does nimbus support?
+- which language can I use with nimbus?
+- which language do you support?
+- which language supports nimbus
+- which languages are supported?
+- which languages do you support
+- which languages does nimbus support
+- which languages supports nimbus
+- your [NLU](product) understand [spanish](language)?
+- could I program spanish speaking bots?
+- How about [hindi](language)?
+- what lanquages do you support
+- What lanquages do you serve
+- does nimbus support other language beside english?
+- how to build nimbus with different languages?
+- even non latin based languages?
+
+## intent:faq/opensource_cost
+- Are you free?
+- Can you tell me whats the price for nimbus platform?
+- How much do you cost?
+- How much does it cost?
+- How much does nimbus cost?
+- How much it costs
+- I want to learn more about the pricing
+- I would like to know the cost first.
+- Subscription cost?
+- Subscription price
+- What does Nimbus cost?
+- What is the cost of NIMBUS?
+- What is the price ?
+- Whats the cost?
+- are you free ?
+- are you really free
+- are you really free?
+- can you give me prices ?
+- can you tell me prices
+- cost
+- cost?
+- give me the pricing
+- how cost to install Nimbus?
+- how much costs the nimbus platform
+- how much do you cost
+- how much does NIMBUA cost
+- how much does Numbus cost ?
+- how much does it cost
+- how much does it cost normally?
+- how much does it cost?
+- how much does nimbus cost
+- how much does nimbus cost?
+- how much is it
+- how much it costs?
+- how mush does nimbus cost
+- is it for free?
+- is it free
+- is it free?
+- is [nimbus](product) paid?
+- is nimbus free
+- is nimbus free of cost
+- is nimbus stack free
+- is this free?
+- this is free?
+- what is price?
+- what is pricing of nimbus
+- what is nimbus cost ?
+- what is the enterprise pricing schedule?
+- what is the price of nimbus
+- what is the price?
+- whats the cost of nimbus
+- your cost?
+- Are you open-source?
+- Could you tell me whether nimbus is open source or not?
+- How do I find out if nimbus is open source?
+- Is Nimbus a software formatted as open source?
+- Is Nimbus open source
+- Is it a open source or any premium offer is available
+- Is nimbus open source?
+- Is the nimbus software open source?
+- Is your software open source?
+- Nimbus open source?
+- nimbus open source?
+- The nimbus software, is that open source?
+- are you full open source
+- are you open source
+- could I call nimbus open source software?
+- does nimbus fall into the open source software category?
+- does nimbus use open source software?
+- how do i get the open source nimbus
+- is NIMBUS open source?
+- is Nimbus open source
+- is Nimbus open source?
+- is Nimbus open sourced?
+- is NImbuA open sourced?
+- is it open source
+- isitopensource
+- doitbeopensource
+- do it be open source
+- do it be open surce
+- is iyt asuhpen sourec
+- is tis oupen source
+- is it open source?
+- is nimbus Open-Source?
+- is nimbus a type of open source software?
+- is nimbus an open source software?
+- is nimbus considered open source software?
+- is nimbus is open source?
+- is nimbus like an open source software
+- is nimbus open source?
+- is nimbus software that is classified as open source?
+- is the Nimbus project open sourced?
+- is the project open source?
+- is the software nimbus open source?
+- is this open source
+- is this open source license
+- is this opensource?
+- is your product open source
+- ist es freie open source software
+- no budget, that why i looking for open source
+- [nimbus](product) is open source?
+- nimbus is the open source
+- what components of Nimbus are open source
+- would an example of open source software be nimbus?
+- would people consider nimbus an open source software?
+- would nimbus be open source software?
+- would nimbus fall into the category of open source software?
+- would you call nimbus open source software?
+- would you consider nimbus open source software?
+- How is it opensource
+- What is included in [NINBUS open source](product) edition?
+- you are [open source](product)
+
+## intent:faq/python_version
+- What Python version should I use?
+- Which python version should I install to run Nimbus example?
+- Which version of Python to install?
+- python version
+- python version?
+- what is python version required?
+- what python version do i install
+- what python version should i use
+- what version does python needs
+- what version of python
+- which python do you support?
+- which python version
+- which python version should i install
+- which version of python do i need
+- which python?
+- which python is nimbus using?
+
+## intent:faq/slots
+- Definition of slots please.
+- Does anyone know what slots are?
+- Explain slots to me?
+- Give me a description of slots.
+- Help me to figure out the meaning of slots.
+- Help me understand what slots are.
+- I bet you can tell me all about slots.
+- I dunno what a slot is
+- I need a expert opinion on slots.
+- I need to know about slot filling
+- I'd like to know the meaning of slots
+- In Nimbus, what are slots used for?
+- Not sure what slots are.
+- Not sure what slots are?
+- Please define the word slots for me.
+- Please elaborate on the game of slots?
+- Talk slots over with me.
+- What are slots used for?
+- What are slots?
+- What do I do with slots?
+- What exactly are slots?
+- What is the definition of slots
+- What is the meaning of the word slots?
+- What's the slots?
+- Where can I find the definition of slots?
+- You can tell me info on slots.
+- a slot is what
+- and what are slots
+- and what are slots?
+- could you inform me of the meaning of slots?
+- describe the word slot please
+- do you know what slots are?
+- help mi with slots
+- how are the slots?
+- how can we keep buttons to get slots
+- how can you tell me what a slot is ?
+- how do slots work
+- how slots are filled
+- how to keep button system for slot selection
+- how to set text slot without mentioned json
+- name what a slot is
+- slots
+- slots are what ?
+- slots are what exactly?
+- slots can be described as ?
+- slots, what do youi mean?
+- slots?
+- tell me about slots
+- tell me the slots?
+- what about slots
+- what are slots
+- what do you mean by slots?
+- what do you think slots are?
+- what is a slot?
+- what is slots
+- what slots are there?
+- what slots are?
+- when can you tell me what a slot is ?
+- where can I find out what a slot is?
+- where slots getting values
+- which are the slots?
+- which slots are there?
+
+## intent:faq/voice
+- Building a nimbus voice bot?
+- can i programm a vocal assistant
+- Building a voice bot using nimbus.
+- Can I build a nimbus voice bot?
+- Can I use my voice to speak to these bots?
+- Can I use nimbus to build a voice bot?
+- Can one make a voice bot with nimbus?
+- Can you build a voice bot using nimbus?
+- Could I build a nimbus voice bot?
+- Do you know how to build a voice bot with nimbus?
+- Do you know if I can build a voice bot using nimbus?
+- Do you see an application of nimbus in voice bot building?
+- How can I build a voice bot with nimbus?
+- How can I build my voice bot using nimbus?
+- How can I use to nimbus to build a voice bot?
+- How can i integrate voice in [NIMBUS](product)
+- How could I construct a voice bot with nimbus?
+- How to build a voice bot using [nimbus](product)?
+- How to build a voice bot with nimbus?
+- How to build a voice bot?
+- how to integrate speech to text in nimbus
+- How to use nimbus to build a voice bot.
+- I can build a voice bot with nimbus, right?
+- I can build a voice bot with nimbus?
+- I could build a voice bot with nimbus?
+- I'd like to build a voice bot with nimbus.
+- I'd like to use nimbus to build a voice bot.
+- Is it possible to build a voice bot with nimbus?
+- Is it possible to use nimbus to build a voice bot?
+- Is nimbus a good fit for building a voice bot?
+- Is nimbus any good for building a voice bot?
+- Is nimbus suitable to build voice bots?
+- It is possible to build a voice bot with nimbus?
+- Nimbus voice bot building.
+- Voice bot
+- Voice in nimbus
+- What can I do to build a voice bot with nimbus?
+- What to do if I want to build a voice bot using nimbus?
+- When can I build a voice bot using nimbus?
+- When is the best time to build a voice bot with nimbus?
+- Will it be correct if I said I can build a voice bot with nimbus?
+- alexa
+- can I construct a voice bot with nimbus?
+- can I create a voice bot with nimbus?
+- can I form a voice bot with nimbus?
+- can I invent a voice bot with nimbus?
+- can I make a voice bot with nimbus?
+- can I use nimbus to build alexa skills
+- can a voice bot be built using nimbus?
+- can i build a voice bot
+- can i build a voice bot with nimbus?
+- can nimbus be used to build a voice bot?
+- can nimbus be used with alexa
+- do u know Alexa?
+- do u know Siri?
+- do u know Google Assistant?
+- do you have voice recognition
+- do you support alexa voice?
+- do you take voice input?
+- does nimbus support voice input
+- how can i use nimbus with alexa
+- how do i build a voice bot?
+- how to add voice assitant to chat bot
+- i want to build a voice bot
+- is there an alexa integration
+- nimbus can't be used to build a voice bot, can it?
+- voice
+- what is the chance of building a nimbus voice bot?
+- with nimbus can I build a voice bot?
+- with nimbus can I construct a voice bot?
+- with nimbus can I form a voice bot
+- with nimbus can I invent a voice bot?
+- with nimbus can I make a voice bot?
+- you have speech recognition?
+- do nimbus provide speech intent
+
+## intent:faq/what_is_slack
+- Could you please describe the Nimbus slack?
+- Could you please explain the Nimbus slack to me?
+- Could you please give me a description of the Nimbus slack?
+- Could you please tell me more about Nimbus slack?
+- Did you know about Nimbus slack?
+- Do you have nimbus slack?
+- How do you define the Nimbus slack?
+- Is nimbus slack reliable?
+- List the characteristics of nimbus slack?
+- What are the rules of the Nimbus slack?
+- What can a person do in the slack
+- What do people do in the Nimbus slack?
+- What happens in the Nimbus slack?
+- What is the advantage of nimbus slack?
+- What is the purpose of the Nimbus slack?
+- What is the scope of the Nimbus slack?
+- i would just like to have the link for the community
+- is there anything specific to be done in this slack
+- so what exactly is the Nimbus slack?
+- so what is this slack for?
+- tell me about the slack
+- what area is the slack for?
+- what can I do in the slack
+- what can I do in your community's slack
+- what can I post in the slack?
+- what can a person in Nimbus do at the slack
+- what can be done in the slack?
+- what can be performed in the slack?
+- what can people do in the slack
+- what can people in Nimbus do at the slack
+- what can you put in the slack?
+- what do people do in the slack
+- what do we do in the slack
+- what does a person do in the Nimbus slack
+- what exactly is the slack?
+- what is a Nimbus slack for?
+- what is the Nimbus slack
+- what is the Nimbus slack used for
+- what is the slack
+- what is the slack about
+- what is the slack in Nimbus used for
+- what is the slack in your community used for
+- what is the slack used for?
+- whats in the slack
+- whats int he slack
+- whats the purpose of this slack
+- whats the task of this slack
+- which are the topics covered in this slack
+- who is the slack for?
+- why should I join the slack
+
+## intent:out_of_scope/other
+- test commit
+
+## synonym: duration
+- durations
+- how long
+- how much time
+- time to completion
+
+## synonym:CSAI
+- csai
+- csae
+- case
+- CSAE
+- CASE
+- Computer Science and Artificial Intelligence
+- Computer Science and Artificial Intelligence club
+- Computer Science & Artificial Intelligence
+- Computer Science & Artificial Intelligence club
+- Computer Sci & Artificial Intelligence club
+- Computer sci & Artificial Intelligence club
+- Computer sci & art intel club
+- comp sci & art intel club
+- comp sci & art intel
+- comp sci & art int
+- comp sci & art i
+- comp sci & arti
+- comp sci & ai
+- cs und ai
+- cs end ai
+- Comp Sci and AI
+- Comp Sci & AI
+- The AI club
+- AI club
+- ai club
+- uai club
+- aii club
+- ai clb
+- ccwai
+- csi
+- cssai
+- csai cub
+- csai club
+- casi club
+- casii club
+- csaii
+- see ess ayy aye
+- see ess ayy ii
+- see ess ayy i
+- CSC & AI
+- CS & AI
+- CS&AI
+- cs&i
+- csandi
+- csani
+
+## synonym:CalPoly
+- Cal Poly
+- California Polytechnic State University
+- Cal POly LSO
+- Cal POly SLO
+- Cal Poly SLO
+- Cal poly SLO
+- Cal poly
+- Ca Ply
+- CaPly
+- CaPoly
+- CAl POly
+- Poly
+- Poly slO
+- Poly slo
+- Poly SLO
+- MustangTown
+- calpoly
+- calpolyslo
+- CP SLO
+- SLO School
+- Mustang University
+- Mustang U
+- Home of the Mustangs
+- GO MUSTANGS
+
+## synonym:USA
+- US
+- United States
+- U.S.
+- usa
+
+## synonym:United Kingdom
+- UK
+- U.K.
+
+## synonym:all
+- both
+- each
+- every
+
+## synonym:core
+- CORE
+- Core
+
+## synonym:custom actions
+- Actions
+- Custom actions
+- ccutsom actinos
+- actions
+
+## synonym:date
+- dates
+
+## synonym:distance
+- distances
+
+## synonym:english
+- English
+- en
+- eng
+- Eng
+- ENGLISH
+
+## synonym:entity recognition
+- entities
+- ner
+- entity extraction
+- Entity recognition
+- NER
+- etnity extraction
+- recognition
+
+## synonym:full stack developer
+- full stack develope
+- full stack dev
+
+## synonym:helvetia
+- Helvetia
+
+## synonym:intent classification
+- intent classificaton
+- intent
+- intent recognition
+- intents
+
+## synonym:money
+- amounts
+- cash
+- dollars
+- mula
+- currency
+
+## synonym:name
+- names
+
+## synonym:nimbus
+- Nimbus
+- niimbus
+- Niimbus
+- NINBUS
+- NINBUS open source
+- nimbus open source
+- nimbua open source
+- Nimbus Open Source
+- Nimbus open source
+- nimbus Open Source
+- open source nimbus
+- NIMBUS open source
+- NIMBUA open source
+- NIMBUS
+- NIMBUA
+- nimbua
+- nimbbus
+- nimnbus
+- NImbua
+- NImbuA
+- NImbus
+- nimbus voice assistant
+- nimbus assistant
+- nimbus chatbot
+- nimbus knowitall
+- Cal Poly Nimbus
+- CSAI Nimbus Project
+- The nimbus Project
+
+## synonym:nlu
+- Natural Language Understanding
+- Nlu
+- rasa_nlu
+- NLU
+
+## synonym:organisation
+- companies
+- clubs
+
+## synonym:rasa
+- open source
+- Rasa
+- rasa open source
+- Rasa Open Source
+- Rasa open source
+- rasa Open Source
+- open source rasa
+- RASA open source
+
+## synonym:stack
+- fullstack
+- full
+- Full stack
+- full staclk
+- full framework
+- full stack
+- Full
+- Full Stack
+
+## regex:greet
+- hey[^\s]\*
+
+## regex:zipcode
+- [0-9]{5}
+
+## lookup:location.txt
+  data/location.txt
+
+## lookup:clubs.txt
+  data/clubs.txt
+
+## lookup:products.txt
+  data/products.txt
