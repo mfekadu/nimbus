@@ -1,5 +1,12 @@
-version: '3.4'
+version: "3.4"
 services:
   app:
     image: mfekadu/rasa-actions:latest
 
+  db:
+    volumes:
+      - db-volume:/bitnami/postgresql
+
+volumes:
+  db-volume:
+    name: db-volume
