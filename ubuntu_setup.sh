@@ -3,7 +3,7 @@ set -Eeuo pipefail
 
 #######################################
 #
-# installing pip and python and docker 
+# installing pip and python and docker and poetry 
 #
 #######################################
 
@@ -28,6 +28,17 @@ sudo apt-get install -y \
     software-properties-common
 
 
+#
+# poetry
+#
+
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
+
+
+#
+# docker
+#
+
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 sudo add-apt-repository \
@@ -47,5 +58,4 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.26.0/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
-
 
