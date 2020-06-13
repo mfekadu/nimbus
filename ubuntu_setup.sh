@@ -12,6 +12,11 @@ source /etc/os-release
 echo "Installing pip & python & docker"
 
 sudo apt-get update -y
+
+# one of these should work
+sudo pip install --upgrade pip || : # upgrade py2 pip else do nothing
+sudo pip2 install --upgrade pip || : # upgrade py2 pip else do nothing
+
 sudo apt-get install -y python3
 sudo apt-get install -y python3-distutils || :  # if the package is not available and the command fails, do nothing,
                                                 # the distutils are already installed
@@ -23,6 +28,8 @@ sudo apt-get install python3-dev python3-pip python3-venv python3-wheel -y
 ##curl -O https://bootstrap.pypa.io/get-pip.py
 #sudo python3 get-pip.py
 #rm get-pip.py
+
+sudo pip install --upgrade pip
 
 sudo apt-get install -y \
     apt-transport-https \
