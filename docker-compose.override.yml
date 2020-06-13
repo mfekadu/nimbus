@@ -1,5 +1,11 @@
 version: "3.4"
 services:
+  rasa-x:
+    volumes:
+      - ./config.yml:/app/config.yml
+      - ./domain.yml:/app/domain.yml
+      - ./tests:/app/tests
+
   app:
     image: mfekadu/rasa-actions:latest
 
