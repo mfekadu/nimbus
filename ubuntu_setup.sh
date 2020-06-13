@@ -30,6 +30,10 @@ sudo apt-get install -y \
     software-properties-common
 
 
+# echo >> ~/.bashrc && echo "alias python=python3" >> ~/.bashrc && echo >> ~/.bashrc 
+# echo "REMEMBER TO RUN `source ~/.bashrc` and `$HOME/.poetry/env`" 
+sudo ln /usr/bin/python3  /usr/bin/python
+
 #
 # poetry
 #
@@ -59,4 +63,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.26.0/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
+
+
+
 
