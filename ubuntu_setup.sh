@@ -20,6 +20,8 @@ sudo apt-get install -y python3-distutils || :  # if the package is not availabl
 curl -O https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py
 
+rm get-pip.py
+
 sudo apt-get install -y \
     apt-transport-https \
     ca-certificates \
@@ -32,8 +34,7 @@ sudo apt-get install -y \
 # poetry
 #
 
-curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-
+curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python3
 
 #
 # docker
