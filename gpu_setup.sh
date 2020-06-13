@@ -9,10 +9,10 @@ sudo apt-key adv --fetch-keys http://developer.download.nvidia.com/compute/cuda/
 
 
 
-sudo apt update
+sudo apt update -y
 
 
-sudo apt install cuda
+sudo apt install -y cuda
 
 
 # Verifying the GPU driver install
