@@ -10,6 +10,16 @@ services:
     # - ./domain.yml:/app/domain.yml
     # - ./tests:/app/tests
 
+  rasa-production:
+    ports:
+      # hack into the rasa-production server
+      - "5065:5005"
+
+  rasa-worker:
+    ports:
+      # hack into the rasa-worker server
+      - "5075:5005"
+
   app:
     image: mfekadu/rasa-actions:latest
     ports:
