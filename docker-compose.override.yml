@@ -1,19 +1,42 @@
 version: "3.4"
 services:
   rasa-x:
-    volumes:
-      - ./config.yml:/app/config.yml
-      - ./domain.yml:/app/domain.yml
-      - ./tests:/app/tests
+    ports:
+      # find production model via http://rasa-x:5002/api/projects/default/models/tags/production
+      - "5002:5002"
+    # turns out these volumes below are stored in db
+    # volumes:
+    # - ./config.yml:/app/config.yml
+    # - ./domain.yml:/app/domain.yml
+    # - ./tests:/app/tests
 
   app:
     image: mfekadu/rasa-actions:latest
+    ports:
+      # hack into the actions server
+      - "5055:5055"
 
   db:
     ports:
+      # hack into the database
       - "5432:5432"
     volumes:
       - db-volume:/bitnami/postgresql
+
+  rabbit:
+    ports:
+      # hack into the rabbitmq
+      - "5672:5672"
+
+  duckling:
+    ports:
+      # hack into the duckling
+      - "8000:8000"
+
+  redis:
+    ports:
+      # hack into the redis
+      - "6379:6379"
 
 volumes:
   db-volume:
