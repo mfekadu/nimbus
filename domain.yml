@@ -39,7 +39,6 @@ intents:
   - faq/languages
   - faq/opensource_cost
   - faq/python_version
-  - faq/slots
   - faq/voice
   - faq/what_is_slack
   - out_of_scope
@@ -71,14 +70,14 @@ responses:
     - text: Hola
   utter_happy:
     - text: ok cool! have a nice day friend
-  utter_identity:
-    - text: "Hi, I'm Nimbus. [See my code](github.com/mfekadu/nimbus)"
-  utter_oos_nonenglish:
+  utter_oos_non_english:
     - text: "I only understand English, I'm sorry."
     - text: "sorry, I only know English. Perhaps you could contribute to make Nimbus multi-lingual? \U0001F60B\U0001F30D"
     - text: I only understand English for now...
   utter_oos_other:
     - text: "I can't help you with that, I'm sorry."
+  utter_faq_languages:
+    - text: "Right now I understand English and Python. Can you teach me more? github.com/calpoly-csai"
   utter_faq_channels:
     - text: "So far, this is the only way I can chat with you. But my software is very modular!"
   utter_faq_community_size:
@@ -88,7 +87,7 @@ responses:
   utter_faq_python_version:
     - text: "The supported Python versions are 3.6 or newer \U0001F40D\U00002728"
   utter_faq_voice:
-    - text: "Right! Yeah! There is a voice assistant too! <TODO: LINK_NIMBUS>"
+    - text: "Right! Yeah! There is a voice assistant too! github.com/calpoly-csai"
   utter_faq_what_is_slack:
     - text: "[Slack](SLACK_URL) is the place to go and chat about all thing CS and AI. (that's why it's called CSAI lol)."
   utter_faq_difference_nimbus_csai:
@@ -169,6 +168,7 @@ responses:
     - text: My address starts with github.com.
     - text: "You can visit my home any time: github.com/calpoly-csai"
   utter_chitchat_ask_whoami:
+    - text: "Hi, I'm Nimbus. [See my code](github.com/mfekadu/nimbus)"
     - text: "Unfortunately I haven't been programmed with the amount of necessary philosophy knowledge to answer that."
     - text: I hope you are being yourself.
     - text: Who do you think you are?
@@ -221,12 +221,14 @@ responses:
     - text: "\U0001F60A"
     - text: "\U0001F604"
 actions:
+  - respond_chitchat
+  - respond_faq
+  - respond_out_of_scope
   - utter_did_that_help
   - utter_goodbye
   - utter_greet
   - utter_happy
-  - utter_identity
-  - utter_oos_nonenglish
+  - utter_oos_non_english
   - utter_oos_other
   - utter_faq_channels
   - utter_faq_community_size
@@ -236,6 +238,7 @@ actions:
   - utter_faq_what_is_slack
   - utter_faq_difference_nimbus_csai
   - utter_faq_opensource_cost
+  - utter_faq_languages
   - utter_chitchat_ask_builder
   - utter_chitchat_ask_howbuilt
   - utter_chitchat_ask_howdoing
