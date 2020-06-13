@@ -157,14 +157,14 @@ git clone https://github.com/mfekadu/nimbus
 ```
 RASA_X_VERSION=0.29.1
 RASA_VERSION=1.10.0
-RASA_TOKEN=<random_string>
-RASA_X_TOKEN=<random_string>
-PASSWORD_SALT=<random_string>
-JWT_SECRET=<random_string>
-RABBITMQ_PASSWORD=<random_string>
-DB_PASSWORD=<random_string>
-REDIS_PASSWORD=<random_string>
-RASA_X_PASSWORD=<random_string>  # used to login to rasa-x dashboard
+RASA_TOKEN=random_string
+RASA_X_TOKEN=random_string
+PASSWORD_SALT=random_string
+JWT_SECRET=random_string
+RABBITMQ_PASSWORD=random_string
+DB_PASSWORD=random_string
+REDIS_PASSWORD=random_string
+RASA_X_PASSWORD=random_string  # used to login to rasa-x dashboard
 ```
 
 > **NOTE:** The `PASSWORD_SALT` is used to hash passwords. If you change this variable after setting it, you will have to create new logins for everyone. ([Source: Rasa Docs][rasa-x-docs])
