@@ -15,12 +15,14 @@ sudo apt-get update -y
 sudo apt-get install -y python3
 sudo apt-get install -y python3-distutils || :  # if the package is not available and the command fails, do nothing,
                                                 # the distutils are already installed
+sudo apt-get install gcc libpq-dev -y
+sudo apt-get install python-dev python-pip -y
+sudo apt-get install python3-dev python3-pip python3-venv python3-wheel -y
 
 
-curl -O https://bootstrap.pypa.io/get-pip.py
-sudo python3 get-pip.py
-
-rm get-pip.py
+##curl -O https://bootstrap.pypa.io/get-pip.py
+#sudo python3 get-pip.py
+#rm get-pip.py
 
 sudo apt-get install -y \
     apt-transport-https \
@@ -32,7 +34,7 @@ sudo apt-get install -y \
 
 # echo >> ~/.bashrc && echo "alias python=python3" >> ~/.bashrc && echo >> ~/.bashrc 
 # echo "REMEMBER TO RUN `source ~/.bashrc` and `$HOME/.poetry/env`" 
-sudo ln /usr/bin/python3  /usr/bin/python
+# sudo ln /usr/bin/python3  /usr/bin/python || :
 
 #
 # poetry
@@ -60,7 +62,7 @@ sudo curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-
 
 sudo chmod +x /usr/local/bin/docker-compose
 
-sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose || :
 
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.26.0/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 
