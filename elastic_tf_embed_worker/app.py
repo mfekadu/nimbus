@@ -13,7 +13,6 @@ import tensorflow_hub as hub
 from sanic import Sanic, response
 from sanic_openapi import swagger_blueprint
 from typing import List, Text, Union, Tuple
-from collections import namedtuple
 from enum import Enum
 from elasticsearch import Elasticsearch
 from log_utils import log
