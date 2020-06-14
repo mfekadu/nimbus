@@ -76,16 +76,16 @@ services:
     # networks:
     #   - elastic
 
-  nimbus-elastic-nlp-worker:
+  nimbus-elastic-tf-embed-worker:
     # https://docs.docker.com/config/containers/start-containers-automatically/
     restart: always
-    build: ./elastic_nlp_worker
+    build: ./elastic_tf_embed_worker
     volumes:
-      - ./elastic_nlp_worker:/app
+      - ./elastic_tf_embed_worker:/app
     expose:
       - "9010"
     environment:
-      NIMBUS_ELASTIC_NLP_WORKER_PORT: "9010"
+      NIMBUS_ELASTIC_TF_EMBED_WORKER_PORT: "9010"
       ELASTIC_SEARCH_BASE_URL: "http://elasticsearch-service:9200"
       # TODO: come up with good index_name depending on data to be indexed
       ELASTIC_SEARCH_INDEX_NAME: "index_name"

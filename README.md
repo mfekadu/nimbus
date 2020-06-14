@@ -66,7 +66,7 @@ The following requirements are [based on Rasa-X documentation][rasa-x-docs]
 > - 6379 (redis)
 > - 9200 (elasticsearch-service)
 > - 9300 (elasticsearch-service)
-> - 9010 (nimbus-elastic-nlp-worker)
+> - 9010 (nimbus-elastic-tf-embed-worker)
 
 </details>
 
