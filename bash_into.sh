@@ -9,7 +9,7 @@ if [ ! "$@" ]; then
     echo "HERE IS A LIST OF CONTAINERS..."
     echo
 
-    docker container ls
+    docker container list --format "table {{.ID}}\t{{.Names}}\t{{.Command}}\t{{.Ports}}"
 
     exit
 fi
