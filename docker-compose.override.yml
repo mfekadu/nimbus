@@ -48,6 +48,32 @@ services:
       # hack into the redis
       - "6379:6379"
 
+  elasticsearch-service:
+    # https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
+    build: ./elastic
+    volumes:
+      - ./elastic:/elastic
+    environment:
+      # - node.name=es01
+      - cluster.name=elastic-docker-single-node
+      - discovery.type=single-node
+      # - discovery.seed_hosts=es02,es03
+      # - cluster.initial_master_nodes=es01,es02,es03
+      # - bootstrap.memory_lock=true
+      # 512 MB of memory ??
+      - "ES_JAVA_OPTS=-Xms512m -Xmx512m"
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    ports:
+      # map local-port :to: container-port
+      # https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-network.html
+      - 9200:9200
+      - 9300:9300
+    # networks:
+    #   - elastic
+
 volumes:
   db-volume:
     name: db-volume
