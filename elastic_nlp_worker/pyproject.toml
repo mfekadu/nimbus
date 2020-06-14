@@ -1,0 +1,19 @@
+[tool.poetry]
+name = "nimbus-elastic-nlp-worker"
+version = "0.1.0"
+description = "A simple nlp vector stuff extractor & indexer thing."
+authors = ["Michael Fekadu <mike.fekadu@gmail.com>"]
+license = "GPL-3.0"
+
+[tool.poetry.dependencies]
+python = "^3.6.8"
+pip = "^20.0.0"
+flask = "^1.1.2"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+flake8 = "^3.8.2"
+
+[build-system]
+requires = ["poetry>=1.0.3", "pip>=20.0.0"]
+build-backend = "poetry.masonry.api"

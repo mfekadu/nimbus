@@ -49,6 +49,8 @@ services:
       - "6379:6379"
 
   elasticsearch-service:
+    # https://docs.docker.com/config/containers/start-containers-automatically/
+    restart: always
     # https://www.elastic.co/guide/en/elasticsearch/reference/current/docker.html
     build: ./elastic
     volumes:
@@ -73,6 +75,26 @@ services:
       - 9300:9300
     # networks:
     #   - elastic
+
+  nimbus-elastic-nlp-worker:
+    # https://docs.docker.com/config/containers/start-containers-automatically/
+    restart: always
+    build: ./elastic_nlp_worker
+    volumes:
+      - ./elastic_nlp_worker:/app
+    expose:
+      - "9010"
+    environment:
+      NIMBUS_ELASTIC_NLP_WORKER_PORT: "9010"
+      ELASTIC_SEARCH_BASE_URL: "http://elasticsearch-service:9200"
+      # TODO: come up with good index_name depending on data to be indexed
+      ELASTIC_SEARCH_INDEX_NAME: "index_name"
+    ports:
+      - 9010:9010
+    depends_on:
+      # TODO: if talk to db, then this services depends on it too
+      # cannot index anything without elasticsearch running
+      - elasticsearch-service
 
 volumes:
   db-volume:
