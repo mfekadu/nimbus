@@ -3,7 +3,7 @@ name = "nimbus"
 version = "0.1.0"
 description = "the nimbus project, dockerized. "
 authors = ["Michael Fekadu <mike.fekadu@gmail.com>"]
-license = "GPL-2.0"
+license = "GPL-3.0"
 
 [tool.poetry.dependencies]
 python = "^3.6.8"
@@ -25,6 +25,7 @@ sklearn = "^0.0"
 rasa = "^1.10.1"
 irc = "^18.0.0"
 pydle = "^0.9.3"
+flask = "^1.1.2"
 
 [tool.poetry.dev-dependencies]
 black = "^19.10b0"
