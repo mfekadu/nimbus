@@ -6,15 +6,14 @@ already asynchronous.
 [1]: https://medium.com/@ahmed.nafies/is-sanic-python-web-framework-the-new-flask-2fe06b409fa3
 """
 
-import logging
-import os
+
 import asyncio
 import tensorflow as tf
 import tensorflow_hub as hub
 from sanic import Sanic, response
 from sanic_openapi import swagger_blueprint
 from typing import List, Text, Union
-
+from enum import Enum
 from elasticsearch import Elasticsearch
 from log_utils import log
 from sanic_validation import validate_json
@@ -53,7 +52,69 @@ for k, v in app.config.items():
 model = None
 
 
-EMBEDDING_REQUEST_SCHEMA = {"texts": {"type": ["string", "list"], "required": True}}
+class EMBEDDING_SCHEMA_KEYS(Enum):
+    NAM = "name"
+    CLS = "classification"
+    TXT = "text"
+
+
+EMBEDDING_REQUEST_SCHEMA = {
+    EMBEDDING_SCHEMA_KEYS.NAM.value: {"type": "string", "required": True},
+    EMBEDDING_SCHEMA_KEYS.CLS.value: {"type": "string", "required": True},
+    EMBEDDING_SCHEMA_KEYS.TXT.value: {"type": "string", "required": True},
+}
+"""
+Example:
+
+{
+    "name": "Something",
+    "classification": "question",
+    "text": "What is Something?"
+}
+"""
+
+EMBEDDING_BULK_REQUEST_SCHEMA = {
+    "texts": {
+        "type": "list",
+        "items": [
+            {
+                "type": "dict",
+                "schema": {
+                    EMBEDDING_SCHEMA_KEYS.NAM.value: {
+                        "type": "string",
+                        "required": True,
+                    },
+                    EMBEDDING_SCHEMA_KEYS.CLS.value: {
+                        "type": "string",
+                        "required": True,
+                    },
+                    EMBEDDING_SCHEMA_KEYS.TXT.value: {
+                        "type": "string",
+                        "required": True,
+                    },
+                },
+            }
+        ],
+        "required": True,
+    }
+}
+"""
+Example:
+{
+    "texts": [
+        {
+            "name": "Something",
+            "classification": "question",
+            "text": "What is Something?",
+        },
+        {
+            "name": "AnotherThing",
+            "classification": "question",
+            "text": "When did Something become AnotherThing?",
+        },
+    ]
+}
+"""
 
 
 def initialize_model(module_url):
@@ -106,12 +167,23 @@ async def stream_foo_bar(request):
 
 @app.post("/embed")
 @validate_json(EMBEDDING_REQUEST_SCHEMA)
-async def handle_embed_request(request):
-    """embed the given texts"""
+async def embed(request):
+    """Returns the universal_sentence_encoder embeddings of the given text"""
+    log(f"request.json: {request.json}")
+    text = request.json.get("text", None)
+    e = get_embeddings_tensor(text)
+    return response.json(e.numpy().tolist())
+
+
+@app.post("/embed_bulk")
+@validate_json(EMBEDDING_BULK_REQUEST_SCHEMA)
+async def embed_bulk(request):
+    """Returns the universal_sentence_encoder embeddings of the given list of text"""
     log(f"text: {request.json}")
-    texts = request.json.get("texts", None)
-    if texts is None:
-        raise ValueError("need be Union[List[Text], Text]")
+    dicts = request.json.get("texts", [])
+    # names = [d.get(EMBEDDING_SCHEMA_KEYS.NAM.value) for d in dicts]
+    # classes = [d.get(EMBEDDING_SCHEMA_KEYS.CLS.value) for d in dicts]
+    texts = [d.get(EMBEDDING_SCHEMA_KEYS.TXT.value) for d in dicts]
     e = get_embeddings_tensor(texts)
     return response.json(e.numpy().tolist())
 
