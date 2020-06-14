@@ -29,7 +29,9 @@ sudo apt-get install python3-dev python3-pip python3-venv python3-wheel -y
 #sudo python3 get-pip.py
 #rm get-pip.py
 
-sudo pip install --upgrade pip
+sudo pip install --upgrade pip  || : # 
+sudo pip2 install --upgrade pip || : #
+sudo pip3 install --upgrade pip || : #
 
 sudo apt-get install -y \
     apt-transport-https \
