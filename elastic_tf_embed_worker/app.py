@@ -12,7 +12,8 @@ import tensorflow as tf
 import tensorflow_hub as hub
 from sanic import Sanic, response
 from sanic_openapi import swagger_blueprint
-from typing import List, Text, Union
+from typing import List, Text, Union, Tuple
+from collections import namedtuple
 from enum import Enum
 from elasticsearch import Elasticsearch
 from log_utils import log
@@ -38,6 +39,8 @@ default_settings = {
 
 
 SUCCESS = 200
+SUCCESS_DICT = {"completed": True}
+FAILURE_DICT = {"completed": False}
 
 app = Sanic(__name__)
 app.blueprint(swagger_blueprint)
@@ -52,16 +55,37 @@ for k, v in app.config.items():
 model = None
 
 
-class EMBEDDING_SCHEMA_KEYS(Enum):
+class STD_KEYS(Enum):
+    """
+    An enum of standard keys to keep things consistent
+    """
+
+    IDX = "index_name"
     NAM = "name"
     CLS = "classification"
     TXT = "text"
 
 
-EMBEDDING_REQUEST_SCHEMA = {
-    EMBEDDING_SCHEMA_KEYS.NAM.value: {"type": "string", "required": True},
-    EMBEDDING_SCHEMA_KEYS.CLS.value: {"type": "string", "required": True},
-    EMBEDDING_SCHEMA_KEYS.TXT.value: {"type": "string", "required": True},
+class EMBED_SCHEMA_KEYS(Enum):
+    NAM = STD_KEYS.NAM.value
+    CLS = STD_KEYS.CLS.value
+    TXT = STD_KEYS.TXT.value
+
+
+class INDEX_SCHEMA_KEYS(Enum):
+    IDX = STD_KEYS.IDX.value
+    NAM = STD_KEYS.NAM.value
+    CLS = STD_KEYS.CLS.value
+    TXT = STD_KEYS.TXT.value
+
+
+INDEX_OR_EMBED_SCHEMA_KEYS = STD_KEYS
+
+
+EMBED_REQUEST_SCHEMA = {
+    EMBED_SCHEMA_KEYS.NAM.value: {"type": "string", "required": True},
+    EMBED_SCHEMA_KEYS.CLS.value: {"type": "string", "required": True},
+    EMBED_SCHEMA_KEYS.TXT.value: {"type": "string", "required": True},
 }
 """
 Example:
@@ -73,28 +97,10 @@ Example:
 }
 """
 
-EMBEDDING_BULK_REQUEST_SCHEMA = {
+EMBED_BULK_REQUEST_SCHEMA = {
     "texts": {
         "type": "list",
-        "items": [
-            {
-                "type": "dict",
-                "schema": {
-                    EMBEDDING_SCHEMA_KEYS.NAM.value: {
-                        "type": "string",
-                        "required": True,
-                    },
-                    EMBEDDING_SCHEMA_KEYS.CLS.value: {
-                        "type": "string",
-                        "required": True,
-                    },
-                    EMBEDDING_SCHEMA_KEYS.TXT.value: {
-                        "type": "string",
-                        "required": True,
-                    },
-                },
-            }
-        ],
+        "items": [{"type": "dict", "schema": EMBED_REQUEST_SCHEMA}],
         "required": True,
     }
 }
@@ -117,6 +123,22 @@ Example:
 """
 
 
+INDEX_REQUEST_SCHEMA = {
+    INDEX_SCHEMA_KEYS.IDX.value: {"type": "string", "required": True},
+    INDEX_SCHEMA_KEYS.NAM.value: {"type": "string", "required": True},
+    INDEX_SCHEMA_KEYS.CLS.value: {"type": "string", "required": True},
+    INDEX_SCHEMA_KEYS.TXT.value: {"type": "string", "required": True},
+}
+
+INDEX_BULK_REQUEST_SCHEMA = {
+    "texts": {
+        "type": "list",
+        "items": [{"type": "dict", "schema": INDEX_REQUEST_SCHEMA}],
+        "required": True,
+    }
+}
+
+
 def initialize_model(module_url):
     """Returns a Tensorflow model given the tfhub url."""
     # TODO: make this asynchronous? download can take a while.
@@ -127,15 +149,6 @@ def initialize_model(module_url):
     model = hub.load(module_url)
     log("done!")
     return model
-
-
-def get_embeddings_tensor(texts: Union[List[Text], Text]):
-    """Returns a tf.Tensor from the model applied to the given text """
-    log()
-    if not isinstance(texts, list) and not isinstance(texts, str):
-        raise ValueError(f"expected list or str but got {type(texts)}")
-    texts = [texts] if type(texts) == str else texts
-    return model(texts)
 
 
 @app.get("/")
@@ -165,27 +178,90 @@ async def stream_foo_bar(request):
     return response.stream(streaming_fn, content_type="text/plain")
 
 
+def _get_embeddings_tensor(texts: Union[List[Text], Text]):
+    """Returns a tf.Tensor from the model applied to the given text """
+    log()
+    if not isinstance(texts, list) and not isinstance(texts, str):
+        raise ValueError(f"expected list or str but got {type(texts)}")
+    texts = [texts] if type(texts) == str else texts
+    return model(texts)
+
+
+def _embed_as_list(texts: Union[List[Text], Text]) -> List[float]:
+    """Returns a List from the model applied to the given text """
+    log()
+    return _get_embeddings_tensor(texts).numpy().tolist()
+
+
+def _extract_data(data: dict) -> Tuple:
+    i = data.get(INDEX_OR_EMBED_SCHEMA_KEYS.IDX.value)
+    n = data.get(INDEX_OR_EMBED_SCHEMA_KEYS.NAM.value)
+    c = data.get(INDEX_OR_EMBED_SCHEMA_KEYS.CLS.value)
+    t = data.get(INDEX_OR_EMBED_SCHEMA_KEYS.TXT.value)
+    e = _embed_as_list(t)
+    return e, i, n, c, t
+
+
+def _extract_bulk_request_data(request) -> Tuple:
+    """
+    Given a Sanic request,
+    Return a tuple (embeddings, indexes, names, classifications, texts)
+    Helps both /index_bulk and /embed_bulk routes
+    """
+    dicts = request.json.get("texts", [])
+    indexes, names, classifications, texts, embeddings = [], [], [], [], []
+    for d in dicts:
+        e, i, n, c, t = _extract_data(d)
+        indexes.append(i)
+        names.append(n)
+        classifications.append(c)
+        texts.append(t)
+        embeddings.append(e)
+    return (embeddings, indexes, names, classifications, texts)
+
+
 @app.post("/embed")
-@validate_json(EMBEDDING_REQUEST_SCHEMA)
+@validate_json(EMBED_REQUEST_SCHEMA)
 async def embed(request):
     """Returns the universal_sentence_encoder embeddings of the given text"""
     log(f"request.json: {request.json}")
-    text = request.json.get("text", None)
-    e = get_embeddings_tensor(text)
-    return response.json(e.numpy().tolist())
+    e, _, _, _, _ = _extract_data(request.json)
+    return response.json(e)
 
 
 @app.post("/embed_bulk")
-@validate_json(EMBEDDING_BULK_REQUEST_SCHEMA)
+@validate_json(EMBED_BULK_REQUEST_SCHEMA)
 async def embed_bulk(request):
     """Returns the universal_sentence_encoder embeddings of the given list of text"""
     log(f"text: {request.json}")
-    dicts = request.json.get("texts", [])
-    # names = [d.get(EMBEDDING_SCHEMA_KEYS.NAM.value) for d in dicts]
-    # classes = [d.get(EMBEDDING_SCHEMA_KEYS.CLS.value) for d in dicts]
-    texts = [d.get(EMBEDDING_SCHEMA_KEYS.TXT.value) for d in dicts]
-    e = get_embeddings_tensor(texts)
-    return response.json(e.numpy().tolist())
+    e, _, _, _, _ = _extract_bulk_request_data(request)
+    return response.json(e)
+
+
+@app.post("/index")
+@validate_json(INDEX_REQUEST_SCHEMA)
+async def index(request):
+    """
+    Given text and metadata,
+    embed it with universal_sentence_encoder,
+    then post to Elastic Search index
+    """
+    e, i, n, c, t = _extract_data(request.json)
+    # now do the indexing
+    return response.json(SUCCESS_DICT)
+
+
+@app.post("/index_bulk")
+@validate_json(INDEX_BULK_REQUEST_SCHEMA)
+async def index_bulk(request):
+    """
+    Given text and metadata,
+    embed it with universal_sentence_encoder,
+    then post to Elastic Search index
+    """
+    e, i, n, c, t = _extract_bulk_request_data(request)
+    # now do the indexing
+    return response.json(SUCCESS_DICT)
 
 
 if __name__ == "__main__":
