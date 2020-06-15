@@ -1,11 +1,18 @@
 #!/bin/bash
-set -Eeuo pipefail
 
-#######################################
+######################################################################################
 #
 # installing pip and python and docker and poetry 
 #
-#######################################
+# if the comments are insufficient, try `explainshell`
+# 
+# https://explainshell.com/explain?cmd=set+-Eeuo+pipefail
+# 
+# - source: https://github.com/idank/explainshell 
+#
+######################################################################################
+
+set -Eeuo pipefail
 
 source /etc/os-release
 
@@ -75,6 +82,12 @@ sudo ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose || :
 
 sudo curl -L https://raw.githubusercontent.com/docker/compose/1.26.0/contrib/completion/bash/docker-compose -o /etc/bash_completion.d/docker-compose
 
+#
+# misc
+#
 
-
-
+echo "now some nice to haves zsh && oh-my-zsh"
+echo "https://ohmyz.sh"
+echo 
+sudo apt install -y zsh
+yes | sudo sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
