@@ -6,7 +6,7 @@ already asynchronous.
 [1]: https://medium.com/@ahmed.nafies/is-sanic-python-web-framework-the-new-flask-2fe06b409fa3
 """
 
-
+import random
 import asyncio
 import tensorflow as tf
 import tensorflow_hub as hub
@@ -14,7 +14,7 @@ from sanic import Sanic, response
 from sanic_openapi import swagger_blueprint
 from typing import List, Text, Union, Tuple
 from enum import Enum
-from elasticsearch import Elasticsearch
+from elasticsearch import AsyncElasticsearch
 from log_utils import log
 from sanic_validation import validate_json
 
@@ -25,8 +25,10 @@ hub.logging.set_verbosity("DEBUG")
 default_settings = {
     "ELASTIC_TF_EMBED_WORKER_PORT": 9010,
     "ELASTIC_TF_EMBED_WORKER_DEBUG": False,
-    "ELASTIC_SEARCH_BASE_URL": None,
-    "ELASTIC_SEARCH_INDEX_NAME": None,
+    "ELASTIC_SEARCH_SCHEME": "http",
+    "ELASTIC_SEARCH_HOST": "localhost",
+    "ELASTIC_SEARCH_PORT": 9200,
+    "ELASTIC_SEARCH_INDEX_NAME": "default_index",
     # These two encoders are 2 GB collectively.
     # Large one uses Transformer architecture.
     # Regular one used Deep Averaging Network (DAN)
@@ -42,16 +44,9 @@ SUCCESS_DICT = {"completed": True}
 FAILURE_DICT = {"completed": False}
 
 app = Sanic(__name__)
-app.blueprint(swagger_blueprint)
-# https://sanic.readthedocs.io/en/latest/sanic/config.html#from-environment-variables
-# reads env vars start with NIMBUS_ and trims it off
-app.config.update(default_settings)
-app.config.load_environment_vars(prefix="NIMBUS_")
-for k, v in app.config.items():
-    log(f"{k}: {v}")
-
 
 model = None
+es = None
 
 
 class STD_KEYS(Enum):
@@ -153,7 +148,15 @@ def initialize_model(module_url):
 @app.get("/")
 async def hello(request):
     log()
-    return response.json({"message": "Hello, Friend!"})
+    friendly_address = [
+        "Friend 🤗",
+        "Pal 👋",
+        "Beautiful 😊",
+        "Neighbor 🤗",
+        "Human 🤖🧬",
+        "🌍",
+    ]
+    return response.json({"message": f"Hello, {random.choice(friendly_address)}!"})
 
 
 @app.route("/streaming")
@@ -263,13 +266,92 @@ async def index_bulk(request):
     return response.json(SUCCESS_DICT)
 
 
-if __name__ == "__main__":
+async def setup_index(
+    es: AsyncElasticsearch, index_name: str, mapping: dict = dict()
+) -> bool:
+    """
+    Asynchronously setup the index_name with the given mapping dictionary
 
-    PORT = app.config.ELASTIC_TF_EMBED_WORKER_PORT
-    DEBUG = app.config.ELASTIC_TF_EMBED_WORKER_DEBUG
+    Resources:
+    * https://elasticsearch-py.readthedocs.io/en/master/async.html
+    """
+    log(info=True)
+    if not isinstance(es, AsyncElasticsearch):
+        raise ValueError("elasticsearch not initialized")
+    if not await es.ping():
+        raise ValueError("elasticsearch service is not healthy")
 
+    # 400 means means resource_already_exists_exception
+    res = await es.indices.create(index=index_name, body=mapping, ignore=[400])
+
+    return {**SUCCESS_DICT, **res}
+
+
+# https://sanic.readthedocs.io/en/latest/sanic/middleware.html?highlight=listener
+@app.middleware("request")
+async def print_on_request(request):
+    print("I print when a request is received by the server")
+
+
+@app.middleware("response")
+async def print_on_response(request, response):
+    print("I print when a response is returned by the server")
+
+
+# https://sanic.readthedocs.io/en/latest/sanic/middleware.html?highlight=listener#listeners
+@app.listener("before_server_start")
+async def print_before_server_start(app, loop):
+    print("print_before_server_start")
+    print("loop", loop)
+
+    # SETUP TENSORFLOW MODEL
     initialize_model(app.config.MODULE_URL)
 
-    client = Elasticsearch()
+    # SETUP CONNECTION TO ELASTICSEARCH
+    es = AsyncElasticsearch(
+        # could be multiple nodes
+        hosts=[
+            {
+                "host": app.config.ELASTIC_SEARCH_HOST,
+                "port": int(app.config.ELASTIC_SEARCH_PORT),
+            }
+        ],
+        scheme=app.config.ELASTIC_SEARCH_SCHEME,
+    )
 
+    # SETUP ELASTICSEARCH INDICES
+    await setup_index(es=es, index_name=app.config.ELASTIC_SEARCH_INDEX_NAME)
+
+
+@app.listener("after_server_start")
+async def print_after_server_start(app, loop):
+    print("print_after_server_start")
+
+
+@app.listener("before_server_stop")
+async def print_before_server_stop(app, loop):
+    print("print_before_server_stop")
+    await es.close()
+
+
+@app.listener("after_server_stop")
+async def print_after_server_stop(app, loop):
+    print("print_after_server_stop")
+
+
+if __name__ == "__main__":
+    # SETUP DOCUMENTATION
+    app.blueprint(swagger_blueprint)
+
+    # SETUP ENVIRONMENT VARIABLES
+    # https://sanic.readthedocs.io/en/latest/sanic/config.html#from-environment-variables
+    # reads env vars start with NIMBUS_ and trims it off
+    app.config.update(default_settings)
+    app.config.load_environment_vars(prefix="NIMBUS_")
+    for k, v in app.config.items():
+        log(f"{k}: {v}", info=True)
+
+    # RUN THE SERVER
+    PORT = app.config.ELASTIC_TF_EMBED_WORKER_PORT
+    DEBUG = app.config.ELASTIC_TF_EMBED_WORKER_DEBUG
     app.run(debug=DEBUG, host="0.0.0.0", port=PORT)

@@ -86,9 +86,11 @@ services:
       - "9010"
     environment:
       NIMBUS_ELASTIC_TF_EMBED_WORKER_PORT: "9010"
-      NIMBUS_ELASTIC_SEARCH_BASE_URL: "http://elasticsearch-service:9200"
+      NIMBUS_ELASTIC_SEARCH_SCHEME: "http"
+      NIMBUS_ELASTIC_SEARCH_HOST: "elasticsearch-service"
+      NIMBUS_ELASTIC_SEARCH_PORT: 9200
       # TODO: come up with good index_name depending on data to be indexed
-      NIMBUS_ELASTIC_SEARCH_INDEX_NAME: "index_name"
+      NIMBUS_ELASTIC_SEARCH_INDEX_NAME: "default_index"
     ports:
       - 9010:9010
     depends_on:
