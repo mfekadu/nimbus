@@ -90,7 +90,7 @@ services:
       NIMBUS_ELASTIC_SEARCH_HOST: "elasticsearch-service"
       NIMBUS_ELASTIC_SEARCH_PORT: 9200
       # TODO: come up with good index_name depending on data to be indexed
-      NIMBUS_ELASTIC_SEARCH_INDEX_NAME: "default_index"
+      NIMBUS_ELASTIC_SEARCH_DEFAULT_INDEX: "default_index"
     ports:
       - 9010:9010
     depends_on:

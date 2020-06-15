@@ -1,0 +1,44 @@
+from sanic import Sanic
+from sanic import response
+import time
+#import threading
+
+import asyncio
+
+app = Sanic(__name__)
+
+mytime=0
+
+#def updateTime():
+#	global mytime
+#	mytime = int(round(time.time() * 1000))
+#	print("updateTime",mytime)
+#	threading.Timer(1, updateTime).start()
+#
+#updateTime()
+
+
+# https://github.com/huge-success/sanic/issues/1302
+#
+# this will increment only once
+
+async def update_time():
+	global mytime
+	mytime = mytime + 1
+
+
+@app.listener("after_server_start")
+async def on_server_start(app, loop):
+	asyncio.ensure_future(update_time(), loop=loop)
+
+
+
+
+@app.route("/")
+async def test(request):
+    return response.json({"test": True, "mytime":mytime})
+
+
+if __name__ == '__main__':
+    app.run(host="0.0.0.0", port=1302, workers=2)
+
