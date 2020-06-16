@@ -270,3 +270,18 @@ GET _search
     }
 }
 ```
+
+# Figure out a way to keep it DRY (dont repeat yourself)
+
+## There's utility code like `color_utils` and `log_utils`
+
+For now it's okay, but soon enough a refactoring will be due
+
+Resources
+
+- https://stackoverflow.com/questions/60485090/shared-builder-containers-in-docker-or-docker-compose
+- https://medium.com/@sanjaypojo/docker-compose-sharing-code-between-services-9decd81654be
+- https://serverfault.com/questions/706736/sharing-code-base-between-docker-containers
+- https://stackoverflow.com/questions/42958573/docker-compose-recommended-way-to-use-data-containers
+- https://docs.docker.com/compose/extends/
+- https://stackoverflow.com/questions/44251094/i-want-to-share-code-content-across-several-containers-using-docker-compose-volu
