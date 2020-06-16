@@ -76,6 +76,22 @@ services:
     # networks:
     #   - elastic
 
+  kibana:
+    # https://docs.docker.com/config/containers/start-containers-automatically/
+    restart: always
+    # https://www.elastic.co/guide/en/kibana/7.7/docker.html
+    # https://www.docker.elastic.co/r/kibana/kibana:7.7.0
+    image: docker.elastic.co/kibana/kibana:7.7.0
+    # volumes:
+    #   - ./kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+    expose:
+      - "5601"
+    ports:
+      - 5601:5601
+    environment:
+      SERVER_NAME: kibana
+      ELASTICSEARCH_HOSTS: http://elasticsearch-service:9200
+
   nimbus-elastic-tf-embed-worker:
     # https://docs.docker.com/config/containers/start-containers-automatically/
     restart: always
