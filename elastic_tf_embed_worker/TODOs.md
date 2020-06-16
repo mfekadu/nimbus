@@ -30,11 +30,9 @@ done!
 
 </details>
 
-
-
 # resolve the tfhub download caching / file lock
 
-1. one solution could be to have a separate `model-downloader-service` that shares a volume with anyone that needs tfhub models because it seems like the issue occurs when I `./restart`. That `model-downloader-service` would be a sinlge node. 
+1. one solution could be to have a separate `model-downloader-service` that shares a volume with anyone that needs tfhub models because it seems like the issue occurs when I `./restart`. That `model-downloader-service` would be a sinlge node.
 
 2. another solution could be to download during `docker build` -- that way we can rely on docker to cache for us rather than tensorflow at runtime. This solution kind of makes more sense since the model does not change much at runtime.
 
@@ -58,9 +56,8 @@ INFO:absl:Module 'https://tfhub.dev/google/universal-sentence-encoder/4' already
 
 </details>
 
-
-
 ### okay so... implemented `#2` but now a `connection reset by peer` may happen
+
 ### solution is to just build again
 
 <details>
@@ -127,8 +124,8 @@ ERROR: Service 'nimbus-elastic-tf-embed-worker' failed to build: The command '/b
 
 # document the following
 
-
 ## Kibana is cool
+
 https://www.elastic.co/kibana
 
 ## delete default_index
@@ -157,24 +154,23 @@ PUT /default_index
 PUT /default_index/_mappings
 {
     "properties": {
-        "name": {
-            "type": "text",
-            "fields": {
-                "keyword": {
-                    "type": "keyword",
-                    "ignore_above": 256
-                }
+        "doc": {
+            "properties": {
+                "classification": {
+                    "type": "text",
+                    "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
+                },
+                "embedding": {"type": "dense_vector", "dims": 512},
+                "name": {
+                    "type": "text",
+                    "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
+                },
+                "text": {
+                    "type": "text",
+                    "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
+                },
+                "timestamp": {"type": "date"},
             }
-        },
-        "classification": {
-            "type": "text"
-        },
-        "text": {
-            "type": "text"
-        },
-        "embedding": {
-            "type": "dense_vector",
-            "dims": 512
         }
     }
 }
@@ -215,12 +211,11 @@ POST /default_index/_doc
 }
 ```
 
-
 # get schema information about the default_index
+
 ```
 GET /default_index/
 ```
-
 
 ## searches the default_index in a Google-like way
 
@@ -251,20 +246,17 @@ GET /default_index/_search
 }
 ```
 
-
-
 # refresh
+
 # https://www.elastic.co/guide/en/elasticsearch/reference/current/indices-refresh.html
+
 ```
 GET /default_index/_refresh
 ```
 
-
 ```
 GET /non_exist_index/_refresh
 ```
-
-
 
 ## searches everything
 

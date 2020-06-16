@@ -15,7 +15,7 @@ from sanic_openapi import swagger_blueprint
 from typing import List, Text, Union, Tuple, Optional
 from enum import Enum
 from elasticsearch import AsyncElasticsearch
-from elasticsearch.helpers import async_bulk
+from elasticsearch.helpers import async_streaming_bulk
 from log_utils import log
 from sanic_validation import validate_json
 from functools import wraps
@@ -159,6 +159,29 @@ INDEX_BULK_REQUEST_SCHEMA = {
     }
 }
 
+INDEX_MAPPINGS = {
+    "properties": {
+        "doc": {
+            "properties": {
+                "classification": {
+                    "type": "text",
+                    "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
+                },
+                "embedding": {"type": "dense_vector", "dims": 512},
+                "name": {
+                    "type": "text",
+                    "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
+                },
+                "text": {
+                    "type": "text",
+                    "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
+                },
+                "timestamp": {"type": "date"},
+            }
+        }
+    }
+}
+
 
 @app.get("/")
 async def hello(request):
@@ -201,7 +224,14 @@ def _get_embeddings_tensor(texts: Union[List[Text], Text]):
     if not isinstance(texts, list) and not isinstance(texts, str):
         raise ValueError(f"expected list or str but got {type(texts)}")
     texts = [texts] if type(texts) == str else texts
-    return app.model(texts)
+    # we pass in to the model only a single sentence
+    tensor = app.model(texts)
+    assert len(tensor) == 1, "weird tensorflow must have changed the output shape??"
+    # so this function can expect to only ever return a single embedding
+    tensor = tensor[0]
+    # TODO: consider runtime differce of bulk passing sentences into tensorflow vs one-by-one  # noqa
+    # TODO: I suspect tensorflow can take advantage of GPU to parallelize. It's ok for now.    # noqa
+    return tensor
 
 
 def _embed_as_list(texts: Union[List[Text], Text]) -> List[float]:
@@ -270,7 +300,7 @@ async def embed_bulk(request):
 
 async def index_and_log(es: AsyncElasticsearch, index_name: str, doc: str):
     log()
-    res = es.index(index=index_name, body=doc)
+    res = await es.index(index=index_name, body=doc)
     log(f"called es.index ( {index_name} , body=`doc` ) and got res = {res}", info=True)
     return res
 
@@ -301,10 +331,12 @@ async def index(request):
 
     default_index_name = app.config.ELASTIC_SEARCH_DEFAULT_INDEX
 
+    res = dict()
+
     # now do the indexing
     # https://elasticsearch-py.readthedocs.io/en/master/#example-usage
-    await create_index_if_not_exist(app.es, x_index_name)
-    await create_index_if_not_exist(app.es, default_index_name)
+    res["res1"] = await create_index_if_not_exist(app.es, x_index_name)
+    res["res2"] = await create_index_if_not_exist(app.es, default_index_name)
 
     doc = {
         DEFAULT_INDEX_MAPPING_KEYS.CLS.value: x_class,
@@ -314,12 +346,12 @@ async def index(request):
         DEFAULT_INDEX_MAPPING_KEYS.EMD.value: x_embedding,
     }
 
-    await index_and_log(es=app.es, index_name=x_index_name, doc=doc)
-    await index_and_log(es=app.es, index_name=default_index_name, doc=doc)
+    res["res3"] = await index_and_log(es=app.es, index_name=x_index_name, doc=doc)
+    res["res4"] = await index_and_log(es=app.es, index_name=default_index_name, doc=doc)
 
-    await refresh_if_possible(index_name=x_index_name)
-    await refresh_if_possible(index_name=default_index_name)
-    return response.json(SUCCESS_DICT)
+    res["res5"] = await refresh_if_possible(index_name=x_index_name)
+    res["res6"] = await refresh_if_possible(index_name=default_index_name)
+    return response.json({**SUCCESS_DICT, **res}, SUCCESS)
 
 
 @app.post("/index_bulk")
@@ -337,11 +369,9 @@ async def index_bulk(request):
     default_index_name = app.config.ELASTIC_SEARCH_DEFAULT_INDEX
     index_names = [default_index_name]
 
-    gen_result = {"num_docs": 0}
-
     # https://elasticsearch-py.readthedocs.io/en/master/async.html#elasticsearch.helpers.async_bulk
     # https://elasticsearch-py.readthedocs.io/en/master/helpers.html#bulk-helpers
-    async def _gen(gen_result):
+    async def _gen():
         for (
             x_embedding,
             x_index_name,
@@ -365,24 +395,15 @@ async def index_bulk(request):
                     DEFAULT_INDEX_MAPPING_KEYS.EMD.value: x_embedding,
                 },
             }
-            yield {
-                # ALSO default_index_name
-                "_index": default_index_name,
-                # tell async_bulk that this should be an index operation
-                # though, default is index
-                "_op_type": "index",
-                "doc": {
-                    DEFAULT_INDEX_MAPPING_KEYS.CLS.value: x_class,
-                    DEFAULT_INDEX_MAPPING_KEYS.NAM.value: x_name,
-                    DEFAULT_INDEX_MAPPING_KEYS.TXT.value: x_text,
-                    DEFAULT_INDEX_MAPPING_KEYS.TIM.value: datetime.now(),
-                    DEFAULT_INDEX_MAPPING_KEYS.EMD.value: x_embedding,
-                },
-            }
-            gen_result["num_docs"] += 1
         return
 
-    await async_bulk(app.es, _gen(gen_result))
+    num_docs = 0
+    # await async_bulk(app.es, _gen())
+    async for ok, result in async_streaming_bulk(app.es, _gen()):
+        num_docs += 1
+        action, result = result.popitem()
+        if not ok:
+            log(f"failed to {action} docuemnt {result}", info=True)
 
     # A refresh makes all operations performed on an index
     # since the last refresh available for search.
@@ -390,7 +411,6 @@ async def index_bulk(request):
     for n in index_names:
         await refresh_if_possible(index_name=n)
 
-    num_docs = gen_result["num_docs"]
     log(f"finished indexing {num_docs} docs", info=True)
 
     # now do the indexing
@@ -414,6 +434,11 @@ async def es_health_check(es: AsyncElasticsearch) -> bool:
     return True
 
 
+async def set_default_mappings(es: AsyncElasticsearch, index_name: str):
+    log(info=True)
+    return await es.indices.put_mapping(index=index_name, body=INDEX_MAPPINGS)
+
+
 async def create_index_if_not_exist(
     es: AsyncElasticsearch, index_name: str, mapping: Optional[dict] = None
 ) -> bool:
@@ -429,6 +454,10 @@ async def create_index_if_not_exist(
 
     # 400 means means resource_already_exists_exception
     res = await es.indices.create(index=index_name, body=mapping, ignore=[400])
+
+    res["set_default_mappings"] = await set_default_mappings(
+        es=es, index_name=index_name
+    )
 
     return {**SUCCESS_DICT, **res}
 
