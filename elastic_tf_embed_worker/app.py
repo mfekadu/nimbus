@@ -21,7 +21,7 @@ from sanic_validation import validate_json
 from functools import wraps
 from datetime import datetime
 from model_utils import initialize_model
-
+from itertools import chain, groupby
 from app_config import default_settings
 
 
@@ -100,7 +100,49 @@ class INDEX_SCHEMA_KEYS(Enum):
     TXT = STD_KEYS.TXT.value
 
 
-INDEX_OR_EMBED_SCHEMA_KEYS = STD_KEYS
+
+
+def enum_left_join(e1: Enum, e2: Enum, new_enum_name: str = None) -> Enum:
+    """
+    Given two Enums, return an enum that is the left_join of both enums.
+
+    Resource:
+    * https://stackoverflow.com/questions/33679930/how-to-extend-python-enum
+    """
+    new_enum_name = new_enum_name or f"{e1.__name__}_OR_{e2.__name__}"
+    # the following will be [e1_1, e2_1, e1_2, e2_2, e1_3, e2_3, ..., e1_n, e2_n]
+    left_first_chain_generator = ((x.name, x.value) for x in chain(e1, e2))
+    sorted_left_first = sorted(left_first_chain_generator, key=lambda tup: tup[0])
+    left_first_enum_keys = [
+        list(v)[0] for _, v in groupby(sorted_left_first, lambda z: z[0])
+    ]
+    return Enum(new_enum_name, left_first_enum_keys)
+
+
+class TEST_1(Enum):
+    A = 1
+    B = 2
+    C = 3
+
+
+class TEST_2(Enum):
+    B = 4
+    C = 5
+    D = 6
+
+
+output = enum_left_join(TEST_1, TEST_2)
+assert output.__name__ == f"{TEST_1.__name__}_OR_{TEST_2.__name__}"
+assert output.A.value == 1
+assert output.B.value == 2
+assert output.C.value == 3
+assert output.D.value == 6
+
+INDEX_OR_EMBED_SCHEMA_KEYS = enum_left_join(
+    INDEX_SCHEMA_KEYS, EMBED_SCHEMA_KEYS, "INDEX_OR_EMBED_SCHEMA_KEYS"
+)
+
+
 
 
 EMBED_REQUEST_SCHEMA = {
