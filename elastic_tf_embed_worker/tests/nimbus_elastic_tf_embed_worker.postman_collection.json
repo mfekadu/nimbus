@@ -1,0 +1,354 @@
+{
+	"info": {
+		"_postman_id": "1a818ba4-fab2-4862-808a-fe56b51d01df",
+		"name": "nimbus_elastic_tf_embed_worker",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hi",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b871acc0-b532-45e8-90a1-4e0399a51a6a",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body contains string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"Hello\");",
+							"});",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}",
+					"host": [
+						"{{base_url}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "embed",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4b76825a-e466-4f3c-b2b2-4a9f3f0f8df8",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+							"});",
+							"var schema = {",
+							"  \"items\": {",
+							"    \"type\": \"number\"",
+							"  }",
+							"};",
+							"pm.test('Schema is valid (list of numbers)', function() {",
+							"  pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;",
+							"});",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"banana\",\n    \"classification\": \"word\",\n    \"name\": \"ok\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{embed}}",
+					"host": [
+						"{{embed}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "embed bulk",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "3d5a84f1-3fef-4af8-ba73-354c346b112b",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+							"});",
+							"var schema = {",
+							"  \"items\": {",
+							"    \"items\": {",
+							"        \"type\": \"number\"",
+							"    }",
+							"  }",
+							"};",
+							"pm.test('Schema is valid (list of list of numbers)', function() {",
+							"  pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;",
+							"});",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"texts\": [\n        {\n        \"text\":\"I ate my breakfast yesterday.\",\n        \"classification\":\"sentence\",\n        \"name\":\"wow\"\n    },\n    {\n        \"text\":\"What is the meaning of life?\",\n        \"classification\":\"question\",\n        \"name\":\"ok\"\n    },\n    {\n        \"text\":\"apple\",\n        \"classification\":\"word\",\n        \"name\":\"cool\"\n    }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/embed_bulk",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"embed_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "swagger",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "b03514cf-6182-4cba-91e1-87895582cac0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{swagger}}",
+					"host": [
+						"{{swagger}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "streaming",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "66bf85fc-b05f-40a8-9656-9265075e19a0",
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"pm.test(\"Body is correct\", function () {",
+							"    pm.response.to.have.body(\"foo....bar\");",
+							"});",
+							"pm.test(\"Response time is less than 3000ms (because stream intentionally sleep)\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/streaming",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"streaming"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "index",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "64a573b8-47ef-47be-8d93-d84952304877",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+							"});",
+							"pm.test(\"completed === true\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.completed).to.eql(true);",
+							"});",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"index_name\": \"index_name\",\n    \"text\": \"banana\",\n    \"classification\": \"word\",\n    \"name\": \"ok\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/index",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "index sentence",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "d9641cd2-7a3d-42b4-b807-cd4ecccb68bd",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+							"});",
+							"pm.test(\"completed === true\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.completed).to.eql(true);",
+							"});",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"index_name\": \"index_name\",\n    \"text\": \"Hello my name is Index Sentence.\",\n    \"classification\": \"sentence\",\n    \"name\": \"wowcool\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/index",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"index"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "index bulk",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "4bc47a2f-f996-4ad1-9c5e-d9280e059c10",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+							"});",
+							"pm.test(\"completed === true\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.completed).to.eql(true);",
+							"});",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"texts\": [\n        {\n            \"index_name\": \"index_name\",\n            \"text\": \"banana\",\n            \"classification\": \"word\",\n            \"name\": \"sure\"\n        },\n        {\n            \"index_name\": \"index_name\",\n            \"text\": \"apples\",\n            \"classification\": \"word\",\n            \"name\": \"hmm\"\n        },\n        {\n            \"index_name\": \"index_name\",\n            \"text\": \"What is the meaning of life?\",\n            \"classification\": \"question\",\n            \"name\": \"wow\"\n        },\n        {\n            \"index_name\": \"index_name\",\n            \"text\": \"This is a sentence.\",\n            \"classification\": \"sentence\",\n            \"name\": \"wow\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/index_bulk",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"index_bulk"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
