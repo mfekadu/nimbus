@@ -49,6 +49,19 @@ logger.addHandler(ch4)
 
 def log(extra_msg="", info=False):
     logLevelFunc = logger.info if info else logger.debug  # default debug
+    if extra_msg != "":
+        extra_msg = "-" * 10 + "\n" + extra_msg + "\n"
+    logLevelFunc(
+        extra_msg,
+        extra={
+            # https://stackoverflow.com/a/44164714/5411712
+            "CALLER": inspect.stack()[1].function
+        },
+    )
+
+
+def warn(extra_msg=""):
+    logLevelFunc = logger.warn  # default debug
     logLevelFunc(
         "-" * 10 + "\n" + extra_msg + "\n",
         extra={

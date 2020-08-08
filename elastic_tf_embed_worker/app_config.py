@@ -2,6 +2,7 @@
 default_settings = {
     "ELASTIC_TF_EMBED_WORKER_PORT": 9010,
     "ELASTIC_TF_EMBED_WORKER_DEBUG": False,
+    "ELASTIC_SEARCH_DEFAULT_QUERY_SIZE": 25,  # top 25 results on `/query` endpoint
     "ELASTIC_SEARCH_SCHEME": "http",
     "ELASTIC_SEARCH_HOST": "localhost",
     "ELASTIC_SEARCH_PORT": 9200,

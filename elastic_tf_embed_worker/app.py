@@ -16,7 +16,7 @@ from typing import List, Text, Union, Tuple, Optional
 from enum import Enum
 from elasticsearch import AsyncElasticsearch
 from elasticsearch.helpers import async_streaming_bulk
-from log_utils import log
+from log_utils import log, warn
 from sanic_validation import validate_json
 from functools import wraps
 from datetime import datetime
@@ -31,6 +31,13 @@ SUCCESS_DICT = {"completed": True}
 FAILURE_DICT = {"completed": False}
 
 app = Sanic(__name__)
+# SETUP ENVIRONMENT VARIABLES
+# https://sanic.readthedocs.io/en/latest/sanic/config.html#from-environment-variables
+# reads env vars start with NIMBUS_ and trims it off
+app.config.update(default_settings)
+app.config.load_environment_vars(prefix="NIMBUS_")
+for k, v in app.config.items():
+    log(f"set env var  {k}: {v}", info=True)
 
 
 def depends_on_es(
@@ -71,15 +78,18 @@ class STD_KEYS(Enum):
     An enum of standard keys to keep things consistent
     """
 
-    IDX = "index_name"
-    NAM = "name"
-    CLS = "classification"
-    TXT = "text"
-    TIM = "timestamp"
-    EMD = "embedding"
+    DOC = "doc"  # refers to a document object that encapsulates the NAM/EMD/TXT/etc...
+    IDX = "index_name"  # the ElasticSearch index on which we perform index/query
+    NAM = "name"  # the name (title) of the document # TODO: refactor/rename this to be Title
+    CLS = "classification"  # any kind of classification (e.g. Question/Sentence/etc)
+    TXT = "text"  # the actual text to be embedded/indexed
+    TIM = "timestamp"  # the current timestamp
+    EMD = "embedding"  # the actual embedding of the TXT
+    BULK_TEXTS = "texts"  # a list of EMBED_REQUEST_SCHEMA
 
 
 class DEFAULT_INDEX_MAPPING_KEYS(Enum):
+    DOC = STD_KEYS.DOC.value
     NAM = STD_KEYS.NAM.value
     CLS = STD_KEYS.CLS.value
     TXT = STD_KEYS.TXT.value
@@ -100,6 +110,8 @@ class INDEX_SCHEMA_KEYS(Enum):
     TXT = STD_KEYS.TXT.value
 
 
+class QUERY_SCHEMA_KEYS(Enum):
+    TXT = STD_KEYS.TXT.value
 
 
 def enum_left_join(e1: Enum, e2: Enum, new_enum_name: str = None) -> Enum:
@@ -143,12 +155,17 @@ INDEX_OR_EMBED_SCHEMA_KEYS = enum_left_join(
 )
 
 
+QUERY_REQUEST_SCHEMA = {
+    # https://cerberus-sanhe.readthedocs.io/usage.html#empty
+    QUERY_SCHEMA_KEYS.TXT.value: {"type": "string", "required": True, "empty": False},
+}
 
 
 EMBED_REQUEST_SCHEMA = {
-    EMBED_SCHEMA_KEYS.NAM.value: {"type": "string", "required": True},
-    EMBED_SCHEMA_KEYS.CLS.value: {"type": "string", "required": True},
-    EMBED_SCHEMA_KEYS.TXT.value: {"type": "string", "required": True},
+    # https://cerberus-sanhe.readthedocs.io/usage.html#empty
+    EMBED_SCHEMA_KEYS.NAM.value: {"type": "string", "required": True, "empty": False},
+    EMBED_SCHEMA_KEYS.CLS.value: {"type": "string", "required": True, "empty": False},
+    EMBED_SCHEMA_KEYS.TXT.value: {"type": "string", "required": True, "empty": False},
 }
 """
 Example:
@@ -161,7 +178,7 @@ Example:
 """
 
 EMBED_BULK_REQUEST_SCHEMA = {
-    "texts": {
+    STD_KEYS.BULK_TEXTS.value: {
         "type": "list",
         "schema": {"type": "dict", "schema": EMBED_REQUEST_SCHEMA},
         "required": True,
@@ -187,14 +204,15 @@ Example:
 
 
 INDEX_REQUEST_SCHEMA = {
-    INDEX_SCHEMA_KEYS.IDX.value: {"type": "string", "required": True},
-    INDEX_SCHEMA_KEYS.NAM.value: {"type": "string", "required": True},
-    INDEX_SCHEMA_KEYS.CLS.value: {"type": "string", "required": True},
-    INDEX_SCHEMA_KEYS.TXT.value: {"type": "string", "required": True},
+    # https://cerberus-sanhe.readthedocs.io/usage.html#empty
+    INDEX_SCHEMA_KEYS.IDX.value: {"type": "string", "required": True, "empty": False},
+    INDEX_SCHEMA_KEYS.NAM.value: {"type": "string", "required": True, "empty": False},
+    INDEX_SCHEMA_KEYS.CLS.value: {"type": "string", "required": True, "empty": False},
+    INDEX_SCHEMA_KEYS.TXT.value: {"type": "string", "required": True, "empty": False},
 }
 
 INDEX_BULK_REQUEST_SCHEMA = {
-    "texts": {
+    STD_KEYS.BULK_TEXTS.value: {
         "type": "list",
         "schema": {"type": "dict", "schema": INDEX_REQUEST_SCHEMA},
         "required": True,
@@ -202,23 +220,27 @@ INDEX_BULK_REQUEST_SCHEMA = {
 }
 
 INDEX_MAPPINGS = {
+    # https://www.elastic.co/guide/en/elasticsearch/reference/7.7/indices-put-mapping.html#indices-put-mapping
     "properties": {
-        "doc": {
+        DEFAULT_INDEX_MAPPING_KEYS.DOC.value: {
             "properties": {
-                "classification": {
+                DEFAULT_INDEX_MAPPING_KEYS.CLS.value: {
                     "type": "text",
                     "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
                 },
-                "embedding": {"type": "dense_vector", "dims": 512},
+                DEFAULT_INDEX_MAPPING_KEYS.EMD.value: {
+                    "type": "dense_vector",
+                    "dims": 512,
+                },
                 "name": {
                     "type": "text",
                     "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
                 },
-                "text": {
+                DEFAULT_INDEX_MAPPING_KEYS.TXT.value: {
                     "type": "text",
                     "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
                 },
-                "timestamp": {"type": "date"},
+                DEFAULT_INDEX_MAPPING_KEYS.TIM.value: {"type": "date"},
             }
         }
     }
@@ -267,10 +289,22 @@ def _get_embeddings_tensor(texts: Union[List[Text], Text]):
         raise ValueError(f"expected list or str but got {type(texts)}")
     texts = [texts] if type(texts) == str else texts
     # we pass in to the model only a single sentence
-    tensor = app.model(texts)
-    assert len(tensor) == 1, "weird tensorflow must have changed the output shape??"
+    list_of_tensors = app.model(texts)
+    assert (
+        len(list_of_tensors) == 1
+    ), "weird tensorflow must have changed the output shape??"
     # so this function can expect to only ever return a single embedding
-    tensor = tensor[0]
+    tensor = list_of_tensors[0]
+    if len(tensor) != 512:  # TODO: make a config variable TENSOR_LENGTH = 512
+        warn(
+            f"WARNING (MAY CAUSE ERRORS!!) expected len(tensor) == 512 but got {len(tensor)}"  # noqa
+            "\n"
+            "if there is no error then you should consider modifying this code in app.py"  # noqa
+            "\n"
+            "consider parameterizing the TENSOR_LENGTH because you may have downloaded a new/different model"  # noqa
+            "\n"
+            "honestly, I think this warning will never show, but if it does... nice :)"
+        )
     # TODO: consider runtime differce of bulk passing sentences into tensorflow vs one-by-one  # noqa
     # TODO: I suspect tensorflow can take advantage of GPU to parallelize. It's ok for now.    # noqa
     return tensor
@@ -314,12 +348,125 @@ def _gen_bulk_request_data(request) -> Tuple:
     Given a Sanic request,
     Yield a tuple (embeddings, indexes, names, classifications, texts)
     """
-    dicts = request.json.get("texts", [])
+    dicts = request.json.get(STD_KEYS.BULK_TEXTS.value, [])
     for d in dicts:
         # unpacking the tuple first
         # ensures that this function returns what it promises
         x_embedding, x_index_name, x_name, x_class, x_text = _extract_data(d)
         yield x_embedding, x_index_name, x_name, x_class, x_text
+
+
+def make_elastic_query_request_for_cosine_similarity(
+    size: int,
+    script_string: str,
+    query_vector: List[float],
+    keys_to_include_in_result: List[str],
+) -> dict:
+    """
+    Returns a dictionary that adheres to ElasticSearch's
+    query-dsl-script-score-query for  _dense_vector_functions
+    using the built in cosineSimilarity function.
+
+    Resources:
+    * https://www.elastic.co/guide/en/elasticsearch/reference/7.7/query-dsl-script-score-query.html#_dense_vector_functions
+    """
+    return {
+        "size": size,
+        "query": {
+            "script_score": {
+                "query": {"match_all": {}},
+                "script": {
+                    "source": script_string,
+                    "params": {"query_vector": query_vector},
+                },
+            }
+        },
+        "_source": {"includes": keys_to_include_in_result},
+    }
+
+
+async def search(
+    es: AsyncElasticsearch,
+    query_string: str,
+    index_name: str = app.config.ELASTIC_SEARCH_DEFAULT_INDEX,
+    size: int = app.config.ELASTIC_SEARCH_DEFAULT_QUERY_SIZE,
+    doc_key: str = DEFAULT_INDEX_MAPPING_KEYS.DOC.value,
+    emd_key: str = DEFAULT_INDEX_MAPPING_KEYS.EMD.value,
+    includes: List[str] = [
+        DEFAULT_INDEX_MAPPING_KEYS.CLS.value,
+        DEFAULT_INDEX_MAPPING_KEYS.TXT.value,
+        DEFAULT_INDEX_MAPPING_KEYS.NAM.value,
+    ],
+):
+    """Returns the top 25 (by default) Elasticsearch results of a simple query_string
+
+    Resources:
+    * https://elasticsearch-py.readthedocs.io/en/master/async.html#elasticsearch.AsyncElasticsearch.search
+    * https://www.elastic.co/guide/en/elasticsearch/reference/7.7/query-dsl-script-score-query.html#_dense_vector_functions
+    """
+    log()
+    query_vector = _embed_as_list(query_string)
+
+    my_dense_vector_accessor = f"{doc_key}.{emd_key}"  # defaults to "doc.embedding"
+    #                                     ^ (notice the `.` dot in between)
+    # the `.` dot is NOT referenced in the documentation.
+    # rather the documentation suggests to script something like doc['embedding']
+    # that failed when I tried it.
+    # Very weird. Maybe their script is a broken subset of JavaScript?
+    # Either way, we use the dot. Thank you, dot!
+
+    keys_to_include_in_result = [f"{doc_key}.{subkey}" for subkey in includes]
+
+    script_string = (
+        f"cosineSimilarity(params.query_vector, '{my_dense_vector_accessor}') + 1.0"
+    )
+
+    request_body = make_elastic_query_request_for_cosine_similarity(
+        size, script_string, query_vector, keys_to_include_in_result,
+    )
+
+    warn(f"searching on the index_name: {index_name}")
+
+    warn(f"the elasticsearch query body looks like:\n {request_body}")
+
+    res = await es.search(
+        index=index_name,
+        body=request_body,
+        # ignore any errors if index_name is no good
+        ignore_unavailable=True,
+        allow_no_indices=True,
+        allow_partial_search_results=True,
+        ignore_throttled=True,
+    )
+
+    log(
+        f"called es.search ( {index_name} , body={request_body} ) and got res = {res}",
+        info=True,
+    )
+
+    return res
+
+
+@app.post("/query")
+@validate_json(QUERY_REQUEST_SCHEMA)
+async def query(request):
+    """
+    Returns the top SIZE (default 25) Elasticsearch results of a simple query_string
+
+    TODO: this endpoint is for simple queries (just text input) so...
+    TODO: consider making an `advanced_query` endpoint...
+    TODO: that further parameterizs the `search` function.
+
+    Resources:
+    * https://www.elastic.co/guide/en/elasticsearch/reference/7.7/search.html
+    * https://elasticsearch-py.readthedocs.io/en/master/async.html#elasticsearch.AsyncElasticsearch.search
+    """
+    log(f"request.json: {request.json}")
+    data = request.json.get(STD_KEYS.TXT.value, "")
+    if not data:
+        return response.json(FAILURE_DICT, FAILURE)
+    result = await search(es=app.es, query_string=data)
+    return response.json(result)
 
 
 @app.post("/embed")
@@ -429,7 +576,7 @@ async def index_bulk(request):
                 # tell async_bulk that this should be an index operation
                 # though, default is index
                 "_op_type": "index",
-                "doc": {
+                DEFAULT_INDEX_MAPPING_KEYS.DOC.value: {
                     DEFAULT_INDEX_MAPPING_KEYS.CLS.value: x_class,
                     DEFAULT_INDEX_MAPPING_KEYS.NAM.value: x_name,
                     DEFAULT_INDEX_MAPPING_KEYS.TXT.value: x_text,
@@ -581,14 +728,6 @@ async def print_after_server_stop(app, loop):
 
 
 if __name__ == "__main__":
-    # SETUP ENVIRONMENT VARIABLES
-    # https://sanic.readthedocs.io/en/latest/sanic/config.html#from-environment-variables
-    # reads env vars start with NIMBUS_ and trims it off
-    app.config.update(default_settings)
-    app.config.load_environment_vars(prefix="NIMBUS_")
-    for k, v in app.config.items():
-        log(f"set env var  {k}: {v}", info=True)
-
     # SETUP DOCUMENTATION
     app.blueprint(swagger_blueprint)
 
