@@ -1,0 +1,399 @@
+{
+	"id": "ffc9b318-c941-419c-864e-fc7783d6473b",
+	"name": "nimbus_elastic_tf_embed_worker",
+	"timestamp": "2020-08-11T01:28:55.896Z",
+	"collection_id": "1a818ba4-fab2-4862-808a-fe56b51d01df",
+	"folder_id": 0,
+	"environment_id": "f7841faa-8ff4-428c-8277-65c51dc817c5",
+	"totalPass": 26,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "66d43cb0-c437-4237-8db9-6b74b6d121f4",
+			"name": "hi",
+			"url": "http://35.233.208.57:9010/",
+			"time": 205,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body contains string": true,
+				"Response time is less than 1000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body contains string": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				205
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body contains string": true,
+					"Response time is less than 1000ms": true
+				}
+			]
+		},
+		{
+			"id": "f2587385-2629-46b3-85b8-ef6c64f0227a",
+			"name": "embed",
+			"url": "http://35.233.208.57:9010/embed",
+			"time": 125,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Schema is valid (list of numbers)": true,
+				"Response time is less than 1000ms": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid (list of numbers)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				125
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Schema is valid (list of numbers)": true,
+					"Response time is less than 1000ms": true
+				}
+			]
+		},
+		{
+			"id": "2eb60b58-c51e-4d96-b5f4-08fcb6787b2c",
+			"name": "embed bulk",
+			"url": "http://35.233.208.57:9010/embed_bulk",
+			"time": 278,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"Schema is valid (list of list of numbers)": true,
+				"Response time is less than 1000ms": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Schema is valid (list of list of numbers)": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				278
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"Schema is valid (list of list of numbers)": true,
+					"Response time is less than 1000ms": true
+				}
+			]
+		},
+		{
+			"id": "bbe40c24-a879-4267-9ba4-1db1b083b078",
+			"name": "swagger",
+			"url": "http://35.233.208.57:9010/swagger",
+			"time": 146,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Response time is less than 1000ms": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				146
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Response time is less than 1000ms": true
+				}
+			]
+		},
+		{
+			"id": "5d76506d-ac49-4a90-a21b-dfbb28cdfe6b",
+			"name": "streaming",
+			"url": "http://35.233.208.57:9010/streaming",
+			"time": 2610,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Status code is 200": true,
+				"Body is correct": true,
+				"Response time is less than 3000ms (because stream intentionally sleep)": true
+			},
+			"testPassFailCounts": {
+				"Status code is 200": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Body is correct": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 3000ms (because stream intentionally sleep)": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				2610
+			],
+			"allTests": [
+				{
+					"Status code is 200": true,
+					"Body is correct": true,
+					"Response time is less than 3000ms (because stream intentionally sleep)": true
+				}
+			]
+		},
+		{
+			"id": "353228ad-0ee9-49bb-8582-e83099ab806d",
+			"name": "index",
+			"url": "http://35.233.208.57:9010/index",
+			"time": 268,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"completed === true": true,
+				"Response time is less than 1000ms": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"completed === true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				268
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"completed === true": true,
+					"Response time is less than 1000ms": true
+				}
+			]
+		},
+		{
+			"id": "6a7982d7-8537-4816-ba5f-603244d8765f",
+			"name": "index sentence",
+			"url": "http://35.233.208.57:9010/index",
+			"time": 178,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"completed === true": true,
+				"Response time is less than 1000ms": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"completed === true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				178
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"completed === true": true,
+					"Response time is less than 1000ms": true
+				}
+			]
+		},
+		{
+			"id": "bde20b0b-c467-43eb-b6b7-8fd23c2c1454",
+			"name": "index bulk",
+			"url": "http://35.233.208.57:9010/index_bulk",
+			"time": 320,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"completed === true": true,
+				"Response time is less than 1000ms": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"completed === true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				320
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"completed === true": true,
+					"Response time is less than 1000ms": true
+				}
+			]
+		},
+		{
+			"id": "2d4b310a-86b0-4439-8759-7999b56b1460",
+			"name": "query",
+			"url": "http://35.233.208.57:9010/query",
+			"time": 145,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Successful POST request": true,
+				"completed === true": true,
+				"Response time is less than 1000ms": true
+			},
+			"testPassFailCounts": {
+				"Successful POST request": {
+					"pass": 1,
+					"fail": 0
+				},
+				"completed === true": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Response time is less than 1000ms": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				145
+			],
+			"allTests": [
+				{
+					"Successful POST request": true,
+					"completed === true": true,
+					"Response time is less than 1000ms": true
+				}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 4275,
+	"collection": {
+		"requests": [
+			{
+				"id": "66d43cb0-c437-4237-8db9-6b74b6d121f4",
+				"method": "GET"
+			},
+			{
+				"id": "f2587385-2629-46b3-85b8-ef6c64f0227a",
+				"method": "POST"
+			},
+			{
+				"id": "2eb60b58-c51e-4d96-b5f4-08fcb6787b2c",
+				"method": "POST"
+			},
+			{
+				"id": "bbe40c24-a879-4267-9ba4-1db1b083b078",
+				"method": "GET"
+			},
+			{
+				"id": "5d76506d-ac49-4a90-a21b-dfbb28cdfe6b",
+				"method": "GET"
+			},
+			{
+				"id": "353228ad-0ee9-49bb-8582-e83099ab806d",
+				"method": "POST"
+			},
+			{
+				"id": "6a7982d7-8537-4816-ba5f-603244d8765f",
+				"method": "POST"
+			},
+			{
+				"id": "bde20b0b-c467-43eb-b6b7-8fd23c2c1454",
+				"method": "POST"
+			},
+			{
+				"id": "2d4b310a-86b0-4439-8759-7999b56b1460",
+				"method": "POST"
+			}
+		]
+	}
+}
