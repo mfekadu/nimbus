@@ -6,24 +6,25 @@ already asynchronous.
 [1]: https://medium.com/@ahmed.nafies/is-sanic-python-web-framework-the-new-flask-2fe06b409fa3
 """
 
-import random
 import asyncio
-import tensorflow as tf
-
-from sanic import Sanic, response
-from sanic_openapi import swagger_blueprint
-from typing import List, Text, Union, Tuple, Optional
+import copy
+import random
+from datetime import datetime
 from enum import Enum
+from functools import wraps
+from itertools import chain, groupby
+from typing import List, Optional, Text, Tuple, Union
+
+import tensorflow as tf
+from sanic import Sanic, response
+
+from app_config import default_settings
 from elasticsearch import AsyncElasticsearch
 from elasticsearch.helpers import async_streaming_bulk
 from log_utils import log, warn
-from sanic_validation import validate_json
-from functools import wraps
-from datetime import datetime
 from model_utils import initialize_model
-from itertools import chain, groupby
-from app_config import default_settings
-
+from sanic_openapi import swagger_blueprint
+from sanic_validation import validate_json
 
 SUCCESS = 200
 FAILURE = 500  # TODO: return useful statuses https://www.restapitutorial.com/httpstatuscodes.html
@@ -66,7 +67,7 @@ def depends_on_es(
                 return res
             else:
                 # the ES is not healthy or client problem
-                return response.json(FAILURE_DICT, FAILURE)
+                return response.json(FAILURE_DICT, status=FAILURE)
 
         return decorated_function
 
@@ -78,7 +79,6 @@ class STD_KEYS(Enum):
     An enum of standard keys to keep things consistent
     """
 
-    DOC = "doc"  # refers to a document object that encapsulates the NAM/EMD/TXT/etc...
     IDX = "index_name"  # the ElasticSearch index on which we perform index/query
     NAM = "name"  # the name (title) of the document # TODO: refactor/rename this to be Title
     CLS = "classification"  # any kind of classification (e.g. Question/Sentence/etc)
@@ -89,7 +89,6 @@ class STD_KEYS(Enum):
 
 
 class DEFAULT_INDEX_MAPPING_KEYS(Enum):
-    DOC = STD_KEYS.DOC.value
     NAM = STD_KEYS.NAM.value
     CLS = STD_KEYS.CLS.value
     TXT = STD_KEYS.TXT.value
@@ -222,27 +221,20 @@ INDEX_BULK_REQUEST_SCHEMA = {
 INDEX_MAPPINGS = {
     # https://www.elastic.co/guide/en/elasticsearch/reference/7.7/indices-put-mapping.html#indices-put-mapping
     "properties": {
-        DEFAULT_INDEX_MAPPING_KEYS.DOC.value: {
-            "properties": {
-                DEFAULT_INDEX_MAPPING_KEYS.CLS.value: {
-                    "type": "text",
-                    "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
-                },
-                DEFAULT_INDEX_MAPPING_KEYS.EMD.value: {
-                    "type": "dense_vector",
-                    "dims": 512,
-                },
-                "name": {
-                    "type": "text",
-                    "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
-                },
-                DEFAULT_INDEX_MAPPING_KEYS.TXT.value: {
-                    "type": "text",
-                    "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
-                },
-                DEFAULT_INDEX_MAPPING_KEYS.TIM.value: {"type": "date"},
-            }
-        }
+        DEFAULT_INDEX_MAPPING_KEYS.CLS.value: {
+            "type": "text",
+            "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
+        },
+        DEFAULT_INDEX_MAPPING_KEYS.EMD.value: {"type": "dense_vector", "dims": 512},
+        DEFAULT_INDEX_MAPPING_KEYS.NAM.value: {
+            "type": "text",
+            "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
+        },
+        DEFAULT_INDEX_MAPPING_KEYS.TXT.value: {
+            "type": "text",
+            "fields": {"keyword": {"type": "keyword", "ignore_above": 256}},
+        },
+        DEFAULT_INDEX_MAPPING_KEYS.TIM.value: {"type": "date"},
     }
 }
 
@@ -258,7 +250,8 @@ async def hello(request):
         "Human 🤖🧬",
         "🌍",
     ]
-    return response.json({"message": f"Hello, {random.choice(friendly_address)}!"})
+    data = {"message": f"Hello, {random.choice(friendly_address)}!"}
+    return response.json(data, status=SUCCESS)
 
 
 @app.route("/streaming")
@@ -370,7 +363,7 @@ def make_elastic_query_request_for_cosine_similarity(
     Resources:
     * https://www.elastic.co/guide/en/elasticsearch/reference/7.7/query-dsl-script-score-query.html#_dense_vector_functions
     """
-    return {
+    request_dict = {
         "size": size,
         "query": {
             "script_score": {
@@ -384,13 +377,21 @@ def make_elastic_query_request_for_cosine_similarity(
         "_source": {"includes": keys_to_include_in_result},
     }
 
+    d_for_log = copy.deepcopy(request_dict)
+    # avoid logging the query_vector list that 512 float numbers
+    d_for_log["query"]["script_score"]["script"]["params"]["query_vector"] = "[...]"
+    log(
+        f"created elastic query request payload: {d_for_log}", info=True,
+    )
+
+    return request_dict
+
 
 async def search(
     es: AsyncElasticsearch,
     query_string: str,
     index_name: str = app.config.ELASTIC_SEARCH_DEFAULT_INDEX,
     size: int = app.config.ELASTIC_SEARCH_DEFAULT_QUERY_SIZE,
-    doc_key: str = DEFAULT_INDEX_MAPPING_KEYS.DOC.value,
     emd_key: str = DEFAULT_INDEX_MAPPING_KEYS.EMD.value,
     includes: List[str] = [
         DEFAULT_INDEX_MAPPING_KEYS.CLS.value,
@@ -407,15 +408,9 @@ async def search(
     log()
     query_vector = _embed_as_list(query_string)
 
-    my_dense_vector_accessor = f"{doc_key}.{emd_key}"  # defaults to "doc.embedding"
-    #                                     ^ (notice the `.` dot in between)
-    # the `.` dot is NOT referenced in the documentation.
-    # rather the documentation suggests to script something like doc['embedding']
-    # that failed when I tried it.
-    # Very weird. Maybe their script is a broken subset of JavaScript?
-    # Either way, we use the dot. Thank you, dot!
+    my_dense_vector_accessor = f"{emd_key}"  # defaults to "embedding"
 
-    keys_to_include_in_result = [f"{doc_key}.{subkey}" for subkey in includes]
+    keys_to_include_in_result = [f"{other_key}" for other_key in includes]
 
     script_string = (
         f"cosineSimilarity(params.query_vector, '{my_dense_vector_accessor}') + 1.0"
@@ -426,8 +421,6 @@ async def search(
     )
 
     warn(f"searching on the index_name: {index_name}")
-
-    warn(f"the elasticsearch query body looks like:\n {request_body}")
 
     res = await es.search(
         index=index_name,
@@ -440,8 +433,7 @@ async def search(
     )
 
     log(
-        f"called es.search ( {index_name} , body={request_body} ) and got res = {res}",
-        info=True,
+        f"called es.search on {index_name} and got res = {res}", info=True,
     )
 
     return res
@@ -464,9 +456,10 @@ async def query(request):
     log(f"request.json: {request.json}")
     data = request.json.get(STD_KEYS.TXT.value, "")
     if not data:
-        return response.json(FAILURE_DICT, FAILURE)
+        return response.json(FAILURE_DICT, status=FAILURE)
     result = await search(es=app.es, query_string=data)
-    return response.json(result)
+    log("finished querying")
+    return response.json({**SUCCESS_DICT, **result}, status=SUCCESS)
 
 
 @app.post("/embed")
@@ -475,7 +468,7 @@ async def embed(request):
     """Returns the universal_sentence_encoder embeddings of the given text"""
     log(f"request.json: {request.json}")
     e, _, _, _, _ = _extract_data(request.json)
-    return response.json(e)
+    return response.json(e, status=SUCCESS)
 
 
 @app.post("/embed_bulk")
@@ -484,7 +477,7 @@ async def embed_bulk(request):
     """Returns the universal_sentence_encoder embeddings of the given list of text"""
     log(f"text: {request.json}")
     e, _, _, _, _ = _extract_bulk_request_data(request)
-    return response.json(e)
+    return response.json(e, status=SUCCESS)
 
 
 async def index_and_log(es: AsyncElasticsearch, index_name: str, doc: str):
@@ -540,7 +533,7 @@ async def index(request):
 
     res["res5"] = await refresh_if_possible(index_name=x_index_name)
     res["res6"] = await refresh_if_possible(index_name=default_index_name)
-    return response.json({**SUCCESS_DICT, **res}, SUCCESS)
+    return response.json({**SUCCESS_DICT, **res}, status=SUCCESS)
 
 
 @app.post("/index_bulk")
@@ -576,13 +569,11 @@ async def index_bulk(request):
                 # tell async_bulk that this should be an index operation
                 # though, default is index
                 "_op_type": "index",
-                DEFAULT_INDEX_MAPPING_KEYS.DOC.value: {
-                    DEFAULT_INDEX_MAPPING_KEYS.CLS.value: x_class,
-                    DEFAULT_INDEX_MAPPING_KEYS.NAM.value: x_name,
-                    DEFAULT_INDEX_MAPPING_KEYS.TXT.value: x_text,
-                    DEFAULT_INDEX_MAPPING_KEYS.TIM.value: datetime.now(),
-                    DEFAULT_INDEX_MAPPING_KEYS.EMD.value: x_embedding,
-                },
+                DEFAULT_INDEX_MAPPING_KEYS.CLS.value: x_class,
+                DEFAULT_INDEX_MAPPING_KEYS.NAM.value: x_name,
+                DEFAULT_INDEX_MAPPING_KEYS.TXT.value: x_text,
+                DEFAULT_INDEX_MAPPING_KEYS.TIM.value: datetime.now(),
+                DEFAULT_INDEX_MAPPING_KEYS.EMD.value: x_embedding,
             }
         return
 
@@ -602,8 +593,7 @@ async def index_bulk(request):
 
     log(f"finished indexing {num_docs} docs", info=True)
 
-    # now do the indexing
-    return response.json(SUCCESS_DICT)
+    return response.json(SUCCESS_DICT, status=SUCCESS)
 
 
 async def es_health_check(es: AsyncElasticsearch) -> bool:
