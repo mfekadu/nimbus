@@ -79,9 +79,12 @@
 					}
 				},
 				"url": {
-					"raw": "{{embed}}",
+					"raw": "{{base_url}}/embed",
 					"host": [
-						"{{embed}}"
+						"{{base_url}}"
+					],
+					"path": [
+						"embed"
 					]
 				}
 			},
@@ -163,9 +166,12 @@
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "{{swagger}}",
+					"raw": "{{base_url}}/swagger",
 					"host": [
-						"{{swagger}}"
+						"{{base_url}}"
+					],
+					"path": [
+						"swagger"
 					]
 				}
 			},
@@ -344,6 +350,53 @@
 					],
 					"path": [
 						"index_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "query",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "a143907b-acf1-47ac-98fc-09c1cbbd9bb4",
+						"exec": [
+							"pm.test(\"Successful POST request\", function () {",
+							"    pm.expect(pm.response.code).to.be.oneOf([200, 201, 202]);",
+							"});",
+							"pm.test(\"completed === true\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.completed).to.eql(true);",
+							"});",
+							"pm.test(\"Response time is less than 1000ms\", function () {",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"text\": \"Can you find something similar to this sentence?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/query",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"query"
 					]
 				}
 			},
