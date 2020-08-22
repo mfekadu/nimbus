@@ -1,3 +1,4 @@
+#!/bin/sh
 # this script will show you a URL to login with Google
 #
 # after 10 seconds, this same script will call `wget localhost:8080`
