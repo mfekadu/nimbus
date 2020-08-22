@@ -1,0 +1,31 @@
+[tool.poetry]
+name = "nimbus-elastic-allennlp-srl-worker"
+version = "0.1.0"
+description = "A simple nlp information extractor & indexer thing."
+authors = ["Michael Fekadu <mike.fekadu@gmail.com>"]
+license = "GPL-3.0"
+
+[tool.poetry.dependencies]
+python = "^3.6.8"
+pip = "^20.0.0"
+# elasticsearch 7.8.0 implements asyncio
+# https://elasticsearch-py.readthedocs.io/en/master/async.html
+elasticsearch = { version = "^7.8.0a1", allow-prereleases = true }
+# elasticsearch = "^7.7.1"
+# tensorflow_hub = "^0.8.0"
+# tensorflow = "^2.2.0"
+allennlp = { version = "1.0.0rc5", allow-prereleases = true }
+allennlp-models = { version = "1.0.0rc5", allow-prereleases = true }
+sanic = "^20.3.0" # it's like Flask but faster because "Sanic" lol
+sanic-openapi = "^0.6.1"
+ujson = "1.35"
+sanic-validation = "^0.5.0"
+aiohttp = "^3.6.2"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+flake8 = "^3.8.2"
+
+[build-system]
+requires = ["poetry>=1.0.3", "pip>=20.0.0"]
+build-backend = "poetry.masonry.api"
