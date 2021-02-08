@@ -1,75 +1,68 @@
 [[package]]
-category = "main"
-description = "Abseil Python Common Libraries, see https://github.com/abseil/abseil-py."
 name = "absl-py"
+version = "0.9.0"
+description = "Abseil Python Common Libraries, see https://github.com/abseil/abseil-py."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.9.0"
 
 [package.dependencies]
 six = "*"
 
 [[package]]
-category = "main"
-description = "File support for asyncio."
 name = "aiofiles"
+version = "0.5.0"
+description = "File support for asyncio."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.5.0"
 
 [[package]]
-category = "main"
-description = "Async http client/server framework (asyncio)"
 name = "aiohttp"
+version = "3.6.2"
+description = "Async http client/server framework (asyncio)"
+category = "main"
 optional = false
 python-versions = ">=3.5.3"
-version = "3.6.2"
 
 [package.dependencies]
 async-timeout = ">=3.0,<4.0"
 attrs = ">=17.3.0"
 chardet = ">=2.0,<4.0"
+idna-ssl = {version = ">=1.0", markers = "python_version < \"3.7\""}
 multidict = ">=4.5,<5.0"
+typing-extensions = {version = ">=3.6.5", markers = "python_version < \"3.7\""}
 yarl = ">=1.0,<2.0"
-
-[package.dependencies.idna-ssl]
-python = "<3.7"
-version = ">=1.0"
-
-[package.dependencies.typing-extensions]
-python = "<3.7"
-version = ">=3.6.5"
 
 [package.extras]
 speedups = ["aiodns", "brotlipy", "cchardet"]
 
 [[package]]
-category = "main"
-description = "ANSI colors for Python"
 name = "ansicolors"
-optional = false
-python-versions = "*"
 version = "1.1.8"
-
-[[package]]
-category = "dev"
-description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
-name = "appdirs"
-optional = false
-python-versions = "*"
-version = "1.4.4"
-
-[[package]]
+description = "ANSI colors for Python"
 category = "main"
-description = "In-process task scheduler with Cron-like capabilities"
-name = "apscheduler"
 optional = false
 python-versions = "*"
+
+[[package]]
+name = "appdirs"
+version = "1.4.4"
+description = "A small Python module for determining appropriate platform-specific dirs, e.g. a \"user data dir\"."
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "apscheduler"
 version = "3.6.3"
+description = "In-process task scheduler with Cron-like capabilities"
+category = "main"
+optional = false
+python-versions = "*"
 
 [package.dependencies]
 pytz = "*"
-setuptools = ">=0.7"
 six = ">=1.4.0"
 tzlocal = ">=1.2"
 
@@ -87,36 +80,36 @@ twisted = ["twisted"]
 zookeeper = ["kazoo"]
 
 [[package]]
-category = "main"
-description = "Read/rewrite/write Python ASTs"
 name = "astor"
+version = "0.8.1"
+description = "Read/rewrite/write Python ASTs"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
-version = "0.8.1"
 
 [[package]]
-category = "main"
-description = "Async generators and context managers for Python 3.5+"
 name = "async-generator"
+version = "1.10"
+description = "Async generators and context managers for Python 3.5+"
+category = "main"
 optional = false
 python-versions = ">=3.5"
-version = "1.10"
 
 [[package]]
-category = "main"
-description = "Timeout context manager for asyncio programs"
 name = "async-timeout"
+version = "3.0.1"
+description = "Timeout context manager for asyncio programs"
+category = "main"
 optional = false
 python-versions = ">=3.5.3"
-version = "3.0.1"
 
 [[package]]
-category = "main"
-description = "Classes Without Boilerplate"
 name = "attrs"
+version = "19.3.0"
+description = "Classes Without Boilerplate"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "19.3.0"
 
 [package.extras]
 azure-pipelines = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface", "pytest-azurepipelines"]
@@ -125,27 +118,30 @@ docs = ["sphinx", "zope.interface"]
 tests = ["coverage", "hypothesis", "pympler", "pytest (>=4.3.0)", "six", "zope.interface"]
 
 [[package]]
-category = "main"
-description = "Screen-scraping library"
 name = "beautifulsoup4"
+version = "4.9.1"
+description = "Screen-scraping library"
+category = "main"
 optional = false
 python-versions = "*"
-version = "4.9.1"
 
 [package.dependencies]
-soupsieve = [">1.2", "<2.0"]
+soupsieve = [
+    ">1.2",
+    "<2.0",
+]
 
 [package.extras]
 html5lib = ["html5lib"]
 lxml = ["lxml"]
 
 [[package]]
-category = "dev"
-description = "The uncompromising code formatter."
 name = "black"
+version = "19.10b0"
+description = "The uncompromising code formatter."
+category = "dev"
 optional = false
 python-versions = ">=3.6"
-version = "19.10b0"
 
 [package.dependencies]
 appdirs = "*"
@@ -160,23 +156,23 @@ typed-ast = ">=1.4.0"
 d = ["aiohttp (>=3.3.2)", "aiohttp-cors"]
 
 [[package]]
-category = "main"
-description = "The Blis BLAS-like linear algebra library, as a self-contained C-extension."
 name = "blis"
+version = "0.4.1"
+description = "The Blis BLAS-like linear algebra library, as a self-contained C-extension."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.4.1"
 
 [package.dependencies]
 numpy = ">=1.15.0"
 
 [[package]]
-category = "main"
-description = "The AWS SDK for Python"
 name = "boto3"
+version = "1.14.2"
+description = "The AWS SDK for Python"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.14.2"
 
 [package.dependencies]
 botocore = ">=1.17.2,<1.18.0"
@@ -184,269 +180,259 @@ jmespath = ">=0.7.1,<1.0.0"
 s3transfer = ">=0.3.0,<0.4.0"
 
 [[package]]
-category = "main"
-description = "Low-level, data-driven core of boto 3."
 name = "botocore"
+version = "1.17.2"
+description = "Low-level, data-driven core of boto 3."
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.17.2"
 
 [package.dependencies]
 docutils = ">=0.10,<0.16"
 jmespath = ">=0.7.1,<1.0.0"
 python-dateutil = ">=2.1,<3.0.0"
-
-[package.dependencies.urllib3]
-python = "<3.4.0 || >=3.5.0"
-version = ">=1.20,<1.26"
+urllib3 = {version = ">=1.20,<1.26", markers = "python_version != \"3.4\""}
 
 [[package]]
-category = "main"
-description = "Extensible memoizing collections and decorators"
 name = "cachetools"
+version = "4.1.0"
+description = "Extensible memoizing collections and decorators"
+category = "main"
 optional = false
 python-versions = "~=3.5"
-version = "4.1.0"
 
 [[package]]
-category = "main"
-description = "Super lightweight function registries for your library"
 name = "catalogue"
+version = "1.0.0"
+description = "Super lightweight function registries for your library"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
-version = "1.0.0"
 
 [package.dependencies]
-[package.dependencies.importlib-metadata]
-python = "<3.8"
-version = ">=0.20"
+importlib-metadata = {version = ">=0.20", markers = "python_version < \"3.8\""}
 
 [[package]]
-category = "main"
-description = "Python package for providing Mozilla's CA Bundle."
 name = "certifi"
+version = "2020.4.5.2"
+description = "Python package for providing Mozilla's CA Bundle."
+category = "main"
 optional = false
 python-versions = "*"
-version = "2020.4.5.2"
 
 [[package]]
-category = "main"
-description = "Foreign Function Interface for Python calling C code."
 name = "cffi"
+version = "1.14.0"
+description = "Foreign Function Interface for Python calling C code."
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.14.0"
 
 [package.dependencies]
 pycparser = "*"
 
 [[package]]
-category = "main"
-description = "Universal encoding detector for Python 2 and 3"
 name = "chardet"
-optional = false
-python-versions = "*"
 version = "3.0.4"
+description = "Universal encoding detector for Python 2 and 3"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
-category = "main"
-description = "Composable command line interface toolkit"
 name = "click"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 version = "7.1.2"
-
-[[package]]
+description = "Composable command line interface toolkit"
 category = "main"
-description = "Extended pickling support for Python objects"
-name = "cloudpickle"
-optional = false
-python-versions = "*"
-version = "1.3.0"
-
-[[package]]
-category = "main"
-description = "Cross-platform colored terminal text."
-name = "colorama"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+
+[[package]]
+name = "cloudpickle"
+version = "1.3.0"
+description = "Extended pickling support for Python objects"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "colorama"
 version = "0.4.3"
+description = "Cross-platform colored terminal text."
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
-category = "main"
-description = "Colorful worry-free console applications for Linux, Mac OS X, and Windows."
 name = "colorclass"
+version = "2.2.0"
+description = "Colorful worry-free console applications for Linux, Mac OS X, and Windows."
+category = "main"
 optional = false
 python-versions = "*"
-version = "2.2.0"
 
 [[package]]
-category = "main"
-description = "Colored terminal output for Python's logging module"
 name = "coloredlogs"
+version = "10.0"
+description = "Colored terminal output for Python's logging module"
+category = "main"
 optional = false
 python-versions = "*"
-version = "10.0"
 
 [package.dependencies]
-colorama = "*"
+colorama = {version = "*", markers = "sys_platform == \"win32\""}
 humanfriendly = ">=4.7"
 
 [package.extras]
 cron = ["capturer (>=2.4)"]
 
 [[package]]
-category = "main"
-description = "Generate a color based on a value"
 name = "colorhash"
+version = "1.0.2"
+description = "Generate a color based on a value"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.0.2"
 
 [[package]]
-category = "main"
-description = "PEP 567 Backport"
-marker = "python_version < \"3.7\""
 name = "contextvars"
+version = "2.4"
+description = "PEP 567 Backport"
+category = "main"
 optional = false
 python-versions = "*"
-version = "2.4"
 
 [package.dependencies]
 immutables = ">=0.9"
 
 [[package]]
-category = "main"
-description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
 name = "cryptography"
+version = "2.9.2"
+description = "cryptography is a package which provides cryptographic recipes and primitives to Python developers."
+category = "main"
 optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*"
-version = "2.9.2"
 
 [package.dependencies]
 cffi = ">=1.8,<1.11.3 || >1.11.3"
 six = ">=1.4.1"
 
 [package.extras]
-docs = ["sphinx (>=1.6.5,<1.8.0 || >1.8.0)", "sphinx-rtd-theme"]
+docs = ["sphinx (>=1.6.5,!=1.8.0)", "sphinx-rtd-theme"]
 docstest = ["doc8", "pyenchant (>=1.6.11)", "twine (>=1.12.0)", "sphinxcontrib-spelling (>=4.0.1)"]
 idna = ["idna (>=2.1)"]
 pep8test = ["flake8", "flake8-import-order", "pep8-naming"]
-test = ["pytest (>=3.6.0,<3.9.0 || >3.9.0,<3.9.1 || >3.9.1,<3.9.2 || >3.9.2)", "pretend", "iso8601", "pytz", "hypothesis (>=1.11.4,<3.79.2 || >3.79.2)"]
+test = ["pytest (>=3.6.0,!=3.9.0,!=3.9.1,!=3.9.2)", "pretend", "iso8601", "pytz", "hypothesis (>=1.11.4,!=3.79.2)"]
 
 [[package]]
-category = "main"
-description = "Composable style cycles"
 name = "cycler"
+version = "0.10.0"
+description = "Composable style cycles"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.10.0"
 
 [package.dependencies]
 six = "*"
 
 [[package]]
-category = "main"
-description = "Manage calls to calloc/free through Cython"
 name = "cymem"
-optional = false
-python-versions = "*"
 version = "2.0.3"
-
-[[package]]
+description = "Manage calls to calloc/free through Cython"
 category = "main"
-description = "A backport of the dataclasses module for Python 3.6"
-marker = "python_version < \"3.7\""
-name = "dataclasses"
 optional = false
 python-versions = "*"
-version = "0.6"
 
 [[package]]
+name = "dataclasses"
+version = "0.6"
+description = "A backport of the dataclasses module for Python 3.6"
 category = "main"
-description = "Decorators for Humans"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "decorator"
+version = "4.4.2"
+description = "Decorators for Humans"
+category = "main"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*"
-version = "4.4.2"
 
 [[package]]
-category = "main"
-description = "DNS toolkit"
 name = "dnspython"
+version = "1.16.0"
+description = "DNS toolkit"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "1.16.0"
 
 [package.extras]
 DNSSEC = ["pycryptodome", "ecdsa (>=0.13)"]
 IDNA = ["idna (>=2.1)"]
 
 [[package]]
-category = "main"
-description = "Pythonic argument parser, that will make you smile"
 name = "docopt"
+version = "0.6.2"
+description = "Pythonic argument parser, that will make you smile"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.6.2"
 
 [[package]]
-category = "main"
-description = "Docutils -- Python Documentation Utilities"
 name = "docutils"
+version = "0.15.2"
+description = "Docutils -- Python Documentation Utilities"
+category = "main"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
-version = "0.15.2"
 
 [[package]]
-category = "main"
-description = "A python library to communicate with the Facebook Messenger API's"
 name = "fbmessenger"
+version = "6.0.0"
+description = "A python library to communicate with the Facebook Messenger API's"
+category = "main"
 optional = false
 python-versions = "*"
-version = "6.0.0"
 
 [package.dependencies]
 requests = ">=2.0"
 
 [[package]]
-category = "main"
-description = "A platform independent file lock."
 name = "filelock"
+version = "3.0.12"
+description = "A platform independent file lock."
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.0.12"
 
 [[package]]
-category = "dev"
-description = "the modular source code checker: pep8 pyflakes and co"
 name = "flake8"
+version = "3.8.3"
+description = "the modular source code checker: pep8 pyflakes and co"
+category = "dev"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
-version = "3.8.3"
 
 [package.dependencies]
+importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
 mccabe = ">=0.6.0,<0.7.0"
 pycodestyle = ">=2.6.0a1,<2.7.0"
 pyflakes = ">=2.2.0,<2.3.0"
 
-[package.dependencies.importlib-metadata]
-python = "<3.8"
-version = "*"
-
 [[package]]
-category = "main"
-description = "A simple framework for building complex web applications."
 name = "flask"
+version = "1.1.2"
+description = "A simple framework for building complex web applications."
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "1.1.2"
 
 [package.dependencies]
-Jinja2 = ">=2.10.1"
-Werkzeug = ">=0.15"
 click = ">=5.1"
 itsdangerous = ">=0.24"
+Jinja2 = ">=2.10.1"
+Werkzeug = ">=0.15"
 
 [package.extras]
 dev = ["pytest", "coverage", "tox", "sphinx", "pallets-sphinx-themes", "sphinxcontrib-log-cabinet", "sphinx-issues"]
@@ -454,77 +440,73 @@ docs = ["sphinx", "pallets-sphinx-themes", "sphinxcontrib-log-cabinet", "sphinx-
 dotenv = ["python-dotenv"]
 
 [[package]]
-category = "main"
-description = "Clean single-source support for Python 3 and 2"
 name = "future"
+version = "0.18.2"
+description = "Clean single-source support for Python 3 and 2"
+category = "main"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
-version = "0.18.2"
 
 [[package]]
-category = "main"
-description = "Python AST that abstracts the underlying Python version"
 name = "gast"
+version = "0.2.2"
+description = "Python AST that abstracts the underlying Python version"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "0.2.2"
 
 [[package]]
-category = "main"
-description = "Coroutine-based network library"
 name = "gevent"
+version = "1.5.0"
+description = "Coroutine-based network library"
+category = "main"
 optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*"
-version = "1.5.0"
 
 [package.dependencies]
-cffi = ">=1.12.2"
-greenlet = ">=0.4.14"
+cffi = {version = ">=1.12.2", markers = "platform_python_implementation == \"CPython\" and sys_platform == \"win32\""}
+greenlet = {version = ">=0.4.14", markers = "platform_python_implementation == \"CPython\""}
 
 [package.extras]
 dnspython = ["dnspython (>=1.16.0)", "idna"]
 docs = ["repoze.sphinx.autointerface", "sphinxcontrib-programoutput"]
 events = ["zope.event", "zope.interface"]
-monitor = ["psutil (>=5.6.1)", "psutil (5.6.3)"]
-recommended = ["dnspython (>=1.16.0)", "idna", "zope.event", "zope.interface", "cffi (>=1.12.2)", "psutil (>=5.6.1)", "psutil (5.6.3)"]
-test = ["dnspython (>=1.16.0)", "idna", "zope.event", "zope.interface", "requests", "objgraph", "cffi (>=1.12.2)", "psutil (>=5.6.1)", "psutil (5.6.3)", "futures", "mock", "coverage (<5.0)", "coveralls (>=1.7.0)"]
+monitor = ["psutil (>=5.6.1)", "psutil (==5.6.3)"]
+recommended = ["dnspython (>=1.16.0)", "idna", "zope.event", "zope.interface", "cffi (>=1.12.2)", "psutil (>=5.6.1)", "psutil (==5.6.3)"]
+test = ["dnspython (>=1.16.0)", "idna", "zope.event", "zope.interface", "requests", "objgraph", "cffi (>=1.12.2)", "psutil (>=5.6.1)", "psutil (==5.6.3)", "futures", "mock", "coverage (<5.0)", "coveralls (>=1.7.0)"]
 
 [[package]]
-category = "main"
-description = "Python bindings to the Google search engine."
 name = "google"
+version = "2.0.3"
+description = "Python bindings to the Google search engine."
+category = "main"
 optional = false
 python-versions = "*"
-version = "2.0.3"
 
 [package.dependencies]
 beautifulsoup4 = "*"
 
 [[package]]
-category = "main"
-description = "Google Authentication Library"
 name = "google-auth"
+version = "1.17.2"
+description = "Google Authentication Library"
+category = "main"
 optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
-version = "1.17.2"
 
 [package.dependencies]
 cachetools = ">=2.0.0,<5.0"
 pyasn1-modules = ">=0.2.1"
-setuptools = ">=40.3.0"
+rsa = {version = ">=3.1.4,<5", markers = "python_version >= \"3\""}
 six = ">=1.9.0"
 
-[package.dependencies.rsa]
-python = ">=3"
-version = ">=3.1.4,<5"
-
 [[package]]
-category = "main"
-description = "Google Authentication Library"
 name = "google-auth-oauthlib"
+version = "0.4.1"
+description = "Google Authentication Library"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.4.1"
 
 [package.dependencies]
 google-auth = "*"
@@ -534,110 +516,112 @@ requests-oauthlib = ">=0.7.0"
 tool = ["click"]
 
 [[package]]
-category = "main"
-description = "pasta is an AST-based Python refactoring library"
 name = "google-pasta"
+version = "0.2.0"
+description = "pasta is an AST-based Python refactoring library"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.2.0"
 
 [package.dependencies]
 six = "*"
 
 [[package]]
-category = "main"
-description = "Lightweight in-process concurrent programming"
-marker = "platform_python_implementation == \"CPython\""
 name = "greenlet"
+version = "0.4.16"
+description = "Lightweight in-process concurrent programming"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.4.16"
 
 [[package]]
-category = "main"
-description = "HTTP/2-based RPC framework"
 name = "grpcio"
+version = "1.29.0"
+description = "HTTP/2-based RPC framework"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.29.0"
 
 [package.dependencies]
 six = ">=1.5.2"
 
 [[package]]
-category = "main"
-description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
 name = "h11"
+version = "0.8.1"
+description = "A pure-Python, bring-your-own-I/O implementation of HTTP/1.1"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.8.1"
 
 [[package]]
-category = "main"
-description = "HTTP/2 State-Machine based protocol implementation"
 name = "h2"
+version = "3.2.0"
+description = "HTTP/2 State-Machine based protocol implementation"
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.2.0"
 
 [package.dependencies]
 hpack = ">=3.0,<4"
 hyperframe = ">=5.2.0,<6"
 
 [[package]]
-category = "main"
-description = "Read and write HDF5 files from Python"
 name = "h5py"
+version = "2.10.0"
+description = "Read and write HDF5 files from Python"
+category = "main"
 optional = false
 python-versions = "*"
-version = "2.10.0"
 
 [package.dependencies]
 numpy = ">=1.7"
 six = "*"
 
 [[package]]
-category = "main"
-description = "Pure-Python HPACK header compression"
 name = "hpack"
+version = "3.0.0"
+description = "Pure-Python HPACK header compression"
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.0.0"
 
 [[package]]
-category = "main"
-description = "Chromium HSTS Preload list as a Python package and updated daily"
 name = "hstspreload"
+version = "2020.6.9"
+description = "Chromium HSTS Preload list as a Python package and updated daily"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "2020.6.9"
 
 [[package]]
-category = "main"
-description = "A comprehensive HTTP client library."
 name = "httplib2"
+version = "0.19.0"
+description = "A comprehensive HTTP client library."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.18.1"
+
+[package.dependencies]
+pyparsing = ">=2.4.2,<3"
 
 [[package]]
-category = "main"
-description = "A collection of framework independent HTTP protocol utils."
 name = "httptools"
+version = "0.1.1"
+description = "A collection of framework independent HTTP protocol utils."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.1.1"
 
 [package.extras]
-test = ["Cython (0.29.14)"]
+test = ["Cython (==0.29.14)"]
 
 [[package]]
-category = "main"
-description = "The next generation HTTP client."
 name = "httpx"
+version = "0.9.3"
+description = "The next generation HTTP client."
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "0.9.3"
 
 [package.dependencies]
 certifi = "*"
@@ -650,60 +634,58 @@ rfc3986 = ">=1.3,<2"
 sniffio = ">=1.0.0,<2.0.0"
 
 [[package]]
-category = "main"
-description = "Human friendly output for text interfaces using Python"
 name = "humanfriendly"
+version = "8.2"
+description = "Human friendly output for text interfaces using Python"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "8.2"
 
 [package.dependencies]
-pyreadline = "*"
+pyreadline = {version = "*", markers = "sys_platform == \"win32\""}
 
 [[package]]
-category = "main"
-description = "HTTP/2 framing layer for Python"
 name = "hyperframe"
+version = "5.2.0"
+description = "HTTP/2 framing layer for Python"
+category = "main"
 optional = false
 python-versions = "*"
-version = "5.2.0"
 
 [[package]]
-category = "main"
-description = "Internationalized Domain Names in Applications (IDNA)"
 name = "idna"
+version = "2.9"
+description = "Internationalized Domain Names in Applications (IDNA)"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "2.9"
 
 [[package]]
-category = "main"
-description = "Patch ssl.match_hostname for Unicode(idna) domains support"
-marker = "python_version < \"3.7\""
 name = "idna-ssl"
+version = "1.1.0"
+description = "Patch ssl.match_hostname for Unicode(idna) domains support"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.1.0"
 
 [package.dependencies]
 idna = ">=2.0"
 
 [[package]]
-category = "main"
-description = "Immutable Collections"
-marker = "python_version < \"3.7\""
 name = "immutables"
+version = "0.14"
+description = "Immutable Collections"
+category = "main"
 optional = false
 python-versions = ">=3.5"
-version = "0.14"
 
 [[package]]
-category = "main"
-description = "Read metadata from Python packages"
 name = "importlib-metadata"
+version = "1.6.1"
+description = "Read metadata from Python packages"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
-version = "1.6.1"
 
 [package.dependencies]
 zipp = ">=0.5"
@@ -713,43 +695,38 @@ docs = ["sphinx", "rst.linker"]
 testing = ["packaging", "pep517", "importlib-resources (>=1.3)"]
 
 [[package]]
-category = "main"
-description = "Read resources from Python packages"
-marker = "python_version < \"3.7\""
 name = "importlib-resources"
+version = "2.0.1"
+description = "Read resources from Python packages"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
-version = "2.0.1"
 
 [package.dependencies]
-[package.dependencies.importlib-metadata]
-python = "<3.8"
-version = "*"
-
-[package.dependencies.zipp]
-python = "<3.8"
-version = ">=0.4"
+importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
+zipp = {version = ">=0.4", markers = "python_version < \"3.8\""}
 
 [package.extras]
 docs = ["sphinx", "rst.linker", "jaraco.packaging"]
 
 [[package]]
-category = "main"
-description = "IPv4/IPv6 manipulation library"
 name = "ipaddress"
+version = "1.0.23"
+description = "IPv4/IPv6 manipulation library"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.0.23"
 
 [[package]]
-category = "main"
-description = "IRC (Internet Relay Chat) protocol library for Python"
 name = "irc"
+version = "18.0.0"
+description = "IRC (Internet Relay Chat) protocol library for Python"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "18.0.0"
 
 [package.dependencies]
+importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
 "jaraco.collections" = "*"
 "jaraco.functools" = ">=1.20"
 "jaraco.logging" = "*"
@@ -759,44 +736,40 @@ more-itertools = "*"
 pytz = "*"
 tempora = ">=1.6"
 
-[package.dependencies.importlib-metadata]
-python = "<3.8"
-version = "*"
-
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov", "backports.unittest-mock"]
+testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov", "backports.unittest-mock"]
 
 [[package]]
-category = "main"
-description = "Various helpers to pass data to untrusted environments and back."
 name = "itsdangerous"
+version = "1.1.0"
+description = "Various helpers to pass data to untrusted environments and back."
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "1.1.0"
 
 [[package]]
-category = "main"
-description = "Utility functions for Python class constructs"
 name = "jaraco.classes"
+version = "3.1.0"
+description = "Utility functions for Python class constructs"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "3.1.0"
 
 [package.dependencies]
 more-itertools = "*"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov"]
+testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov"]
 
 [[package]]
-category = "main"
-description = "Collection objects similar to those in stdlib by jaraco"
 name = "jaraco.collections"
+version = "3.0.0"
+description = "Collection objects similar to those in stdlib by jaraco"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "3.0.0"
 
 [package.dependencies]
 "jaraco.classes" = "*"
@@ -805,30 +778,30 @@ six = ">=1.7.0"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov"]
+testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov"]
 
 [[package]]
-category = "main"
-description = "Functools like those found in stdlib"
 name = "jaraco.functools"
+version = "3.0.1"
+description = "Functools like those found in stdlib"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "3.0.1"
 
 [package.dependencies]
 more-itertools = "*"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black (>=0.3.7)", "pytest-cov", "jaraco.classes"]
+testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black (>=0.3.7)", "pytest-cov", "jaraco.classes"]
 
 [[package]]
-category = "main"
-description = "Support for Python logging facility"
 name = "jaraco.logging"
+version = "3.0.0"
+description = "Support for Python logging facility"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "3.0.0"
 
 [package.dependencies]
 six = "*"
@@ -836,47 +809,44 @@ tempora = "*"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov"]
+testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov"]
 
 [[package]]
-category = "main"
-description = "routines for dealing with data streams"
 name = "jaraco.stream"
+version = "3.0.0"
+description = "routines for dealing with data streams"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "3.0.0"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov", "more-itertools"]
+testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov", "more-itertools"]
 
 [[package]]
-category = "main"
-description = "Module for text manipulation"
 name = "jaraco.text"
+version = "3.2.0"
+description = "Module for text manipulation"
+category = "main"
 optional = false
 python-versions = ">=2.7"
-version = "3.2.0"
 
 [package.dependencies]
+importlib-resources = {version = "*", markers = "python_version < \"3.7\""}
 "jaraco.functools" = "*"
 six = "*"
 
-[package.dependencies.importlib-resources]
-python = "<3.7"
-version = "*"
-
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov"]
+testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov"]
 
 [[package]]
-category = "main"
-description = "A very fast and expressive template engine."
 name = "jinja2"
+version = "2.11.2"
+description = "A very fast and expressive template engine."
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "2.11.2"
 
 [package.dependencies]
 MarkupSafe = ">=0.23"
@@ -885,74 +855,70 @@ MarkupSafe = ">=0.23"
 i18n = ["Babel (>=0.8)"]
 
 [[package]]
-category = "main"
-description = "JSON Matching Expressions"
 name = "jmespath"
+version = "0.10.0"
+description = "JSON Matching Expressions"
+category = "main"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
-version = "0.10.0"
 
 [[package]]
-category = "main"
-description = "Lightweight pipelining: using Python functions as pipeline jobs."
 name = "joblib"
+version = "0.15.1"
+description = "Lightweight pipelining: using Python functions as pipeline jobs."
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "0.15.1"
 
 [[package]]
-category = "main"
-description = "Python library for serializing any arbitrary object graph into JSON"
 name = "jsonpickle"
+version = "1.4.1"
+description = "Python library for serializing any arbitrary object graph into JSON"
+category = "main"
 optional = false
 python-versions = ">=2.7"
-version = "1.4.1"
 
 [package.dependencies]
 importlib-metadata = "*"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["coverage (<5)", "pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov", "ecdsa", "feedparser", "numpy", "pandas", "pymongo", "sqlalchemy", "enum34", "jsonlib"]
+testing = ["coverage (<5)", "pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov", "ecdsa", "feedparser", "numpy", "pandas", "pymongo", "sqlalchemy", "enum34", "jsonlib"]
 "testing.libs" = ["demjson", "simplejson", "ujson", "yajl"]
 
 [[package]]
-category = "main"
-description = "An implementation of JSON Schema validation for Python"
 name = "jsonschema"
+version = "3.2.0"
+description = "An implementation of JSON Schema validation for Python"
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.2.0"
 
 [package.dependencies]
 attrs = ">=17.4.0"
+importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
 pyrsistent = ">=0.14.0"
-setuptools = "*"
 six = ">=1.11.0"
-
-[package.dependencies.importlib-metadata]
-python = "<3.8"
-version = "*"
 
 [package.extras]
 format = ["idna", "jsonpointer (>1.13)", "rfc3987", "strict-rfc3339", "webcolors"]
 format_nongpl = ["idna", "jsonpointer (>1.13)", "webcolors", "rfc3986-validator (>0.1.0)", "rfc3339-validator"]
 
 [[package]]
-category = "main"
-description = "Pure Python client for Apache Kafka"
 name = "kafka-python"
+version = "1.4.7"
+description = "Pure Python client for Apache Kafka"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.4.7"
 
 [[package]]
-category = "main"
-description = "Deep Learning for humans"
 name = "keras"
+version = "2.3.1"
+description = "Deep Learning for humans"
+category = "main"
 optional = false
 python-versions = "*"
-version = "2.3.1"
 
 [package.dependencies]
 h5py = "*"
@@ -968,12 +934,12 @@ tests = ["pytest", "pytest-pep8", "pytest-xdist", "flaky", "pytest-cov", "pandas
 visualize = ["pydot (>=1.2.4)"]
 
 [[package]]
-category = "main"
-description = "Reference implementations of popular deep learning models"
 name = "keras-applications"
+version = "1.0.8"
+description = "Reference implementations of popular deep learning models"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.0.8"
 
 [package.dependencies]
 h5py = "*"
@@ -983,12 +949,12 @@ numpy = ">=1.9.1"
 tests = ["pytest", "pytest-pep8", "pytest-xdist", "pytest-cov"]
 
 [[package]]
-category = "main"
-description = "Easy data preprocessing and data augmentation for deep learning models"
 name = "keras-preprocessing"
+version = "1.1.0"
+description = "Easy data preprocessing and data augmentation for deep learning models"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.1.0"
 
 [package.dependencies]
 numpy = ">=1.9.1"
@@ -997,43 +963,40 @@ six = ">=1.9.0"
 [package.extras]
 image = ["scipy (>=0.14)", "Pillow (>=5.2.0)"]
 pep8 = ["flake8"]
-tests = ["pandas", "pillow", "tensorflow (1.7)", "keras", "pytest", "pytest-xdist", "pytest-cov"]
+tests = ["pandas", "pillow", "tensorflow (==1.7)", "keras", "pytest", "pytest-xdist", "pytest-cov"]
 
 [[package]]
-category = "main"
-description = "A fast implementation of the Cassowary constraint solver"
 name = "kiwisolver"
+version = "1.2.0"
+description = "A fast implementation of the Cassowary constraint solver"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "1.2.0"
 
 [[package]]
-category = "main"
-description = "A concrete syntax tree with AST-like properties for Python 3.5, 3.6, 3.7 and 3.8 programs."
 name = "libcst"
+version = "0.3.6"
+description = "A concrete syntax tree with AST-like properties for Python 3.5, 3.6, 3.7 and 3.8 programs."
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "0.3.6"
 
 [package.dependencies]
+dataclasses = {version = "*", markers = "python_version < \"3.7\""}
 pyyaml = ">=5.2"
 typing-extensions = ">=3.7.2"
 typing-inspect = ">=0.4.0"
-
-[package.dependencies.dataclasses]
-python = "<3.7"
-version = "*"
 
 [package.extras]
 dev = ["black", "codecov", "coverage", "hypothesis (>=4.36.0)", "hypothesmith (>=0.0.4)", "isort", "flake8", "jupyter", "nbsphinx", "pyre-check", "sphinx", "sphinx-rtd-theme"]
 
 [[package]]
-category = "main"
-description = "A super-fast templating language that borrows the  best ideas from the existing templating languages."
 name = "mako"
+version = "1.1.3"
+description = "A super-fast templating language that borrows the  best ideas from the existing templating languages."
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "1.1.3"
 
 [package.dependencies]
 MarkupSafe = ">=0.9.2"
@@ -1043,36 +1006,34 @@ babel = ["babel"]
 lingua = ["lingua"]
 
 [[package]]
-category = "main"
-description = "Python implementation of Markdown."
 name = "markdown"
+version = "3.2.2"
+description = "Python implementation of Markdown."
+category = "main"
 optional = false
 python-versions = ">=3.5"
-version = "3.2.2"
 
 [package.dependencies]
-[package.dependencies.importlib-metadata]
-python = "<3.8"
-version = "*"
+importlib-metadata = {version = "*", markers = "python_version < \"3.8\""}
 
 [package.extras]
 testing = ["coverage", "pyyaml"]
 
 [[package]]
-category = "main"
-description = "Safely add untrusted strings to HTML/XML markup."
 name = "markupsafe"
+version = "1.1.1"
+description = "Safely add untrusted strings to HTML/XML markup."
+category = "main"
 optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
-version = "1.1.1"
 
 [[package]]
-category = "main"
-description = "Python plotting package"
 name = "matplotlib"
+version = "3.2.1"
+description = "Python plotting package"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "3.2.1"
 
 [package.dependencies]
 cycler = ">=0.10"
@@ -1082,63 +1043,63 @@ pyparsing = ">=2.0.1,<2.0.4 || >2.0.4,<2.1.2 || >2.1.2,<2.1.6 || >2.1.6"
 python-dateutil = ">=2.1"
 
 [[package]]
-category = "main"
-description = "A mattermost api v4 wrapper to interact with api"
 name = "mattermostwrapper"
+version = "2.2"
+description = "A mattermost api v4 wrapper to interact with api"
+category = "main"
 optional = false
 python-versions = "*"
-version = "2.2"
 
 [package.dependencies]
 requests = "*"
 
 [[package]]
-category = "dev"
-description = "McCabe checker, plugin for flake8"
 name = "mccabe"
-optional = false
-python-versions = "*"
 version = "0.6.1"
+description = "McCabe checker, plugin for flake8"
+category = "dev"
+optional = false
+python-versions = "*"
 
 [[package]]
-category = "main"
-description = "More routines for operating on iterables, beyond itertools"
 name = "more-itertools"
-optional = false
-python-versions = ">=3.5"
 version = "8.3.0"
+description = "More routines for operating on iterables, beyond itertools"
+category = "main"
+optional = false
+python-versions = ">=3.5"
 
 [[package]]
-category = "main"
-description = "multidict implementation"
 name = "multidict"
-optional = false
-python-versions = ">=3.5"
 version = "4.7.6"
-
-[[package]]
+description = "multidict implementation"
 category = "main"
-description = "Cython bindings for MurmurHash"
-name = "murmurhash"
-optional = false
-python-versions = "*"
-version = "1.0.2"
-
-[[package]]
-category = "main"
-description = "Experimental type system extensions for programs checked with the mypy typechecker."
-name = "mypy-extensions"
-optional = false
-python-versions = "*"
-version = "0.4.3"
-
-[[package]]
-category = "main"
-description = "Python package for creating and manipulating graphs and networks"
-name = "networkx"
 optional = false
 python-versions = ">=3.5"
+
+[[package]]
+name = "murmurhash"
+version = "1.0.2"
+description = "Cython bindings for MurmurHash"
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "mypy-extensions"
+version = "0.4.3"
+description = "Experimental type system extensions for programs checked with the mypy typechecker."
+category = "main"
+optional = false
+python-versions = "*"
+
+[[package]]
+name = "networkx"
 version = "2.4"
+description = "Python package for creating and manipulating graphs and networks"
+category = "main"
+optional = false
+python-versions = ">=3.5"
 
 [package.dependencies]
 decorator = ">=4.3.0"
@@ -1157,20 +1118,20 @@ pyyaml = ["pyyaml"]
 scipy = ["scipy"]
 
 [[package]]
-category = "main"
-description = "NumPy is the fundamental package for array computing with Python."
 name = "numpy"
+version = "1.18.5"
+description = "NumPy is the fundamental package for array computing with Python."
+category = "main"
 optional = false
 python-versions = ">=3.5"
-version = "1.18.5"
 
 [[package]]
-category = "main"
-description = "OAuth 2.0 client library"
 name = "oauth2client"
+version = "4.1.3"
+description = "OAuth 2.0 client library"
+category = "main"
 optional = false
 python-versions = "*"
-version = "4.1.3"
 
 [package.dependencies]
 httplib2 = ">=0.9.1"
@@ -1180,12 +1141,12 @@ rsa = ">=3.1.4"
 six = ">=1.6.1"
 
 [[package]]
-category = "main"
-description = "A generic, spec-compliant, thorough implementation of the OAuth request-signing logic"
 name = "oauthlib"
+version = "3.1.0"
+description = "A generic, spec-compliant, thorough implementation of the OAuth request-signing logic"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "3.1.0"
 
 [package.extras]
 rsa = ["cryptography"]
@@ -1193,39 +1154,39 @@ signals = ["blinker"]
 signedtoken = ["cryptography", "pyjwt (>=1.0.0)"]
 
 [[package]]
-category = "main"
-description = "Optimizing numpys einsum function"
 name = "opt-einsum"
+version = "3.2.1"
+description = "Optimizing numpys einsum function"
+category = "main"
 optional = false
 python-versions = ">=3.5"
-version = "3.2.1"
 
 [package.dependencies]
 numpy = ">=1.7"
 
 [package.extras]
-docs = ["sphinx (1.2.3)", "sphinxcontrib-napoleon", "sphinx-rtd-theme", "numpydoc"]
+docs = ["sphinx (==1.2.3)", "sphinxcontrib-napoleon", "sphinx-rtd-theme", "numpydoc"]
 tests = ["pytest", "pytest-cov", "pytest-pep8"]
 
 [[package]]
-category = "main"
-description = "Core utilities for Python packages"
 name = "packaging"
+version = "20.4"
+description = "Core utilities for Python packages"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "20.4"
 
 [package.dependencies]
 pyparsing = ">=2.0.2"
 six = "*"
 
 [[package]]
-category = "main"
-description = "Powerful data structures for data analysis, time series, and statistics"
 name = "pandas"
+version = "1.0.4"
+description = "Powerful data structures for data analysis, time series, and statistics"
+category = "main"
 optional = false
 python-versions = ">=3.6.1"
-version = "1.0.4"
 
 [package.dependencies]
 numpy = ">=1.13.3"
@@ -1236,142 +1197,141 @@ pytz = ">=2017.2"
 test = ["pytest (>=4.0.2)", "pytest-xdist", "hypothesis (>=3.58)"]
 
 [[package]]
-category = "dev"
-description = "Utility library for gitignore style pattern matching of file paths."
 name = "pathspec"
+version = "0.8.0"
+description = "Utility library for gitignore style pattern matching of file paths."
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "0.8.0"
 
 [[package]]
-category = "main"
-description = "Auto-generate API documentation for Python projects."
 name = "pdoc3"
+version = "0.8.1"
+description = "Auto-generate API documentation for Python projects."
+category = "main"
 optional = false
 python-versions = ">= 3.5"
-version = "0.8.1"
 
 [package.dependencies]
 mako = "*"
 markdown = ">=3.0"
 
 [[package]]
-category = "main"
-description = "Pika Python AMQP Client Library"
 name = "pika"
+version = "1.1.0"
+description = "Pika Python AMQP Client Library"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.1.0"
 
 [package.extras]
 tornado = ["tornado"]
 twisted = ["twisted"]
 
 [[package]]
-category = "main"
-description = "The smartest command line arguments parser in the world"
 name = "plac"
+version = "1.1.3"
+description = "The smartest command line arguments parser in the world"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.1.3"
 
 [[package]]
-category = "main"
-description = "Cython hash table that trusts the keys are pre-hashed"
 name = "preshed"
+version = "3.0.2"
+description = "Cython hash table that trusts the keys are pre-hashed"
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.0.2"
 
 [package.dependencies]
 cymem = ">=2.0.2,<2.1.0"
 murmurhash = ">=0.28.0,<1.1.0"
 
 [[package]]
-category = "main"
-description = "Library for building powerful interactive command lines in Python"
 name = "prompt-toolkit"
+version = "2.0.10"
+description = "Library for building powerful interactive command lines in Python"
+category = "main"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
-version = "2.0.10"
 
 [package.dependencies]
 six = ">=1.9.0"
 wcwidth = "*"
 
 [[package]]
-category = "main"
-description = "Protocol Buffers"
 name = "protobuf"
+version = "3.12.2"
+description = "Protocol Buffers"
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.12.2"
 
 [package.dependencies]
-setuptools = "*"
 six = ">=1.9"
 
 [[package]]
-category = "main"
-description = "Cross-platform lib for process and system monitoring in Python."
 name = "psutil"
+version = "5.7.0"
+description = "Cross-platform lib for process and system monitoring in Python."
+category = "main"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "5.7.0"
 
 [package.extras]
 enum = ["enum34"]
 
 [[package]]
-category = "main"
-description = "psycopg2 - Python-PostgreSQL Database Adapter"
 name = "psycopg2-binary"
+version = "2.8.5"
+description = "psycopg2 - Python-PostgreSQL Database Adapter"
+category = "main"
 optional = false
 python-versions = ">=2.7,!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*"
-version = "2.8.5"
 
 [[package]]
-category = "main"
-description = "ASN.1 types and codecs"
 name = "pyasn1"
+version = "0.4.8"
+description = "ASN.1 types and codecs"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.4.8"
 
 [[package]]
-category = "main"
-description = "A collection of ASN.1-based protocols modules."
 name = "pyasn1-modules"
+version = "0.2.8"
+description = "A collection of ASN.1-based protocols modules."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.2.8"
 
 [package.dependencies]
 pyasn1 = ">=0.4.6,<0.5.0"
 
 [[package]]
-category = "dev"
-description = "Python style guide checker"
 name = "pycodestyle"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
 version = "2.6.0"
-
-[[package]]
-category = "main"
-description = "C parser in Python"
-name = "pycparser"
+description = "Python style guide checker"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "2.20"
 
 [[package]]
+name = "pycparser"
+version = "2.20"
+description = "C parser in Python"
 category = "main"
-description = "A compact, flexible and standards-abiding IRC library for Python 3."
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
+
+[[package]]
 name = "pydle"
+version = "0.9.3"
+description = "A compact, flexible and standards-abiding IRC library for Python 3."
+category = "main"
 optional = false
 python-versions = ">=3.5"
-version = "0.9.3"
 
 [package.extras]
 coverage = ["pytest-cov"]
@@ -1380,31 +1340,31 @@ sasl = ["pure-sasl (>=0.1.6)"]
 tests = ["pytest"]
 
 [[package]]
-category = "main"
-description = "Python interface to Graphviz's Dot"
 name = "pydot"
+version = "1.4.1"
+description = "Python interface to Graphviz's Dot"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "1.4.1"
 
 [package.dependencies]
 pyparsing = ">=2.1.4"
 
 [[package]]
-category = "dev"
-description = "passive checker of Python programs"
 name = "pyflakes"
+version = "2.2.0"
+description = "passive checker of Python programs"
+category = "dev"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "2.2.0"
 
 [[package]]
-category = "main"
-description = "JSON Web Token implementation in Python"
 name = "pyjwt"
+version = "1.7.1"
+description = "JSON Web Token implementation in Python"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.7.1"
 
 [package.extras]
 crypto = ["cryptography (>=1.4)"]
@@ -1412,37 +1372,32 @@ flake8 = ["flake8", "flake8-import-order", "pep8-naming"]
 test = ["pytest (>=4.0.1,<5.0.0)", "pytest-cov (>=2.6.0,<3.0.0)", "pytest-runner (>=4.2,<5.0.0)"]
 
 [[package]]
-category = "main"
-description = "Python lib/cli for JSON/YAML schema validation"
 name = "pykwalify"
+version = "1.7.0"
+description = "Python lib/cli for JSON/YAML schema validation"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.7.0"
 
 [package.dependencies]
-PyYAML = ">=3.11"
 docopt = ">=0.6.2"
 python-dateutil = ">=2.4.2"
+PyYAML = ">=3.11"
 
 [package.extras]
 ruamel = ["ruamel.yaml (>=0.11.0,<0.16.0)"]
 
 [[package]]
-category = "main"
-description = "Python driver for MongoDB <http://www.mongodb.org>"
 name = "pymongo"
+version = "3.8.0"
+description = "Python driver for MongoDB <http://www.mongodb.org>"
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.8.0"
 
 [package.dependencies]
-[package.dependencies.dnspython]
-optional = true
-version = ">=1.8.0,<2.0.0"
-
-[package.dependencies.ipaddress]
-optional = true
-version = "*"
+dnspython = {version = ">=1.8.0,<2.0.0", optional = true, markers = "extra == \"srv\""}
+ipaddress = {version = "*", optional = true, markers = "extra == \"tls\""}
 
 [package.extras]
 gssapi = ["pykerberos"]
@@ -1451,20 +1406,20 @@ srv = ["dnspython (>=1.8.0,<2.0.0)"]
 tls = ["ipaddress"]
 
 [[package]]
-category = "main"
-description = "Python parsing module"
 name = "pyparsing"
+version = "2.4.7"
+description = "Python parsing module"
+category = "main"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
-version = "2.4.7"
 
 [[package]]
-category = "main"
-description = "A performant type checker for Python"
 name = "pyre-check"
+version = "0.0.46"
+description = "A performant type checker for Python"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "0.0.46"
 
 [package.dependencies]
 libcst = "*"
@@ -1473,75 +1428,73 @@ pyre-extensions = "*"
 pywatchman = "*"
 
 [package.extras]
-sapp = ["click", "click-log", "ipython (7.6.1)", "munch", "pygments", "sqlalchemy", "ujson (>=1.35,<2.0)", "xxhash (>=1.3.0,<1.4.0)", "prompt-toolkit (>=2.0.9,<2.1.0)"]
+sapp = ["click", "click-log", "ipython (==7.6.1)", "munch", "pygments", "sqlalchemy", "ujson (>=1.35,<2.0)", "xxhash (>=1.3.0,<1.4.0)", "prompt-toolkit (>=2.0.9,<2.1.0)"]
 
 [[package]]
-category = "main"
-description = "Type system extensions for use with the pyre type checker"
 name = "pyre-extensions"
+version = "0.0.18"
+description = "Type system extensions for use with the pyre type checker"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.0.18"
 
 [package.dependencies]
 typing-extensions = "*"
 typing-inspect = "*"
 
 [[package]]
-category = "main"
-description = "A python implmementation of GNU readline."
-marker = "sys_platform == \"win32\""
 name = "pyreadline"
+version = "2.1"
+description = "A python implmementation of GNU readline."
+category = "main"
 optional = false
 python-versions = "*"
-version = "2.1"
 
 [[package]]
-category = "main"
-description = "Persistent/Functional/Immutable data structures"
 name = "pyrsistent"
+version = "0.16.0"
+description = "Persistent/Functional/Immutable data structures"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.16.0"
 
 [package.dependencies]
 six = "*"
 
 [[package]]
-category = "main"
-description = "A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information."
-marker = "python_version >= \"3.0\""
 name = "pysocks"
+version = "1.7.1"
+description = "A Python SOCKS client module. See https://github.com/Anorov/PySocks for more information."
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "1.7.1"
 
 [[package]]
-category = "main"
-description = "Python binding for CRFsuite"
 name = "python-crfsuite"
+version = "0.9.7"
+description = "Python binding for CRFsuite"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.9.7"
 
 [[package]]
-category = "main"
-description = "Extensions to the standard Python datetime module"
 name = "python-dateutil"
+version = "2.8.1"
+description = "Extensions to the standard Python datetime module"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,>=2.7"
-version = "2.8.1"
 
 [package.dependencies]
 six = ">=1.5"
 
 [[package]]
-category = "main"
-description = "Engine.IO server"
 name = "python-engineio"
+version = "3.12.1"
+description = "Engine.IO server"
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.12.1"
 
 [package.dependencies]
 six = ">=1.9.0"
@@ -1551,12 +1504,12 @@ asyncio_client = ["aiohttp (>=3.4)"]
 client = ["requests (>=2.21.0)", "websocket-client (>=0.54.0)"]
 
 [[package]]
-category = "main"
-description = "Socket.IO server"
 name = "python-socketio"
+version = "4.5.1"
+description = "Socket.IO server"
+category = "main"
 optional = false
 python-versions = "*"
-version = "4.5.1"
 
 [package.dependencies]
 python-engineio = ">=3.9.0"
@@ -1567,12 +1520,12 @@ asyncio_client = ["aiohttp (>=3.4)", "websockets (>=7.0)"]
 client = ["requests (>=2.21.0)", "websocket-client (>=0.54.0)"]
 
 [[package]]
-category = "main"
-description = "We have made you a wrapper you can't refuse"
 name = "python-telegram-bot"
+version = "12.7"
+description = "We have made you a wrapper you can't refuse"
+category = "main"
 optional = false
 python-versions = "*"
-version = "12.7"
 
 [package.dependencies]
 certifi = "*"
@@ -1586,36 +1539,36 @@ json = ["ujson"]
 socks = ["pysocks"]
 
 [[package]]
-category = "main"
-description = "World timezone definitions, modern and historical"
 name = "pytz"
-optional = false
-python-versions = "*"
 version = "2019.3"
+description = "World timezone definitions, modern and historical"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
-category = "main"
-description = "Watchman client for python"
 name = "pywatchman"
-optional = false
-python-versions = "*"
 version = "1.4.1"
+description = "Watchman client for python"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
-category = "main"
-description = "YAML parser and emitter for Python"
 name = "pyyaml"
-optional = false
-python-versions = "*"
 version = "5.3.1"
+description = "YAML parser and emitter for Python"
+category = "main"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
-category = "main"
-description = "Python library to build pretty command line user prompts ⭐️"
 name = "questionary"
+version = "1.5.2"
+description = "Python library to build pretty command line user prompts ⭐️"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.5.2"
 
 [package.dependencies]
 prompt-toolkit = ">=2.0,<4.0"
@@ -1624,16 +1577,14 @@ prompt-toolkit = ">=2.0,<4.0"
 test = ["pytest", "pytest-pycodestyle", "pytest-cov", "coveralls"]
 
 [[package]]
-category = "main"
-description = "Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants"
 name = "rasa"
+version = "1.10.2"
+description = "Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants"
+category = "main"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "1.10.2"
 
 [package.dependencies]
-PyJWT = ">=1.7,<1.8"
-SQLAlchemy = ">=1.3.3,<1.4.0"
 absl-py = ">=0.9,<0.10"
 aiohttp = ">=3.6,<3.7"
 apscheduler = ">=3.6,<3.7"
@@ -1660,7 +1611,9 @@ pika = ">=1.1.0,<1.2.0"
 prompt-toolkit = ">=2.0,<3.0"
 psycopg2-binary = ">=2.8.2,<2.9.0"
 pydot = ">=1.4,<1.5"
+PyJWT = ">=1.7,<1.8"
 pykwalify = ">=1.7.0,<1.8.0"
+pymongo = {version = ">=3.8.0,<3.9.0", extras = ["srv", "tls"]}
 python-dateutil = ">=2.8,<2.9"
 python-engineio = ">=3.11,<3.13"
 python-socketio = ">=4.4,<4.6"
@@ -1677,38 +1630,34 @@ sanic-cors = ">=0.10.0b1,<0.11.0"
 sanic-jwt = ">=1.3.2,<1.5.0"
 scikit-learn = ">=0.22,<0.23"
 scipy = ">=1.4.1,<2.0.0"
-setuptools = ">=41.0.0"
 sklearn-crfsuite = ">=0.3,<0.4"
 slackclient = ">=2.0.0,<3.0.0"
+SQLAlchemy = ">=1.3.3,<1.4.0"
 tensorflow = ">=2.1,<2.2"
 tensorflow-addons = ">=0.7.1,<0.8.0"
 tensorflow-estimator = "2.1.0"
-tensorflow-probability = ">=0.7,<0.10"
 tensorflow_hub = ">=0.7,<0.9"
+tensorflow-probability = ">=0.7,<0.10"
 terminaltables = ">=3.1.0,<3.2.0"
 tqdm = ">=4.31,<4.46"
 twilio = ">=6.26,<6.27"
 ujson = ">=1.35,<3.0"
 webexteamssdk = ">=1.1.1,<1.4.0"
 
-[package.dependencies.pymongo]
-extras = ["srv", "tls"]
-version = ">=3.8.0,<3.9.0"
-
 [package.extras]
-convert = ["tensorflow_text (2.1.0rc0)"]
-full = ["jieba (0.39)", "spacy (>=2.1,<2.2)", "tensorflow_text (2.1.0rc0)", "transformers (>=2.4,<2.5)"]
 gh-release-notes = ["github3.py (>=1.3.0,<1.4.0)", "pypandoc (>=1.4,<1.5)"]
+full = ["jieba (==0.39)", "spacy (>=2.1,<2.2)", "tensorflow_text (==2.1.0rc0)", "transformers (>=2.4,<2.5)"]
 spacy = ["spacy (>=2.1,<2.2)"]
+convert = ["tensorflow_text (==2.1.0rc0)"]
 transformers = ["transformers (>=2.4,<2.5)"]
 
 [[package]]
-category = "main"
-description = "Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants"
 name = "rasa-sdk"
+version = "1.10.1"
+description = "Open source machine learning framework to automate text- and voice-based conversations: NLU, dialogue management, connect to Slack, Facebook, and more - Create chatbots and voice assistants"
+category = "main"
 optional = false
 python-versions = ">=3.6,<4.0"
-version = "1.10.1"
 
 [package.dependencies]
 coloredlogs = ">=10,<15"
@@ -1717,31 +1666,31 @@ sanic = ">=19.12.2,<20.0.0"
 sanic-cors = ">=0.10.0b1,<0.11.0"
 
 [[package]]
-category = "main"
-description = "Python client for Redis key-value store"
 name = "redis"
+version = "3.5.3"
+description = "Python client for Redis key-value store"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "3.5.3"
 
 [package.extras]
 hiredis = ["hiredis (>=0.1.3)"]
 
 [[package]]
-category = "main"
-description = "Alternative regular expression module, to replace re."
 name = "regex"
+version = "2020.6.8"
+description = "Alternative regular expression module, to replace re."
+category = "main"
 optional = false
 python-versions = "*"
-version = "2020.6.8"
 
 [[package]]
-category = "main"
-description = "Python HTTP for Humans."
 name = "requests"
+version = "2.23.0"
+description = "Python HTTP for Humans."
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "2.23.0"
 
 [package.dependencies]
 certifi = ">=2017.4.17"
@@ -1751,111 +1700,108 @@ urllib3 = ">=1.21.1,<1.25.0 || >1.25.0,<1.25.1 || >1.25.1,<1.26"
 
 [package.extras]
 security = ["pyOpenSSL (>=0.14)", "cryptography (>=1.3.4)"]
-socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7)", "win-inet-pton"]
+socks = ["PySocks (>=1.5.6,!=1.5.7)", "win-inet-pton"]
 
 [[package]]
-category = "main"
-description = "OAuthlib authentication support for Requests."
 name = "requests-oauthlib"
+version = "1.3.0"
+description = "OAuthlib authentication support for Requests."
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "1.3.0"
 
 [package.dependencies]
 oauthlib = ">=3.0.0"
 requests = ">=2.0.0"
 
 [package.extras]
-rsa = ["oauthlib (>=3.0.0)"]
+rsa = ["oauthlib[signedtoken] (>=3.0.0)"]
 
 [[package]]
-category = "main"
-description = "A utility belt for advanced users of python-requests"
 name = "requests-toolbelt"
+version = "0.9.1"
+description = "A utility belt for advanced users of python-requests"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.9.1"
 
 [package.dependencies]
 requests = ">=2.0.1,<3.0.0"
 
 [[package]]
-category = "main"
-description = "Validating URI References per RFC 3986"
 name = "rfc3986"
+version = "1.4.0"
+description = "Validating URI References per RFC 3986"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.4.0"
 
 [package.extras]
 idna2008 = ["idna"]
 
 [[package]]
-category = "main"
-description = "Python API wrapper for Rocket.Chat"
 name = "rocketchat-api"
+version = "1.3.1"
+description = "Python API wrapper for Rocket.Chat"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.3.1"
 
 [package.dependencies]
 requests = "*"
 
 [[package]]
-category = "main"
-description = "Pure-Python RSA implementation"
 name = "rsa"
+version = "4.6"
+description = "Pure-Python RSA implementation"
+category = "main"
 optional = false
 python-versions = ">=3.5, <4"
-version = "4.6"
 
 [package.dependencies]
 pyasn1 = ">=0.1.3"
 
 [[package]]
-category = "main"
-description = "ruamel.yaml is a YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order"
 name = "ruamel.yaml"
+version = "0.16.10"
+description = "ruamel.yaml is a YAML parser/emitter that supports roundtrip preservation of comments, seq/map flow style, and map key order"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.16.10"
 
 [package.dependencies]
-[package.dependencies."ruamel.yaml.clib"]
-python = "<3.9"
-version = ">=0.1.2"
+"ruamel.yaml.clib" = {version = ">=0.1.2", markers = "platform_python_implementation == \"CPython\" and python_version < \"3.9\""}
 
 [package.extras]
 docs = ["ryd"]
 jinja2 = ["ruamel.yaml.jinja2 (>=0.2)"]
 
 [[package]]
-category = "main"
-description = "C version of reader, parser and emitter for ruamel.yaml derived from libyaml"
-marker = "platform_python_implementation == \"CPython\" and python_version < \"3.9\""
 name = "ruamel.yaml.clib"
+version = "0.2.0"
+description = "C version of reader, parser and emitter for ruamel.yaml derived from libyaml"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.2.0"
 
 [[package]]
-category = "main"
-description = "An Amazon S3 Transfer Manager"
 name = "s3transfer"
+version = "0.3.3"
+description = "An Amazon S3 Transfer Manager"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.3.3"
 
 [package.dependencies]
 botocore = ">=1.12.36,<2.0a.0"
 
 [[package]]
-category = "main"
-description = "SacreMoses"
 name = "sacremoses"
+version = "0.0.43"
+description = "SacreMoses"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.0.43"
 
 [package.dependencies]
 click = "*"
@@ -1865,47 +1811,47 @@ six = "*"
 tqdm = "*"
 
 [[package]]
-category = "main"
-description = "A web server and web framework that's written to go fast. Build fast. Run fast."
 name = "sanic"
+version = "19.12.2"
+description = "A web server and web framework that's written to go fast. Build fast. Run fast."
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "19.12.2"
 
 [package.dependencies]
 aiofiles = ">=0.3.0"
 httptools = ">=0.0.10"
 httpx = "0.9.3"
 multidict = ">=4.0,<5.0"
-ujson = ">=1.35"
-uvloop = ">=0.5.3"
+ujson = {version = ">=1.35", markers = "sys_platform != \"win32\" and implementation_name == \"cpython\""}
+uvloop = {version = ">=0.5.3", markers = "sys_platform != \"win32\" and implementation_name == \"cpython\""}
 websockets = ">=7.0,<9.0"
 
 [package.extras]
-all = ["pytest (5.2.1)", "multidict (>=4.0,<5.0)", "gunicorn", "pytest-cov", "httpcore (0.3.0)", "beautifulsoup4", "pytest-sanic", "pytest-sugar", "pytest-benchmark", "aiofiles", "tox", "black", "flake8", "bandit", "towncrier", "sphinx (>=2.1.2)", "sphinx-rtd-theme", "recommonmark (>=0.5.0)", "docutils", "pygments", "uvloop (>=0.5.3)", "ujson (>=1.35)"]
-dev = ["pytest (5.2.1)", "multidict (>=4.0,<5.0)", "gunicorn", "pytest-cov", "httpcore (0.3.0)", "beautifulsoup4", "pytest-sanic", "pytest-sugar", "pytest-benchmark", "aiofiles", "tox", "black", "flake8", "bandit", "towncrier", "uvloop (>=0.5.3)", "ujson (>=1.35)"]
+all = ["pytest (==5.2.1)", "multidict (>=4.0,<5.0)", "gunicorn", "pytest-cov", "httpcore (==0.3.0)", "beautifulsoup4", "pytest-sanic", "pytest-sugar", "pytest-benchmark", "aiofiles", "tox", "black", "flake8", "bandit", "towncrier", "sphinx (>=2.1.2)", "sphinx-rtd-theme", "recommonmark (>=0.5.0)", "docutils", "pygments", "uvloop (>=0.5.3)", "ujson (>=1.35)"]
+dev = ["pytest (==5.2.1)", "multidict (>=4.0,<5.0)", "gunicorn", "pytest-cov", "httpcore (==0.3.0)", "beautifulsoup4", "pytest-sanic", "pytest-sugar", "pytest-benchmark", "aiofiles", "tox", "black", "flake8", "bandit", "towncrier", "uvloop (>=0.5.3)", "ujson (>=1.35)"]
 docs = ["sphinx (>=2.1.2)", "sphinx-rtd-theme", "recommonmark (>=0.5.0)", "docutils", "pygments"]
-test = ["pytest (5.2.1)", "multidict (>=4.0,<5.0)", "gunicorn", "pytest-cov", "httpcore (0.3.0)", "beautifulsoup4", "pytest-sanic", "pytest-sugar", "pytest-benchmark", "uvloop (>=0.5.3)", "ujson (>=1.35)"]
+test = ["pytest (==5.2.1)", "multidict (>=4.0,<5.0)", "gunicorn", "pytest-cov", "httpcore (==0.3.0)", "beautifulsoup4", "pytest-sanic", "pytest-sugar", "pytest-benchmark", "uvloop (>=0.5.3)", "ujson (>=1.35)"]
 
 [[package]]
-category = "main"
-description = "A Sanic extension adding a decorator for CORS support. Based on flask-cors by Cory Dolphin."
 name = "sanic-cors"
+version = "0.10.0.post3"
+description = "A Sanic extension adding a decorator for CORS support. Based on flask-cors by Cory Dolphin."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.10.0.post3"
 
 [package.dependencies]
 sanic = ">=18.12.0"
 sanic-plugins-framework = ">=0.9.0"
 
 [[package]]
-category = "main"
-description = "JWT oauth flow for Sanic"
 name = "sanic-jwt"
+version = "1.4.1"
+description = "JWT oauth flow for Sanic"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.4.1"
 
 [package.dependencies]
 pyjwt = "*"
@@ -1915,23 +1861,23 @@ all = ["sphinx", "sphinx"]
 docs = ["sphinx"]
 
 [[package]]
-category = "main"
-description = "Doing all of the boilerplate to create a Sanic Plugin, so you don't have to."
 name = "sanic-plugins-framework"
+version = "0.9.2"
+description = "Doing all of the boilerplate to create a Sanic Plugin, so you don't have to."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.9.2"
 
 [package.dependencies]
 sanic = ">=18.12.0"
 
 [[package]]
-category = "main"
-description = "A set of python modules for machine learning and data mining"
 name = "scikit-learn"
+version = "0.22.2.post1"
+description = "A set of python modules for machine learning and data mining"
+category = "main"
 optional = false
 python-versions = ">=3.5"
-version = "0.22.2.post1"
 
 [package.dependencies]
 joblib = ">=0.11"
@@ -1942,50 +1888,50 @@ scipy = ">=0.17.0"
 alldeps = ["numpy (>=1.11.0)", "scipy (>=0.17.0)"]
 
 [[package]]
-category = "main"
-description = "SciPy: Scientific Library for Python"
 name = "scipy"
+version = "1.4.1"
+description = "SciPy: Scientific Library for Python"
+category = "main"
 optional = false
 python-versions = ">=3.5"
-version = "1.4.1"
 
 [package.dependencies]
 numpy = ">=1.13.3"
 
 [[package]]
-category = "main"
-description = "SentencePiece python wrapper"
 name = "sentencepiece"
+version = "0.1.92"
+description = "SentencePiece python wrapper"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.1.92"
 
 [[package]]
-category = "main"
-description = "Python 2 and 3 compatibility utilities"
 name = "six"
+version = "1.15.0"
+description = "Python 2 and 3 compatibility utilities"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
-version = "1.15.0"
 
 [[package]]
-category = "main"
-description = "A set of python modules for machine learning and data mining"
 name = "sklearn"
+version = "0.0"
+description = "A set of python modules for machine learning and data mining"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.0"
 
 [package.dependencies]
 scikit-learn = "*"
 
 [[package]]
-category = "main"
-description = "CRFsuite (python-crfsuite) wrapper which provides interface simlar to scikit-learn"
 name = "sklearn-crfsuite"
+version = "0.3.6"
+description = "CRFsuite (python-crfsuite) wrapper which provides interface simlar to scikit-learn"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.3.6"
 
 [package.dependencies]
 python-crfsuite = ">=0.8.3"
@@ -1994,12 +1940,12 @@ tabulate = "*"
 tqdm = ">=2.0"
 
 [[package]]
-category = "main"
-description = "Slack API clients for Web API and RTM API"
 name = "slackclient"
+version = "2.7.1"
+description = "Slack API clients for Web API and RTM API"
+category = "main"
 optional = false
 python-versions = ">=3.6.0"
-version = "2.7.1"
 
 [package.dependencies]
 aiohttp = ">3.5.2,<4.0.0"
@@ -2008,33 +1954,31 @@ aiohttp = ">3.5.2,<4.0.0"
 optional = ["aiodns (>1.0)"]
 
 [[package]]
-category = "main"
-description = "Sniff out which async library your code is running under"
 name = "sniffio"
+version = "1.1.0"
+description = "Sniff out which async library your code is running under"
+category = "main"
 optional = false
 python-versions = ">=3.5"
-version = "1.1.0"
 
 [package.dependencies]
-[package.dependencies.contextvars]
-python = "<3.7"
-version = ">=2.1"
+contextvars = {version = ">=2.1", markers = "python_version < \"3.7\""}
 
 [[package]]
-category = "main"
-description = "A modern CSS selector implementation for Beautiful Soup."
 name = "soupsieve"
+version = "1.9.6"
+description = "A modern CSS selector implementation for Beautiful Soup."
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.9.6"
 
 [[package]]
-category = "main"
-description = "Industrial-strength Natural Language Processing (NLP) in Python"
 name = "spacy"
+version = "2.2.4"
+description = "Industrial-strength Natural Language Processing (NLP) in Python"
+category = "main"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,>=2.7"
-version = "2.2.4"
 
 [package.dependencies]
 blis = ">=0.4.0,<0.5.0"
@@ -2045,7 +1989,6 @@ numpy = ">=1.15.0"
 plac = ">=0.9.6,<1.2.0"
 preshed = ">=3.0.2,<3.1.0"
 requests = ">=2.13.0,<3.0.0"
-setuptools = "*"
 srsly = ">=1.0.2,<1.1.0"
 thinc = "7.4.0"
 tqdm = ">=4.38.0,<5.0.0"
@@ -2059,17 +2002,17 @@ cuda90 = ["cupy-cuda90 (>=5.0.0b4)"]
 cuda91 = ["cupy-cuda91 (>=5.0.0b4)"]
 cuda92 = ["cupy-cuda92 (>=5.0.0b4)"]
 ja = ["fugashi (>=0.1.3)"]
-ko = ["natto-py (0.9.0)"]
+ko = ["natto-py (==0.9.0)"]
 lookups = ["spacy-lookups-data (>=0.0.5,<0.2.0)"]
 th = ["pythainlp (>=2.0)"]
 
 [[package]]
-category = "main"
-description = "Database Abstraction Library"
 name = "sqlalchemy"
+version = "1.3.17"
+description = "Database Abstraction Library"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
-version = "1.3.17"
 
 [package.extras]
 mssql = ["pyodbc"]
@@ -2084,31 +2027,31 @@ postgresql_psycopg2cffi = ["psycopg2cffi"]
 pymysql = ["pymysql"]
 
 [[package]]
-category = "main"
-description = "Modern high-performance serialization utilities for Python"
 name = "srsly"
+version = "1.0.2"
+description = "Modern high-performance serialization utilities for Python"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.0.2"
 
 [[package]]
-category = "main"
-description = "Pretty-print tabular data"
 name = "tabulate"
+version = "0.8.7"
+description = "Pretty-print tabular data"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.8.7"
 
 [package.extras]
 widechars = ["wcwidth"]
 
 [[package]]
-category = "main"
-description = "Objects and routines pertaining to date and time (tempora)"
 name = "tempora"
+version = "3.0.0"
+description = "Objects and routines pertaining to date and time (tempora)"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "3.0.0"
 
 [package.dependencies]
 "jaraco.functools" = ">=1.20"
@@ -2116,15 +2059,15 @@ pytz = "*"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
-testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov", "backports.unittest-mock", "freezegun", "pytest-freezegun"]
+testing = ["pytest (>=3.5,!=3.7.3)", "pytest-checkdocs (>=1.2.3)", "pytest-flake8", "pytest-black-multipy", "pytest-cov", "backports.unittest-mock", "freezegun", "pytest-freezegun"]
 
 [[package]]
-category = "main"
-description = "TensorBoard lets you watch Tensors Flow"
 name = "tensorboard"
+version = "2.1.1"
+description = "TensorBoard lets you watch Tensors Flow"
+category = "main"
 optional = false
 python-versions = ">= 2.7, != 3.0.*, != 3.1.*"
-version = "2.1.1"
 
 [package.dependencies]
 absl-py = ">=0.4"
@@ -2135,21 +2078,16 @@ markdown = ">=2.6.8"
 numpy = ">=1.12.0"
 protobuf = ">=3.6.0"
 requests = ">=2.21.0,<3"
-setuptools = ">=41.0.0"
 six = ">=1.10.0"
 werkzeug = ">=0.11.15"
 
-[package.dependencies.wheel]
-python = ">=3"
-version = ">=0.26"
-
 [[package]]
-category = "main"
-description = "TensorFlow is an open source machine learning framework for everyone."
 name = "tensorflow"
+version = "2.1.1"
+description = "TensorFlow is an open source machine learning framework for everyone."
+category = "main"
 optional = false
 python-versions = "*"
-version = "2.1.1"
 
 [package.dependencies]
 absl-py = ">=0.7.0"
@@ -2162,46 +2100,39 @@ keras-preprocessing = "1.1.0"
 numpy = ">=1.16.0,<2.0"
 opt-einsum = ">=2.3.2"
 protobuf = ">=3.8.0"
+scipy = {version = "1.4.1", markers = "python_version >= \"3\""}
 six = ">=1.12.0"
 tensorboard = ">=2.1.0,<2.2.0"
 tensorflow-estimator = ">=2.1.0rc0,<2.2.0"
 termcolor = ">=1.1.0"
 wrapt = ">=1.11.1"
 
-[package.dependencies.scipy]
-python = ">=3"
-version = "1.4.1"
-
-[package.dependencies.wheel]
-python = ">=3"
-version = ">=0.26"
-
 [[package]]
-category = "main"
-description = "TensorFlow Addons."
 name = "tensorflow-addons"
+version = "0.7.1"
+description = "TensorFlow Addons."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.7.1"
 
 [package.dependencies]
 tensorflow = ">=2.1.0"
 
 [[package]]
-category = "main"
-description = "TensorFlow Estimator."
 name = "tensorflow-estimator"
+version = "2.1.0"
+description = "TensorFlow Estimator."
+category = "main"
 optional = false
 python-versions = "*"
-version = "2.1.0"
 
 [[package]]
-category = "main"
-description = "TensorFlow Hub is a library to foster the publication, discovery, and consumption of reusable parts of machine learning models."
 name = "tensorflow-hub"
+version = "0.8.0"
+description = "TensorFlow Hub is a library to foster the publication, discovery, and consumption of reusable parts of machine learning models."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.8.0"
 
 [package.dependencies]
 numpy = ">=1.12.0"
@@ -2213,12 +2144,12 @@ make_image_classifier = ["keras-preprocessing"]
 make_nearest_neighbour_index = ["apache-beam", "annoy"]
 
 [[package]]
-category = "main"
-description = "Probabilistic modeling and statistical inference in TensorFlow"
 name = "tensorflow-probability"
+version = "0.9.0"
+description = "Probabilistic modeling and statistical inference in TensorFlow"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.9.0"
 
 [package.dependencies]
 cloudpickle = ">=1.2.2"
@@ -2231,28 +2162,28 @@ six = ">=1.10.0"
 jax = ["jax", "jaxlib"]
 
 [[package]]
-category = "main"
-description = "ANSII Color formatting for output in terminal."
 name = "termcolor"
-optional = false
-python-versions = "*"
 version = "1.1.0"
+description = "ANSII Color formatting for output in terminal."
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
-category = "main"
-description = "Generate simple tables in terminals from a nested list of strings."
 name = "terminaltables"
+version = "3.1.0"
+description = "Generate simple tables in terminals from a nested list of strings."
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.1.0"
 
 [[package]]
-category = "main"
-description = "Practical Machine Learning for NLP"
 name = "thinc"
+version = "7.4.0"
+description = "Practical Machine Learning for NLP"
+category = "main"
 optional = false
 python-versions = "*"
-version = "7.4.0"
 
 [package.dependencies]
 blis = ">=0.4.0,<0.5.0"
@@ -2276,47 +2207,47 @@ cuda91 = ["cupy-cuda91 (>=5.0.0b4)"]
 cuda92 = ["cupy-cuda92 (>=5.0.0b4)"]
 
 [[package]]
-category = "main"
-description = "Fast and Customizable Tokenizers"
 name = "tokenizers"
-optional = false
-python-versions = "*"
 version = "0.0.11"
-
-[[package]]
-category = "dev"
-description = "Python Library for Tom's Obvious, Minimal Language"
-name = "toml"
+description = "Fast and Customizable Tokenizers"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.10.1"
 
 [[package]]
-category = "main"
-description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed."
+name = "toml"
+version = "0.10.1"
+description = "Python Library for Tom's Obvious, Minimal Language"
+category = "dev"
+optional = false
+python-versions = "*"
+
+[[package]]
 name = "tornado"
+version = "6.0.4"
+description = "Tornado is a Python web framework and asynchronous networking library, originally developed at FriendFeed."
+category = "main"
 optional = false
 python-versions = ">= 3.5"
-version = "6.0.4"
 
 [[package]]
-category = "main"
-description = "Fast, Extensible Progress Meter"
 name = "tqdm"
+version = "4.45.0"
+description = "Fast, Extensible Progress Meter"
+category = "main"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*"
-version = "4.45.0"
 
 [package.extras]
 dev = ["py-make (>=0.1.0)", "twine", "argopt", "pydoc-markdown"]
 
 [[package]]
-category = "main"
-description = "State-of-the-art Natural Language Processing for TensorFlow 2.0 and PyTorch"
 name = "transformers"
+version = "2.4.0"
+description = "State-of-the-art Natural Language Processing for TensorFlow 2.0 and PyTorch"
+category = "main"
 optional = false
 python-versions = ">=3.5.0"
-version = "2.4.0"
 
 [package.dependencies]
 boto3 = "*"
@@ -2342,192 +2273,174 @@ tf = ["tensorflow"]
 torch = ["torch"]
 
 [[package]]
-category = "main"
-description = "Twilio API client and TwiML generator"
 name = "twilio"
+version = "6.26.3"
+description = "Twilio API client and TwiML generator"
+category = "main"
 optional = false
 python-versions = "*"
-version = "6.26.3"
 
 [package.dependencies]
 PyJWT = ">=1.4.2"
+pysocks = {version = "*", markers = "python_version >= \"3.0\""}
 pytz = "*"
+requests = {version = ">=2.0.0", markers = "python_version >= \"3.0\""}
 six = "*"
 
-[package.dependencies.pysocks]
-python = ">=3.0"
-version = "*"
-
-[package.dependencies.requests]
-python = ">=3.0"
-version = ">=2.0.0"
-
 [[package]]
-category = "dev"
-description = "a fork of Python 2 and 3 ast modules with type comment support"
 name = "typed-ast"
-optional = false
-python-versions = "*"
 version = "1.4.1"
+description = "a fork of Python 2 and 3 ast modules with type comment support"
+category = "dev"
+optional = false
+python-versions = "*"
 
 [[package]]
-category = "main"
-description = "Backported and Experimental Type Hints for Python 3.5+"
 name = "typing-extensions"
+version = "3.7.4.2"
+description = "Backported and Experimental Type Hints for Python 3.5+"
+category = "main"
 optional = false
 python-versions = "*"
-version = "3.7.4.2"
 
 [[package]]
-category = "main"
-description = "Runtime inspection utilities for typing module."
 name = "typing-inspect"
+version = "0.6.0"
+description = "Runtime inspection utilities for typing module."
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.6.0"
 
 [package.dependencies]
 mypy-extensions = ">=0.3.0"
 typing-extensions = ">=3.7.4"
 
 [[package]]
-category = "main"
-description = "tzinfo object for the local timezone"
 name = "tzlocal"
+version = "2.1"
+description = "tzinfo object for the local timezone"
+category = "main"
 optional = false
 python-versions = "*"
-version = "2.1"
 
 [package.dependencies]
 pytz = "*"
 
 [[package]]
-category = "main"
-description = "Ultra fast JSON encoder and decoder for Python"
 name = "ujson"
+version = "2.0.3"
+description = "Ultra fast JSON encoder and decoder for Python"
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "2.0.3"
 
 [[package]]
-category = "main"
-description = "HTTP library with thread-safe connection pooling, file post, and more."
 name = "urllib3"
+version = "1.25.9"
+description = "HTTP library with thread-safe connection pooling, file post, and more."
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*, <4"
-version = "1.25.9"
 
 [package.extras]
 brotli = ["brotlipy (>=0.6.0)"]
 secure = ["certifi", "cryptography (>=1.3.4)", "idna (>=2.0.0)", "pyOpenSSL (>=0.14)", "ipaddress"]
-socks = ["PySocks (>=1.5.6,<1.5.7 || >1.5.7,<2.0)"]
+socks = ["PySocks (>=1.5.6,!=1.5.7,<2.0)"]
 
 [[package]]
-category = "main"
-description = "Fast implementation of asyncio event loop on top of libuv"
-marker = "sys_platform != \"win32\" and implementation_name == \"cpython\""
 name = "uvloop"
-optional = false
-python-versions = "*"
 version = "0.14.0"
+description = "Fast implementation of asyncio event loop on top of libuv"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
-category = "main"
-description = "A lightweight console printing and formatting toolkit"
 name = "wasabi"
-optional = false
-python-versions = "*"
 version = "0.6.0"
+description = "A lightweight console printing and formatting toolkit"
+category = "main"
+optional = false
+python-versions = "*"
 
 [[package]]
-category = "main"
-description = "Measures the displayed width of unicode strings in a terminal"
 name = "wcwidth"
+version = "0.2.4"
+description = "Measures the displayed width of unicode strings in a terminal"
+category = "main"
 optional = false
 python-versions = "*"
-version = "0.2.4"
 
 [[package]]
-category = "main"
-description = "Community-developed Python SDK for the Webex Teams APIs"
 name = "webexteamssdk"
+version = "1.3"
+description = "Community-developed Python SDK for the Webex Teams APIs"
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.3"
 
 [package.dependencies]
-PyJWT = "*"
 future = "*"
+PyJWT = "*"
 requests = ">=2.4.2"
 requests-toolbelt = "*"
 
 [[package]]
-category = "main"
-description = "An implementation of the WebSocket Protocol (RFC 6455 & 7692)"
 name = "websockets"
+version = "8.1"
+description = "An implementation of the WebSocket Protocol (RFC 6455 & 7692)"
+category = "main"
 optional = false
 python-versions = ">=3.6.1"
-version = "8.1"
 
 [[package]]
-category = "main"
-description = "The comprehensive WSGI web application library."
 name = "werkzeug"
+version = "1.0.1"
+description = "The comprehensive WSGI web application library."
+category = "main"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "1.0.1"
 
 [package.extras]
 dev = ["pytest", "pytest-timeout", "coverage", "tox", "sphinx", "pallets-sphinx-themes", "sphinx-issues"]
 watchdog = ["watchdog"]
 
 [[package]]
-category = "main"
-description = "A built-package format for Python"
-marker = "python_version >= \"3\""
-name = "wheel"
-optional = false
-python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
-version = "0.34.2"
-
-[package.extras]
-test = ["pytest (>=3.0.0)", "pytest-cov"]
-
-[[package]]
-category = "main"
-description = "Module for decorators, wrappers and monkey patching."
 name = "wrapt"
+version = "1.12.1"
+description = "Module for decorators, wrappers and monkey patching."
+category = "main"
 optional = false
 python-versions = "*"
-version = "1.12.1"
 
 [[package]]
-category = "main"
-description = "Yet another URL library"
 name = "yarl"
+version = "1.4.2"
+description = "Yet another URL library"
+category = "main"
 optional = false
 python-versions = ">=3.5"
-version = "1.4.2"
 
 [package.dependencies]
 idna = ">=2.0"
 multidict = ">=4.0"
 
 [[package]]
-category = "main"
-description = "Backport of pathlib-compatible object wrapper for zip files"
 name = "zipp"
+version = "3.1.0"
+description = "Backport of pathlib-compatible object wrapper for zip files"
+category = "main"
 optional = false
 python-versions = ">=3.6"
-version = "3.1.0"
 
 [package.extras]
 docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "85ea941b961835bb9ed320cf30fa59552dae5dd102a44b5ea04579ca7e76c5be"
+lock-version = "1.1"
 python-versions = "^3.6.8"
+content-hash = "85ea941b961835bb9ed320cf30fa59552dae5dd102a44b5ea04579ca7e76c5be"
 
 [metadata.files]
 absl-py = [
@@ -2910,8 +2823,8 @@ hstspreload = [
     {file = "hstspreload-2020.6.9.tar.gz", hash = "sha256:1534715db2f5224debb605a82e3f79ee9f891031b748cdcf0441eb672d5f3aa2"},
 ]
 httplib2 = [
-    {file = "httplib2-0.18.1-py3-none-any.whl", hash = "sha256:ca2914b015b6247791c4866782fa6042f495b94401a0f0bd3e1d6e0ba2236782"},
-    {file = "httplib2-0.18.1.tar.gz", hash = "sha256:8af66c1c52c7ffe1aa5dc4bcd7c769885254b0756e6e69f953c7f0ab49a70ba3"},
+    {file = "httplib2-0.19.0-py3-none-any.whl", hash = "sha256:749c32603f9bf16c1277f59531d502e8f1c2ca19901ae653b49c4ed698f0820e"},
+    {file = "httplib2-0.19.0.tar.gz", hash = "sha256:e0d428dad43c72dbce7d163b7753ffc7a39c097e6788ef10f4198db69b92f08e"},
 ]
 httptools = [
     {file = "httptools-0.1.1-cp35-cp35m-macosx_10_13_x86_64.whl", hash = "sha256:a2719e1d7a84bb131c4f1e0cb79705034b48de6ae486eb5297a139d6a3296dce"},
@@ -3044,16 +2957,19 @@ kiwisolver = [
     {file = "kiwisolver-1.2.0-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:443c2320520eda0a5b930b2725b26f6175ca4453c61f739fef7a5847bd262f74"},
     {file = "kiwisolver-1.2.0-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:efcf3397ae1e3c3a4a0a0636542bcad5adad3b1dd3e8e629d0b6e201347176c8"},
     {file = "kiwisolver-1.2.0-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:fccefc0d36a38c57b7bd233a9b485e2f1eb71903ca7ad7adacad6c28a56d62d2"},
+    {file = "kiwisolver-1.2.0-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:be046da49fbc3aa9491cc7296db7e8d27bcf0c3d5d1a40259c10471b014e4e0c"},
     {file = "kiwisolver-1.2.0-cp36-none-win32.whl", hash = "sha256:60a78858580761fe611d22127868f3dc9f98871e6fdf0a15cc4203ed9ba6179b"},
     {file = "kiwisolver-1.2.0-cp36-none-win_amd64.whl", hash = "sha256:556da0a5f60f6486ec4969abbc1dd83cf9b5c2deadc8288508e55c0f5f87d29c"},
     {file = "kiwisolver-1.2.0-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:7cc095a4661bdd8a5742aaf7c10ea9fac142d76ff1770a0f84394038126d8fc7"},
     {file = "kiwisolver-1.2.0-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:c955791d80e464da3b471ab41eb65cf5a40c15ce9b001fdc5bbc241170de58ec"},
     {file = "kiwisolver-1.2.0-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:603162139684ee56bcd57acc74035fceed7dd8d732f38c0959c8bd157f913fec"},
+    {file = "kiwisolver-1.2.0-cp37-cp37m-manylinux2014_aarch64.whl", hash = "sha256:63f55f490b958b6299e4e5bdac66ac988c3d11b7fafa522800359075d4fa56d1"},
     {file = "kiwisolver-1.2.0-cp37-none-win32.whl", hash = "sha256:03662cbd3e6729f341a97dd2690b271e51a67a68322affab12a5b011344b973c"},
     {file = "kiwisolver-1.2.0-cp37-none-win_amd64.whl", hash = "sha256:4eadb361baf3069f278b055e3bb53fa189cea2fd02cb2c353b7a99ebb4477ef1"},
     {file = "kiwisolver-1.2.0-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:c31bc3c8e903d60a1ea31a754c72559398d91b5929fcb329b1c3a3d3f6e72113"},
     {file = "kiwisolver-1.2.0-cp38-cp38-manylinux1_i686.whl", hash = "sha256:d52b989dc23cdaa92582ceb4af8d5bcc94d74b2c3e64cd6785558ec6a879793e"},
     {file = "kiwisolver-1.2.0-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:e586b28354d7b6584d8973656a7954b1c69c93f708c0c07b77884f91640b7657"},
+    {file = "kiwisolver-1.2.0-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:38d05c9ecb24eee1246391820ed7137ac42a50209c203c908154782fced90e44"},
     {file = "kiwisolver-1.2.0-cp38-none-win32.whl", hash = "sha256:d069ef4b20b1e6b19f790d00097a5d5d2c50871b66d10075dab78938dc2ee2cf"},
     {file = "kiwisolver-1.2.0-cp38-none-win_amd64.whl", hash = "sha256:18d749f3e56c0480dccd1714230da0f328e6e4accf188dd4e6884bdd06bf02dd"},
     {file = "kiwisolver-1.2.0.tar.gz", hash = "sha256:247800260cd38160c362d211dcaf4ed0f7816afb5efe56544748b21d6ad6d17f"},
@@ -3089,20 +3005,39 @@ markupsafe = [
     {file = "MarkupSafe-1.1.1-cp35-cp35m-win32.whl", hash = "sha256:6dd73240d2af64df90aa7c4e7481e23825ea70af4b4922f8ede5b9e35f78a3b1"},
     {file = "MarkupSafe-1.1.1-cp35-cp35m-win_amd64.whl", hash = "sha256:9add70b36c5666a2ed02b43b335fe19002ee5235efd4b8a89bfcf9005bebac0d"},
     {file = "MarkupSafe-1.1.1-cp36-cp36m-macosx_10_6_intel.whl", hash = "sha256:24982cc2533820871eba85ba648cd53d8623687ff11cbb805be4ff7b4c971aff"},
+    {file = "MarkupSafe-1.1.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:d53bc011414228441014aa71dbec320c66468c1030aae3a6e29778a3382d96e5"},
     {file = "MarkupSafe-1.1.1-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:00bc623926325b26bb9605ae9eae8a215691f33cae5df11ca5424f06f2d1f473"},
     {file = "MarkupSafe-1.1.1-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:717ba8fe3ae9cc0006d7c451f0bb265ee07739daf76355d06366154ee68d221e"},
+    {file = "MarkupSafe-1.1.1-cp36-cp36m-manylinux2010_i686.whl", hash = "sha256:3b8a6499709d29c2e2399569d96719a1b21dcd94410a586a18526b143ec8470f"},
+    {file = "MarkupSafe-1.1.1-cp36-cp36m-manylinux2010_x86_64.whl", hash = "sha256:84dee80c15f1b560d55bcfe6d47b27d070b4681c699c572af2e3c7cc90a3b8e0"},
+    {file = "MarkupSafe-1.1.1-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:b1dba4527182c95a0db8b6060cc98ac49b9e2f5e64320e2b56e47cb2831978c7"},
     {file = "MarkupSafe-1.1.1-cp36-cp36m-win32.whl", hash = "sha256:535f6fc4d397c1563d08b88e485c3496cf5784e927af890fb3c3aac7f933ec66"},
     {file = "MarkupSafe-1.1.1-cp36-cp36m-win_amd64.whl", hash = "sha256:b1282f8c00509d99fef04d8ba936b156d419be841854fe901d8ae224c59f0be5"},
     {file = "MarkupSafe-1.1.1-cp37-cp37m-macosx_10_6_intel.whl", hash = "sha256:8defac2f2ccd6805ebf65f5eeb132adcf2ab57aa11fdf4c0dd5169a004710e7d"},
+    {file = "MarkupSafe-1.1.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:bf5aa3cbcfdf57fa2ee9cd1822c862ef23037f5c832ad09cfea57fa846dec193"},
     {file = "MarkupSafe-1.1.1-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:46c99d2de99945ec5cb54f23c8cd5689f6d7177305ebff350a58ce5f8de1669e"},
     {file = "MarkupSafe-1.1.1-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:ba59edeaa2fc6114428f1637ffff42da1e311e29382d81b339c1817d37ec93c6"},
+    {file = "MarkupSafe-1.1.1-cp37-cp37m-manylinux2010_i686.whl", hash = "sha256:6fffc775d90dcc9aed1b89219549b329a9250d918fd0b8fa8d93d154918422e1"},
+    {file = "MarkupSafe-1.1.1-cp37-cp37m-manylinux2010_x86_64.whl", hash = "sha256:a6a744282b7718a2a62d2ed9d993cad6f5f585605ad352c11de459f4108df0a1"},
+    {file = "MarkupSafe-1.1.1-cp37-cp37m-manylinux2014_aarch64.whl", hash = "sha256:195d7d2c4fbb0ee8139a6cf67194f3973a6b3042d742ebe0a9ed36d8b6f0c07f"},
     {file = "MarkupSafe-1.1.1-cp37-cp37m-win32.whl", hash = "sha256:b00c1de48212e4cc9603895652c5c410df699856a2853135b3967591e4beebc2"},
     {file = "MarkupSafe-1.1.1-cp37-cp37m-win_amd64.whl", hash = "sha256:9bf40443012702a1d2070043cb6291650a0841ece432556f784f004937f0f32c"},
     {file = "MarkupSafe-1.1.1-cp38-cp38-macosx_10_9_x86_64.whl", hash = "sha256:6788b695d50a51edb699cb55e35487e430fa21f1ed838122d722e0ff0ac5ba15"},
     {file = "MarkupSafe-1.1.1-cp38-cp38-manylinux1_i686.whl", hash = "sha256:cdb132fc825c38e1aeec2c8aa9338310d29d337bebbd7baa06889d09a60a1fa2"},
     {file = "MarkupSafe-1.1.1-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:13d3144e1e340870b25e7b10b98d779608c02016d5184cfb9927a9f10c689f42"},
+    {file = "MarkupSafe-1.1.1-cp38-cp38-manylinux2010_i686.whl", hash = "sha256:acf08ac40292838b3cbbb06cfe9b2cb9ec78fce8baca31ddb87aaac2e2dc3bc2"},
+    {file = "MarkupSafe-1.1.1-cp38-cp38-manylinux2010_x86_64.whl", hash = "sha256:d9be0ba6c527163cbed5e0857c451fcd092ce83947944d6c14bc95441203f032"},
+    {file = "MarkupSafe-1.1.1-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:caabedc8323f1e93231b52fc32bdcde6db817623d33e100708d9a68e1f53b26b"},
     {file = "MarkupSafe-1.1.1-cp38-cp38-win32.whl", hash = "sha256:596510de112c685489095da617b5bcbbac7dd6384aeebeda4df6025d0256a81b"},
     {file = "MarkupSafe-1.1.1-cp38-cp38-win_amd64.whl", hash = "sha256:e8313f01ba26fbbe36c7be1966a7b7424942f670f38e666995b88d012765b9be"},
+    {file = "MarkupSafe-1.1.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:d73a845f227b0bfe8a7455ee623525ee656a9e2e749e4742706d80a6065d5e2c"},
+    {file = "MarkupSafe-1.1.1-cp39-cp39-manylinux1_i686.whl", hash = "sha256:98bae9582248d6cf62321dcb52aaf5d9adf0bad3b40582925ef7c7f0ed85fceb"},
+    {file = "MarkupSafe-1.1.1-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:2beec1e0de6924ea551859edb9e7679da6e4870d32cb766240ce17e0a0ba2014"},
+    {file = "MarkupSafe-1.1.1-cp39-cp39-manylinux2010_i686.whl", hash = "sha256:7fed13866cf14bba33e7176717346713881f56d9d2bcebab207f7a036f41b850"},
+    {file = "MarkupSafe-1.1.1-cp39-cp39-manylinux2010_x86_64.whl", hash = "sha256:6f1e273a344928347c1290119b493a1f0303c52f5a5eae5f16d74f48c15d4a85"},
+    {file = "MarkupSafe-1.1.1-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:feb7b34d6325451ef96bc0e36e1a6c0c1c64bc1fbec4b854f4529e51887b1621"},
+    {file = "MarkupSafe-1.1.1-cp39-cp39-win32.whl", hash = "sha256:22c178a091fc6630d0d045bdb5992d2dfe14e3259760e713c490da5323866c39"},
+    {file = "MarkupSafe-1.1.1-cp39-cp39-win_amd64.whl", hash = "sha256:b7d644ddb4dbd407d31ffb699f1d140bc35478da613b441c582aeb7c43838dd8"},
     {file = "MarkupSafe-1.1.1.tar.gz", hash = "sha256:29872e92839765e546828bb7754a68c418d927cd064fd4708fab9fe9c8bb116b"},
 ]
 matplotlib = [
@@ -3520,6 +3455,8 @@ pyyaml = [
     {file = "PyYAML-5.3.1-cp37-cp37m-win_amd64.whl", hash = "sha256:73f099454b799e05e5ab51423c7bcf361c58d3206fa7b0d555426b1f4d9a3eaf"},
     {file = "PyYAML-5.3.1-cp38-cp38-win32.whl", hash = "sha256:06a0d7ba600ce0b2d2fe2e78453a470b5a6e000a985dd4a4e54e436cc36b0e97"},
     {file = "PyYAML-5.3.1-cp38-cp38-win_amd64.whl", hash = "sha256:95f71d2af0ff4227885f7a6605c37fd53d3a106fcab511b8860ecca9fcf400ee"},
+    {file = "PyYAML-5.3.1-cp39-cp39-win32.whl", hash = "sha256:ad9c67312c84def58f3c04504727ca879cb0013b2517c85a9a253f0cb6380c0a"},
+    {file = "PyYAML-5.3.1-cp39-cp39-win_amd64.whl", hash = "sha256:6034f55dab5fea9e53f436aa68fa3ace2634918e8b5994d82f3621c04ff5ed2e"},
     {file = "PyYAML-5.3.1.tar.gz", hash = "sha256:b8eac752c5e14d3eca0e6dd9199cd627518cb5ec06add0de9d32baeee6fe645d"},
 ]
 questionary = [
@@ -3562,6 +3499,7 @@ regex = [
     {file = "regex-2020.6.8.tar.gz", hash = "sha256:e9b64e609d37438f7d6e68c2546d2cb8062f3adb27e6336bc129b51be20773ac"},
 ]
 requests = [
+    {file = "requests-2.23.0-py2.7.egg", hash = "sha256:5d2d0ffbb515f39417009a46c14256291061ac01ba8f875b90cad137de83beb4"},
     {file = "requests-2.23.0-py2.py3-none-any.whl", hash = "sha256:43999036bfa82904b6af1d99e4882b560e5e2c68e5c4b0aa03b655f3d7d73fee"},
     {file = "requests-2.23.0.tar.gz", hash = "sha256:b3f43d496c6daba4493e7c431722aeb7dbc6288f52a6e04e7b6023b0247817e6"},
 ]
@@ -3583,7 +3521,7 @@ rocketchat-api = [
     {file = "rocketchat_API-1.3.1-py3-none-any.whl", hash = "sha256:2e2ea555b96bb34738fb4568238633ec22b24adb3027f3df995d58439a5e5ea0"},
 ]
 rsa = [
-    {file = "rsa-4.6-py2.py3-none-any.whl", hash = "sha256:23778f5523461cf86ae075f9482a99317f362bca752ae57cb118044066f4026f"},
+    {file = "rsa-4.6-py3-none-any.whl", hash = "sha256:6166864e23d6b5195a5cfed6cd9fed0fe774e226d8f854fcb23b7bbef0350233"},
     {file = "rsa-4.6.tar.gz", hash = "sha256:109ea5a66744dd859bf16fe904b8d8b627adafb9408753161e766a92e7d681fa"},
 ]
 "ruamel.yaml" = [
@@ -3898,19 +3836,28 @@ typed-ast = [
     {file = "typed_ast-1.4.1-cp36-cp36m-macosx_10_9_x86_64.whl", hash = "sha256:269151951236b0f9a6f04015a9004084a5ab0d5f19b57de779f908621e7d8b75"},
     {file = "typed_ast-1.4.1-cp36-cp36m-manylinux1_i686.whl", hash = "sha256:24995c843eb0ad11a4527b026b4dde3da70e1f2d8806c99b7b4a7cf491612652"},
     {file = "typed_ast-1.4.1-cp36-cp36m-manylinux1_x86_64.whl", hash = "sha256:fe460b922ec15dd205595c9b5b99e2f056fd98ae8f9f56b888e7a17dc2b757e7"},
+    {file = "typed_ast-1.4.1-cp36-cp36m-manylinux2014_aarch64.whl", hash = "sha256:fcf135e17cc74dbfbc05894ebca928ffeb23d9790b3167a674921db19082401f"},
     {file = "typed_ast-1.4.1-cp36-cp36m-win32.whl", hash = "sha256:4e3e5da80ccbebfff202a67bf900d081906c358ccc3d5e3c8aea42fdfdfd51c1"},
     {file = "typed_ast-1.4.1-cp36-cp36m-win_amd64.whl", hash = "sha256:249862707802d40f7f29f6e1aad8d84b5aa9e44552d2cc17384b209f091276aa"},
     {file = "typed_ast-1.4.1-cp37-cp37m-macosx_10_9_x86_64.whl", hash = "sha256:8ce678dbaf790dbdb3eba24056d5364fb45944f33553dd5869b7580cdbb83614"},
     {file = "typed_ast-1.4.1-cp37-cp37m-manylinux1_i686.whl", hash = "sha256:c9e348e02e4d2b4a8b2eedb48210430658df6951fa484e59de33ff773fbd4b41"},
     {file = "typed_ast-1.4.1-cp37-cp37m-manylinux1_x86_64.whl", hash = "sha256:bcd3b13b56ea479b3650b82cabd6b5343a625b0ced5429e4ccad28a8973f301b"},
+    {file = "typed_ast-1.4.1-cp37-cp37m-manylinux2014_aarch64.whl", hash = "sha256:f208eb7aff048f6bea9586e61af041ddf7f9ade7caed625742af423f6bae3298"},
     {file = "typed_ast-1.4.1-cp37-cp37m-win32.whl", hash = "sha256:d5d33e9e7af3b34a40dc05f498939f0ebf187f07c385fd58d591c533ad8562fe"},
     {file = "typed_ast-1.4.1-cp37-cp37m-win_amd64.whl", hash = "sha256:0666aa36131496aed8f7be0410ff974562ab7eeac11ef351def9ea6fa28f6355"},
     {file = "typed_ast-1.4.1-cp38-cp38-macosx_10_15_x86_64.whl", hash = "sha256:d205b1b46085271b4e15f670058ce182bd1199e56b317bf2ec004b6a44f911f6"},
     {file = "typed_ast-1.4.1-cp38-cp38-manylinux1_i686.whl", hash = "sha256:6daac9731f172c2a22ade6ed0c00197ee7cc1221aa84cfdf9c31defeb059a907"},
     {file = "typed_ast-1.4.1-cp38-cp38-manylinux1_x86_64.whl", hash = "sha256:498b0f36cc7054c1fead3d7fc59d2150f4d5c6c56ba7fb150c013fbc683a8d2d"},
+    {file = "typed_ast-1.4.1-cp38-cp38-manylinux2014_aarch64.whl", hash = "sha256:7e4c9d7658aaa1fc80018593abdf8598bf91325af6af5cce4ce7c73bc45ea53d"},
     {file = "typed_ast-1.4.1-cp38-cp38-win32.whl", hash = "sha256:715ff2f2df46121071622063fc7543d9b1fd19ebfc4f5c8895af64a77a8c852c"},
     {file = "typed_ast-1.4.1-cp38-cp38-win_amd64.whl", hash = "sha256:fc0fea399acb12edbf8a628ba8d2312f583bdbdb3335635db062fa98cf71fca4"},
     {file = "typed_ast-1.4.1-cp39-cp39-macosx_10_15_x86_64.whl", hash = "sha256:d43943ef777f9a1c42bf4e552ba23ac77a6351de620aa9acf64ad54933ad4d34"},
+    {file = "typed_ast-1.4.1-cp39-cp39-macosx_10_9_x86_64.whl", hash = "sha256:92c325624e304ebf0e025d1224b77dd4e6393f18aab8d829b5b7e04afe9b7a2c"},
+    {file = "typed_ast-1.4.1-cp39-cp39-manylinux1_i686.whl", hash = "sha256:d648b8e3bf2fe648745c8ffcee3db3ff903d0817a01a12dd6a6ea7a8f4889072"},
+    {file = "typed_ast-1.4.1-cp39-cp39-manylinux1_x86_64.whl", hash = "sha256:fac11badff8313e23717f3dada86a15389d0708275bddf766cca67a84ead3e91"},
+    {file = "typed_ast-1.4.1-cp39-cp39-manylinux2014_aarch64.whl", hash = "sha256:0d8110d78a5736e16e26213114a38ca35cb15b6515d535413b090bd50951556d"},
+    {file = "typed_ast-1.4.1-cp39-cp39-win32.whl", hash = "sha256:b52ccf7cfe4ce2a1064b18594381bccf4179c2ecf7f513134ec2f993dd4ab395"},
+    {file = "typed_ast-1.4.1-cp39-cp39-win_amd64.whl", hash = "sha256:3742b32cf1c6ef124d57f95be609c473d7ec4c14d0090e5a5e05a15269fb4d0c"},
     {file = "typed_ast-1.4.1.tar.gz", hash = "sha256:8c8aaad94455178e3187ab22c8b01a3837f8ee50e09cf31f1ba129eb293ec30b"},
 ]
 typing-extensions = [
@@ -3989,10 +3936,6 @@ websockets = [
 werkzeug = [
     {file = "Werkzeug-1.0.1-py2.py3-none-any.whl", hash = "sha256:2de2a5db0baeae7b2d2664949077c2ac63fbd16d98da0ff71837f7d1dea3fd43"},
     {file = "Werkzeug-1.0.1.tar.gz", hash = "sha256:6c80b1e5ad3665290ea39320b91e1be1e0d5f60652b964a3070216de83d2e47c"},
-]
-wheel = [
-    {file = "wheel-0.34.2-py2.py3-none-any.whl", hash = "sha256:df277cb51e61359aba502208d680f90c0493adec6f0e848af94948778aed386e"},
-    {file = "wheel-0.34.2.tar.gz", hash = "sha256:8788e9155fe14f54164c1b9eb0a319d98ef02c160725587ad60f14ddc57b6f96"},
 ]
 wrapt = [
     {file = "wrapt-1.12.1.tar.gz", hash = "sha256:b62ffa81fb85f4332a4f609cab4ac40709470da05643a082ec1eb88e6d9b97d7"},
